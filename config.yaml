@@ -27,16 +27,16 @@ params:
   katex: yes
   large_breakpoint: 64em
   medium_breakpoint: 42em
-  project_name: Cayman Hugo Theme
+  project_name: What They Forgot UI Carpentries Workshop
   project_tagline: What They Forgot to Teach You (when Using R)
   section_headings_color: '#159957'
   table_border_color: '#e9ebec'
 menu:
   nav:
-    - name: introduction
+    - name: Introduction
       url: /
       weight: 1
-    - name: materials
+    - name: Materials
       url: /materials/
       weight: 2
     - name: Instructors
