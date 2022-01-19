@@ -22,7 +22,11 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
-      - uses: r-lib/actions/setup-renv@v1
+      # set up enviroment
+      # - uses: r-lib/actions/setup-renv@v1
+      # install blogdown
+      - name: Install rmarkdown and blogdown
+        run: Rscript -e 'install.packages("blogdown")'
       # set up Hugo
       - name: Install hugo
         run: |
