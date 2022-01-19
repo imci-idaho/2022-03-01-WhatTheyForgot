@@ -12,7 +12,8 @@ enableEmoji: true
 taxonomies:
   tag: tags
 permalinks:
-  post: /:filename/
+  post: /
+  #/:filename/
 params:
   blockquote_text_color: '#819198'
   body_link_color: '#1e6bb8'
