@@ -25,12 +25,12 @@ jobs:
       # set up enviroment
       # - uses: r-lib/actions/setup-renv@v1
       # install blogdown
-      - name: Install rmarkdown and blogdown
+      - name: Install blogdown
         run: Rscript -e 'install.packages("blogdown")'
       # set up Hugo
       - name: Install hugo
         run: |
-          R -e 'blogdown::install_hugo()'
+          R -e 'blogdown::install_hugo("0.82.0")'
       # build site
       - name: Build site
         run: |
