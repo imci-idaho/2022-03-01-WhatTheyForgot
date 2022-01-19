@@ -2,13 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/introduction/</loc>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/2020-12-01-r-rmarkdown/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/</loc>
@@ -26,8 +23,8 @@
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/instructors/</loc>
-    <lastmod>2019-03-29T00:00:00+00:00</lastmod>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</loc>
+    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/cayman-typography/</loc>
     <lastmod>2019-03-29T00:00:00+00:00</lastmod>
@@ -97,5 +94,7 @@
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</loc>
   </url>
 </urlset>
