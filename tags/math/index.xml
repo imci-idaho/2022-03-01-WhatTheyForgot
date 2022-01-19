@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>math on What They Forgot to Teach You</title>
-    <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/math/</link>
+    <link>/tags/math/</link>
     <description>Recent content in math on What They Forgot to Teach You</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Katex Math Typesetting</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/katex-math-typesetting/</link>
+      <link>/materials/katex-math-typesetting/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/katex-math-typesetting/</guid>
+      <guid>/materials/katex-math-typesetting/</guid>
       <description>Enable Katex in the config file by setting the katex param to true. This will import the necessary Katex CSS/JS.
 See the online reference of supported TeX functions.
 Note: For inline math to render correctly, your content file extension must be .mmark. See the official mmark site.
