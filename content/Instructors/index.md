@@ -5,6 +5,14 @@ title: About Your Instructors
 
 Here's where we add short bios on ourselves. 
 
-![](test.png)
 
-# Breanna
+
+### Breanna
+
+![example_image](sombra_350.png)
+
+### Julia Piaskowski
+
+Julia's favorite Overwatch hero is Sombra. 
+
+### Yesol
