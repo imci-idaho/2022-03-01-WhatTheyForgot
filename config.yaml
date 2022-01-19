@@ -8,6 +8,7 @@ googleAnalytics:
 disqusShortname: 
 pygmentsCodefences: yes
 pygmentsStyle: pygments
+enableEmoji: true
 taxonomies:
   tag: tags
 permalinks:
@@ -20,7 +21,7 @@ params:
   code_background_color: '#f3f6fa'
   code_text_color: '#567482'
   dateFormat: '2006-01-02'
-  footer: Made with [Hugo](https://gohugo.io/). Themed by [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme).
+  footer: Made with [Hugo](https://gohugo.io/); themed by [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme).
   header_background_color: '#159957'
   header_background_color_secondary: '#155799'
   header_heading_color: '#fff'
@@ -28,21 +29,21 @@ params:
   katex: yes
   large_breakpoint: 64em
   medium_breakpoint: 42em
-  project_name: What They Forgot UI Carpentries Workshop
-  project_tagline: What They Forgot to Teach You (when Using R)
+  project_name: What They Forgot to Teach You When Using R
+  project_tagline: "Spring 2022 University of Idaho Carpentries Workshop"
   section_headings_color: '#159957'
   table_border_color: '#e9ebec'
 menu:
   nav:
-    - name: Introduction
-      url: /
+    - name: Details
+      url: /details
       weight: 1
     - name: Materials
       url: /materials/
       weight: 2
-    - name: Instructors
-      url: /instructors/
-      weight: 3
+#    - name: Instructors
+#      url: /instructors/
+#      weight: 3
 #    - name: RSS
 #      url: /index.xml
 #      weight: 4
