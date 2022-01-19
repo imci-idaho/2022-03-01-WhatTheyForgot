@@ -35,9 +35,12 @@ params:
   table_border_color: '#e9ebec'
 menu:
   nav:
+    - name: Home 
+      url: /
+      weight: 1
     - name: Details
       url: /details
-      weight: 1
+      weight: 2
     - name: Materials
       url: /materials/
       weight: 2
