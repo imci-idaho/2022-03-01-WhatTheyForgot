@@ -1,0 +1,41 @@
+name: build blogdown site and deploy on github pages
+
+# trigger on push or PR to main
+on:
+  push: 
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  blogdown:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # checkout code
+      - uses: actions/checkout@v2
+      # set up pandoc
+      - uses: r-lib/actions/setup-pandoc@v1
+      # set up R
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-renv@v1
+      # set up Hugo
+      - name: Install hugo
+        run: |
+          R -e 'blogdown::install_hugo()'
+      # build site
+      - name: Build site
+        run: |
+          R -e 'blogdown::build_site(TRUE)'
+      # use actions-gh-pages to deploy
+      # https://github.com/peaceiris/actions-gh-pages
+      - name: Deploy on gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN secret is set up automatically
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
