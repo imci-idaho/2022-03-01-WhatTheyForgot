@@ -1,5 +1,5 @@
-
-baseURL: https://imci-idaho.github.io/2022-03-01-WhatTheyForgot
+# https://imci-idaho.github.io/2022-03-01-WhatTheyForgot
+baseURL: 
 languageCode: en-us
 defaultContentLanguage: en
 title: What They Forgot to Teach You
