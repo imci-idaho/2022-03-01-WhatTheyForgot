@@ -36,8 +36,8 @@ params:
   table_border_color: '#e9ebec'
 menu:
   nav:
-    - name: Home 
-      url: /
+    - name: Info 
+      url: /info
       weight: 1
     - name: Details
       url: /details
