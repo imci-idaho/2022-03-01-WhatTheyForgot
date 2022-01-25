@@ -3,7 +3,9 @@ baseURL: https://imci-idaho.github.io/2022-03-01-WhatTheyForgot
 languageCode: en-us
 defaultContentLanguage: en
 title: What They Forgot to Teach You
-theme: cayman-hugo-theme
+theme: 
+- cayman-hugo-theme
+- hugo-webslides
 googleAnalytics: 
 disqusShortname: 
 pygmentsCodefences: yes
@@ -34,6 +36,18 @@ params:
   project_tagline: "Spring 2022 University of Idaho Carpentries Workshop"
   section_headings_color: '#159957'
   table_border_color: '#e9ebec'
+params.webslides:
+  banner: false
+  slideshow: true
+  vertical: false
+  autoslide: false
+  changeOnClick: false
+  disableLoop: false
+  minWheelDelta: 40
+  disableNavigateOnScroll: false
+  scrollWait: 450
+  slideOffset: 50
+  hideIndex: false
 menu:
   nav:
     - name: Info 

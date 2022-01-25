@@ -1,5 +1,3 @@
 ---
-title: test1
+title:
 ---
-
-more test text...

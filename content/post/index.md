@@ -1,5 +1,5 @@
 ---
-title: Workshop Information
+title: Workshop Information (content/post)
 ---
 
 *(placeholder text below that needs editing)*  
