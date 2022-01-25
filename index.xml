@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>test1 on What They Forgot to Teach You</title>
+    <title>What They Forgot to Teach You</title>
     <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</link>
-    <description>Recent content in test1 on What They Forgot to Teach You</description>
+    <description>Recent content on What They Forgot to Teach You</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 21:13:14 -0500</lastBuildDate><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation2/</guid>
+      <description>Good Karma Hypertext and beauty as narrative elements.
+Twitter Dribble Github
+  the end  </description>
+    </item>
+    
     <item>
       <title>Workshop Details</title>
       <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</link>
@@ -21,6 +32,17 @@ Schedule Tuesday, March 1 09:00 - 10:30 1_1: Project-oriented workflow 1 of 2
 13:30 - 15:00 1_3: Debugging
 15:00 - 15:30 Break
 15:30 - 17:00 1_4: Git/GitHub 1</description>
+    </item>
+    
+    <item>
+      <title>test presentation</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</link>
+      <pubDate>Tue, 25 Jan 2022 21:13:14 -0500</pubDate>
+      
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</guid>
+      <description>Slide one some content
+ slide two more content
+ the end  </description>
     </item>
     
     <item>
@@ -89,11 +111,11 @@ This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>
-      <title>Workshop Information</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/home/</link>
+      <title>Workshop Information (content/Info)</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/home/</guid>
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</guid>
       <description>(placeholder text below that needs editing)
 
 by Julia, Breanna and Yesol
@@ -105,11 +127,11 @@ Overview This is a two-day hands on workshop designed for experienced R and RStu
     </item>
     
     <item>
-      <title>Workshop Information</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</link>
+      <title>Workshop Information (content/post)</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</guid>
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</guid>
       <description>(placeholder text below that needs editing)
 
 by Julia, Breanna and Yesol

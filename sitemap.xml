@@ -2,13 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation2/</loc>
+  </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/2020-12-01-r-rmarkdown/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</loc>
+    <lastmod>2022-01-25T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/hugo-webslides/</loc>
+    <lastmod>2022-01-25T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/</loc>
+    <lastmod>2022-01-25T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/</loc>
+    <lastmod>2022-01-25T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</loc>
+    <lastmod>2022-01-25T21:13:14-05:00</lastmod>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/plot/</loc>
@@ -18,12 +32,6 @@
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/cayman-typography/</loc>
@@ -95,8 +103,8 @@
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/home/</loc>
-  </url><url>
     <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</loc>
+  </url><url>
+    <loc>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</loc>
   </url>
 </urlset>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo webslides on What They Forgot to Teach You</title>
+    <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/hugo-webslides/</link>
+    <description>Recent content in hugo webslides on What They Forgot to Teach You</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jan 2022 21:13:14 -0500</lastBuildDate><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/tags/hugo-webslides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test presentation</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</link>
+      <pubDate>Tue, 25 Jan 2022 21:13:14 -0500</pubDate>
+      
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</guid>
+      <description>Slide one some content
+ slide two more content
+ the end  </description>
+    </item>
+    
+  </channel>
+</rss>
