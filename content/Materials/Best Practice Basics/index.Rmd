@@ -18,6 +18,17 @@ knitr::opts_chunk$set(echo = FALSE)
 - Naming files
 
 
+## Saving source and blank slates
+
+![](images/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg)
+
+## Saving source and blank slates
+
+- Use an IDE
+
+![](images/RStudio_IDE_screenshot.png)
+
+
 
 ## R Markdown
 
