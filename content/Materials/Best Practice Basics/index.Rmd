@@ -28,6 +28,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](images/RStudio_IDE_screenshot.png)
 
+## Start with a blank slate
+
+![](images/rstudio-workspace.png)
+
+## Avoid hidden dependencies
+
+What is wrong with `rm(list = ls())`?
+
+- Falls short of providing a blank slate
+- Better strategy is to restart R
+
+
 
 
 ## R Markdown
