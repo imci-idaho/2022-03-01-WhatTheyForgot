@@ -7,7 +7,7 @@ tags:
 - templates
 - themes
 - development
-title: (Hu)go Template Primer
+title: Test embed
 ---
 
 Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
