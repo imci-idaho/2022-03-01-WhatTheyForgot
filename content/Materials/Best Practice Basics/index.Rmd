@@ -1,5 +1,5 @@
 ---
-title: "Practical Best Practices"
+title: "Best Practice Basics"
 author: "Yesol Sapozhnikov"
 date: "2/3/2022"
 output: ioslides_presentation
@@ -39,30 +39,44 @@ What is wrong with `rm(list = ls())`?
 - Falls short of providing a blank slate
 - Better strategy is to restart R
 
+## When power-cycling is not practical
+
+- e.g. your analysis contains parts that take a long time to execute
+- Modular approach:
+  - Break an analysis into logical steps
+  - Utilize `saveRDS()` and `readRDS()`
+  
+## Automating workflow
+
+
+## Project-oriented workflow: RStudio Projects
+
+- Automatically starts at the working directory for the project (eliminate the need for `setwd("path/that/only/works/on/one/particular/machine")`)
+- Easy to switch from project A to project B
+- Actual demo?
+
+## Benefits of working in a project
+
+- File system discipline
+- Working directory intentionality
+- File path discipline
+
+## Practice safe paths
+
+## Naming files
+
+Ideal file names should be...
+
+- Machine readable
+- Human readable
+- Plays well with default ordering
 
 
 
-## R Markdown
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
-## Slide with Bullets
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-## Slide with R Output
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
 
