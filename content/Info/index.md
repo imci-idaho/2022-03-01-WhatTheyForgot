@@ -37,10 +37,9 @@ The tidyverse is not an explicit focus of the course (other than the purrr segme
 ## Instructors
 
 * [Julia Piaskowski](https://jpiaskowski.gitlab.io/) | [GitHub](https://github.com/jpiaskowski) | [Twitter](https://twitter.com/SeedsAndBreeds)
-* Brenna
+* Breanna
 * Yesol
   
 TAs and special guests: 
 
 * JT VanLeuven
-
