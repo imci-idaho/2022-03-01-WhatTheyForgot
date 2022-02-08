@@ -55,6 +55,12 @@ What is wrong with `rm(list = ls())`?
 - Easy to switch from project A to project B
 - Actual demo?
 
+## RStudio Project with `renv` package
+
+- You can turn it on in Project Options:
+![](images/project-options-renv.png)
+More info from the [vignette](https://rstudio.github.io/renv/articles/renv.html)
+
 ## Benefits of working in a project
 
 - File system discipline
