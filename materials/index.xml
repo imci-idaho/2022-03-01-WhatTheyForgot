@@ -103,14 +103,5 @@ This document is a brief primer on using Go templates.</description>
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
-    <item>
-      <title>Practical Best Practices</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</guid>
-      <description>What We Will Cover  Saving source and blank slates Project-oriented workflow Safe paths for reproducibility Naming files   Saving source and blank slates  Saving source and blank slates  Use an IDE   R Markdown This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.</description>
-    </item>
-    
   </channel>
 </rss>
