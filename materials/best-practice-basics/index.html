@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.82.0" />
+  
+  <meta name="description" content="What We Will Cover  Saving source and blank slates Project-oriented workflow Safe paths for reproducibility Naming files   Saving source and blank slates  Saving source and blank slates  Use an IDE   Start with a blank slate  Avoid hidden dependencies What is wrong with rm(list = ls())?
+ Falls short of providing a blank slate Better strategy is to restart R   When power-cycling is not practical  e.">
+  <link rel="stylesheet" href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Best Practice Basics | What They Forgot to Teach You</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    What They Forgot to Teach You When Using R
+  </h1>
+  <h2 class="project-tagline">
+    Spring 2022 University of Idaho Carpentries Workshop
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/2022-03-01-WhatTheyForgot/info" class="btn">Info</a>
+    
+      
+      
+      
+      
+      <a href="/2022-03-01-WhatTheyForgot/details" class="btn">Details</a>
+    
+      
+      
+      
+      
+      <a href="/2022-03-01-WhatTheyForgot/materials/" class="btn">Materials</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Best Practice Basics</h1>
+  
+<script src="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="what-we-will-cover" class="section level2">
+<h2>What We Will Cover</h2>
+<ul>
+<li>Saving source and blank slates</li>
+<li>Project-oriented workflow</li>
+<li>Safe paths for reproducibility</li>
+<li>Naming files</li>
+</ul>
+</div>
+<div id="saving-source-and-blank-slates" class="section level2">
+<h2>Saving source and blank slates</h2>
+<p><img src="images/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg" /></p>
+</div>
+<div id="saving-source-and-blank-slates-1" class="section level2">
+<h2>Saving source and blank slates</h2>
+<ul>
+<li>Use an IDE</li>
+</ul>
+<p><img src="images/RStudio_IDE_screenshot.png" /></p>
+</div>
+<div id="start-with-a-blank-slate" class="section level2">
+<h2>Start with a blank slate</h2>
+<p><img src="images/rstudio-workspace.png" /></p>
+</div>
+<div id="avoid-hidden-dependencies" class="section level2">
+<h2>Avoid hidden dependencies</h2>
+<p>What is wrong with <code>rm(list = ls())</code>?</p>
+<ul>
+<li>Falls short of providing a blank slate</li>
+<li>Better strategy is to restart R</li>
+</ul>
+</div>
+<div id="when-power-cycling-is-not-practical" class="section level2">
+<h2>When power-cycling is not practical</h2>
+<ul>
+<li>e.g. your analysis contains parts that take a long time to execute</li>
+<li>Modular approach:
+<ul>
+<li>Break an analysis into logical steps</li>
+<li>Utilize <code>saveRDS()</code> and <code>readRDS()</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="automating-workflow" class="section level2">
+<h2>Automating workflow</h2>
+</div>
+<div id="project-oriented-workflow-rstudio-projects" class="section level2">
+<h2>Project-oriented workflow: RStudio Projects</h2>
+<ul>
+<li>Automatically starts at the working directory for the project (eliminate the need for <code>setwd("path/that/only/works/on/one/particular/machine")</code>)</li>
+<li>Easy to switch from project A to project B</li>
+<li>Actual demo?</li>
+</ul>
+</div>
+<div id="rstudio-project-with-renv-package" class="section level2">
+<h2>RStudio Project with <code>renv</code> package</h2>
+<ul>
+<li>You can turn it on in Project Options:
+<img src="images/project-options-renv.png" />
+More info from the <a href="https://rstudio.github.io/renv/articles/renv.html">vignette</a></li>
+</ul>
+</div>
+<div id="benefits-of-working-in-a-project" class="section level2">
+<h2>Benefits of working in a project</h2>
+<ul>
+<li>File system discipline</li>
+<li>Working directory intentionality</li>
+<li>File path discipline</li>
+</ul>
+</div>
+<div id="practice-safe-paths" class="section level2">
+<h2>Practice safe paths</h2>
+</div>
+<div id="naming-files" class="section level2">
+<h2>Naming files</h2>
+<p>Ideal file names should be…</p>
+<ul>
+<li>Machine readable</li>
+<li>Human readable</li>
+<li>Plays well with default ordering</li>
+</ul>
+</div>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Made with <a href="https://gohugo.io/">Hugo</a>; themed by <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

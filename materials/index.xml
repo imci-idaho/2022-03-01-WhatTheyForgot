@@ -103,5 +103,15 @@ This document is a brief primer on using Go templates.</description>
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
+    <item>
+      <title>Best Practice Basics</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</guid>
+      <description>What We Will Cover  Saving source and blank slates Project-oriented workflow Safe paths for reproducibility Naming files   Saving source and blank slates  Saving source and blank slates  Use an IDE   Start with a blank slate  Avoid hidden dependencies What is wrong with rm(list = ls())?
+ Falls short of providing a blank slate Better strategy is to restart R   When power-cycling is not practical  e.</description>
+    </item>
+    
   </channel>
 </rss>
