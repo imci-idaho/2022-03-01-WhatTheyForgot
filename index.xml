@@ -1,164 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Website Under Construction Currently on What They Forgot to Teach You</title>
+    <title>Home on What They Forgot to Teach You About R</title>
     <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/</link>
-    <description>Recent content in Website Under Construction Currently on What They Forgot to Teach You</description>
+    <description>Recent content in Home on What They Forgot to Teach You About R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 07 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation2/</link>
+      <title>Additional Resources</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation2/</guid>
-      <description>Good Karma Hypertext and beauty as narrative elements.
-Twitter Dribble Github
-  the end  </description>
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/resources/</guid>
+      <description> What They Forgot book &amp;hellip;   </description>
+    </item>
+    
+    <item>
+      <title>Course Materials</title>
+      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/course-materials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/course-materials/</guid>
+      <description> example lecture lecture 2 &amp;hellip;  </description>
     </item>
     
     <item>
       <title>Workshop Details</title>
       <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</link>
-      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</guid>
       <description>(placeholder text below that needs editing)
 Pre-work Please do the requested Git/GitHub prep in advance! Go here for details. If you have questions, please ask on the community.rstudio.com thread.
-Schedule Tuesday, March 1 09:00 - 10:30 1_1: Project-oriented workflow 1 of 2
-10:30 - 11:00 Break
-11:00 - 12:30 1_2: Project-oriented workflow 2 of 2) 12:30 - 13:30 Lunch
-13:30 - 15:00 1_3: Debugging
-15:00 - 15:30 Break
-15:30 - 17:00 1_4: Git/GitHub 1</description>
-    </item>
-    
-    <item>
-      <title>Test embed</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/c5-art-of-workflow/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/c5-art-of-workflow/</guid>
-      <description>Placeholder for chapter 5 slides to test embed Testing using slidedeck from Breanna&amp;rsquo;s dissertation proposal</description>
-    </item>
-    
-    <item>
-      <title>test presentation</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</link>
-      <pubDate>Tue, 25 Jan 2022 21:13:14 -0500</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/test_presentation1/</guid>
-      <description>Slide one some content
- slide two more content
- the end  </description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/2020-12-01-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
-    </item>
-    
-    <item>
-      <title>Cayman Typography</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/cayman-typography/</link>
-      <pubDate>Fri, 29 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/cayman-typography/</guid>
-      <description>Text Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over). Text can be bold, italic, or strikethrough. Links should be blue with no underlines (unless hovered over).
-Paragraph There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.</description>
-    </item>
-    
-    <item>
-      <title>Katex Math Typesetting</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/katex-math-typesetting/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/katex-math-typesetting/</guid>
-      <description>Enable Katex in the config file by setting the katex param to true. This will import the necessary Katex CSS/JS.
-See the online reference of supported TeX functions.
-Note: For inline math to render correctly, your content file extension must be .mmark. See the official mmark site.
-Inline math: $$ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $$ Inline math: \( \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… \)
-Block math: $$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$ Block math:</description>
-    </item>
-    
-    <item>
-      <title>NASA Images</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/nasa-images/</link>
-      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/nasa-images/</guid>
-      <description>The below images are from the NASA Image and Video Library &amp;ndash; indulge yourself, revel in their beauty. Also, the built-in figure shortcode is shown for each image.
- {{&amp;lt; figure img=&amp;quot;sun.jpg&amp;quot; caption=&amp;quot;The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/hugo-template-primer/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/hugo-template-primer/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
-    </item>
-    
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
-      <title>Best Practice Basics</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/materials/best-practice-basics/</guid>
-      <description>What We Will Cover  Saving source and blank slates Project-oriented workflow Safe paths for reproducibility Naming files   Saving source and blank slates  Saving source and blank slates  Use an IDE   Start with a blank slate  Avoid hidden dependencies What is wrong with rm(list = ls())?
- Falls short of providing a blank slate Better strategy is to restart R   When power-cycling is not practical  e.</description>
-    </item>
-    
-    <item>
-      <title>Workshop Information (content/Info)</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/info/</guid>
-      <description>(placeholder text below that needs editing)
-
-by Julia, Breanna and Yesol
-https://imci-idaho.github.io/2022-03-01-WhatTheyForgot &amp;lt;&amp;ndash; The One True URL that links to everything!
-🗓 March 1, 3, 8, 10, 2022
-⏰ 14:00 - 17:00
-🌎 Zoom
-Overview This is a two-day hands on workshop designed for experienced R and RStudio users who want to (re)design their R lifestyle. You&amp;rsquo;ll learn holistic workflows that address the most common sources of friction in data analysis.</description>
-    </item>
-    
-    <item>
-      <title>Workshop Information (content/post)</title>
-      <link>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/post/</guid>
-      <description>(placeholder text below that needs editing)
-
-by Julia, Breanna and Yesol
-https://imci-idaho.github.io/2022-03-01-WhatTheyForgot &amp;lt;&amp;ndash; The One True URL that links to everything!
-🗓 March 1, 3, 8, 10, 2022
-⏰ 14:00 - 17:00
-🌎 Zoom
-Overview This is a two-day hands on workshop designed for experienced R and RStudio users who want to (re)design their R lifestyle. You&amp;rsquo;ll learn holistic workflows that address the most common sources of friction in data analysis.</description>
+We will hold a Session Zero February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can.
+Schedule Monday, February 28 15:00 - 16:00 Session Zero (optional, but recommended)</description>
     </item>
     
   </channel>
