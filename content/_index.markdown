@@ -2,37 +2,48 @@
 title: Home
 ---
 
-[<img src="https://simpleicons.org/icons/github.svg" style="max-width:15%;min-width:40px;float:right;" alt="Github repo" />](https://github.com/yihui/hugo-xmin)
+# Workshop Information
 
-# HUGO XMIN
+*(placeholder text below that needs editing)*  
 
-## _Keep it simple, but not simpler_
+[![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/what-they-forgot/wtf-2020-rsc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-**XMin** is a Hugo theme written by [Yihui Xie](https://yihui.org) in about four hours: half an hour was spent on the Hugo templates, and 3.5 hours were spent on styling. The main motivation for writing this theme was to provide a really minimal example to beginners of Hugo templates. This XMin theme contains about 130 lines of code in total, including the code in HTML templates and CSS (also counting empty lines).
+by Julia, Breanna and Yesol
 
+**https://imci-idaho.github.io/2022-03-01-WhatTheyForgot** <-- The One True URL that links to everything!
 
-```bash
-find . -not -path '*/exampleSite/*' \( -name '*.html' -o -name '*.css' \) | xargs wc -l
-```
+:spiral_calendar: March 1, 3, 8, 10, 2022   
+:alarm_clock: 14:00 - 17:00   
+:earth_americas: Zoom   
 
-```
-       5 ./layouts/404.html
-      12 ./layouts/_default/single.html
-      20 ./layouts/_default/list.html
-      13 ./layouts/_default/terms.html
-       0 ./layouts/partials/foot_custom.html
-       0 ./layouts/partials/head_custom.html
-       9 ./layouts/partials/footer.html
-      20 ./layouts/partials/header.html
-      51 ./static/css/style.css
-       7 ./static/css/fonts.css
-     137 total
-```
+## Overview
 
-I can certainly further reduce the code, for example, by eliminating the CSS, but I believe a tiny bit of CSS can greatly improve readability. You cannot really find many CSS frameworks that only contain 50 lines of code.
+This is a two-day hands on workshop designed for experienced R and RStudio users who want to (re)design their R lifestyle. You'll learn holistic workflows that address the most common sources of friction in data analysis. We’ll work on project-oriented workflows, version control for data science (Git/GitHub!), and how to plan for collaboration, communication, and iteration (incl. RMarkdown).
 
-Although it is a minimal theme, it is actually fully functional. It supports pages (including the home page), blog posts, a navigation menu, categories, tags, and RSS. With [a little bit customization](https://github.com/yihui/hugo-xmin/blob/master/exampleSite/layouts/partials/foot_custom.html), it can easily support LaTeX math expressions, e.g.,
+In terms of your R skills, expect to come away with new knowledge of your R installation, how to maintain it, robust strategies for working with the file system, debugging tools, and ways to use the purrr package for repetitive tasks.
 
-`$${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$`
+## Is this course for me?
 
-All pages not under the root directory of the website are listed below. You can also visit the list page of a single section, e.g., [posts](/post/), or [notes](/note/). See the [About](/about/) page for the usage of this theme.
+* Have you been using R for a while and feel there might be better ways to organize your R life, but don't know what they are?
+* Do you want to streamline your workflow for doing analysis and automating repetitive tasks in R?
+* Are you willing to get into the weeds of your R installation, project organization, error messages, and source code?
+
+*You should take this workshop if:*
+
+* You've been using R for a while and you feel like writing R code is not what’s holding you back the most.
+* You’ve realized that you have more pressing "meta" problems that no one seems to talk about.
+* You want to know how to divide your work into projects and scripts, how to expose your work to others, and how to get more connected to the R development scene. 
+
+The tidyverse is not an explicit focus of the course (other than the purrr segment) and you can certainly work through the content without it. But you should expect a great deal of tidyverse exposure.
+
+## Instructors
+
+* [Julia Piaskowski](https://jpiaskowski.gitlab.io/) | [GitHub](https://github.com/jpiaskowski) | [Twitter](https://twitter.com/SeedsAndBreeds)
+* Breanna
+* Yesol
+  
+### TAs and special guests: 
+
+* JT VanLeuven
+
+--- the end ---

@@ -1,36 +1,35 @@
-baseurl: "/"
+baseurl: "https://imci-idaho.github.io/2022-03-01-WhatTheyForgot"
 languageCode: "en-us"
-title: "A minimal Hugo website"
+title: "What They Forgot to Teach You About R"
 theme: "hugo-xmin"
 googleAnalytics: ""
 disqusShortname: ""
+enableEmoji: true
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 footnotereturnlinkcontents: "↩"
 
 permalinks:
-  note: "/note/:year/:month/:day/:slug/"
-  post: "/post/:year/:month/:day/:slug/"
+#  note: "/note/:year/:month/:day/:slug/"
+#  post: "/post/:year/:month/:day/:slug/"
 
 menu:
   main:
     - name: Home
       url: ""
       weight: 1
-    - name: About
-      url: "about/"
+    - name: Course Materials
+      url: "course-materials/"
       weight: 2
-    - name: Categories
-      url: "categories/"
+    - name: Details
+      url: "details/"
       weight: 3
-    - name: Tags
-      url: "tags/"
+    - name: Resources
+      url: "resources/"
       weight: 4
-    - name: Subscribe
-      url: "index.xml"
 
 params:
-  description: "A website built through Hugo and blogdown."
-  footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- {Year} | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+  description: "A workshop offerred by University of Idaho Carpentries"
+  footer: "&copy; [University of Idaho](www.uidaho.edu) 2022 -- {Year} | [Github](https://github.com/imci-idaho/2022-03-01-WhatTheyForgot)"
 
 markup:
   highlight:

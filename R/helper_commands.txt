@@ -2,11 +2,10 @@
 # Site build with this: (do not run this again)
 
 install.packages("blogdown")
-blogdown::new_site(theme = "zwbetz-gh/cayman-hugo-theme", netlify = FALSE)
+blogdown::new_site(theme = " yihui/hugo-xmin", netlify = FALSE)
 
 # To serve the site: (it will also build it)
 
-blogdown::build_site()
 blogdown::serve_site()
 
 # To stop serving the site:
