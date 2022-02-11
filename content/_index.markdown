@@ -6,7 +6,7 @@ title: Home
 
 *(placeholder text below that needs editing)*  
 
-[![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/what-they-forgot/wtf-2020-rsc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
 
 by Julia, Breanna and Yesol
 
@@ -14,7 +14,7 @@ by Julia, Breanna and Yesol
 
 :spiral_calendar: March 1, 3, 8, 10, 2022   
 :alarm_clock: 14:00 - 17:00   
-:earth_americas: Zoom   
+:earth_americas: via Zoom (Link will be provided via email)  
 
 ## Overview
 
@@ -45,5 +45,4 @@ The tidyverse is not an explicit focus of the course (other than the purrr segme
 ### TAs and special guests: 
 
 * JT VanLeuven
-
---- the end ---
+* Janet Williams
