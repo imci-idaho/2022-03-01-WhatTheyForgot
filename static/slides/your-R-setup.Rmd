@@ -1,0 +1,20 @@
+---
+title: "Getting to know your R Setup"
+subtitle: "⚔<br/>and your dev environment"
+author: "Julia Piaskowski"
+date: "2022-03-08"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    mathjax: null
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+
