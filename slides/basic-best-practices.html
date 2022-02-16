@@ -42,17 +42,18 @@ class: inverse, center, middle
 ---
 
 ![](images/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg)
+
 ---
 
 # Use an IDE
 
 
-![](images/RStudio_IDE_screenshot.png){width=50%}
+![](images/RStudio_IDE_screenshot.png)
 
 ---
 # Start with a blank slate
 
-![](images/rstudio-workspace.png){width=50%}
+![](images/rstudio-workspace.png)
 
 ---
 
@@ -106,7 +107,7 @@ class: inverse, center, middle
 
 You can turn it on in Project Options:
 
-![](images/project-options-renv.png){width=50%}
+![](images/project-options-renv.png)
 
 More info: [vignette](https://rstudio.github.io/renv/articles/renv.html)
 
@@ -141,7 +142,7 @@ class: inverse, center, middle
   - If you use RStudioo Projects, you'll see `.Rproj` file
   
   
-![](images/rproj_top_level.png)
+.center[![](images/rproj_top_level.png)]
 
 ---
 
@@ -177,20 +178,79 @@ class: inverse, center, middle
 
 ---
 
-Ideal file names should be...
+# Ideal file names should be...
+
+--
 
 - Machine readable
 
+--
+
 - Human readable
+
+--
 
 - Plays well with default ordering
 
+---
+
+![](images/file_names_example.png)
+
+---
+
+# Machine-readable file names
+
+- Regular expression and globbing friendly
+
+  - Avoid spaces, punctuation, accented characters, case sensitivity
+  
+  - Allows for easy search or narrowing down the list
+
+- Deliberate use of delimiters
+
+  - Use "_" and "-" to recover meta-data from file names
+  
+
+---
+
+# Human-readable file names
+
+- Make it descriptive!
+
+  (while utilizing "_" and "-" to avoid spaces, punctuations, etc)
 
 
+---
 
+# Plays well with default ordering
 
+Files with chronological order? -&gt; *Use the ISO 8601 standard for dates*
 
+--
 
+.center[## YYYY-MM-DD]
+
+--
+
+![](images/file_names_dates.png)
+
+---
+
+.center[![](images/iso_date_psa.png)]
+
+---
+
+# Plays well with default ordering
+
+Files with logical order? -&gt; Put something numeric first
+
+--
+
+(with leading zeros!)
+
+--
+
+![](images/file_names_zeros.png)
 
 
 
