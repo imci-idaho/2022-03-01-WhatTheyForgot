@@ -18,9 +18,9 @@ by Julia, Breanna and Yesol
 
 ## Overview
 
-This is a two-day hands on workshop designed for experienced R and RStudio users who want to (re)design their R lifestyle. You'll learn holistic workflows that address the most common sources of friction in data analysis. We’ll work on project-oriented workflows, version control for data science (Git/GitHub!), and how to plan for collaboration, communication, and iteration (incl. RMarkdown).
+This is a two-day hands-on workshop designed for experienced R and RStudio users who want to (re)design their R lifestyle. You'll learn holistic workflows that address the most common sources of friction in data analysis. We’ll work on project-oriented workflows and how to plan for collaboration, communication, and iteration (incl. RMarkdown).
 
-In terms of your R skills, expect to come away with new knowledge of your R installation, how to maintain it, robust strategies for working with the file system, debugging tools, and ways to use the purrr package for repetitive tasks.
+In terms of your R skills, expect to come away with new knowledge of your R installation, how to maintain it, robust strategies for working with the file system, and debugging tools.
 
 ## Is this course for me?
 
@@ -39,8 +39,8 @@ The tidyverse is not an explicit focus of the course (other than the purrr segme
 ## Instructors
 
 * [Julia Piaskowski](https://jpiaskowski.gitlab.io/) | [GitHub](https://github.com/jpiaskowski) | [Twitter](https://twitter.com/SeedsAndBreeds)
-* Breanna
-* Yesol
+* Breanna Sipley
+* Yesol Sapozhnikov
   
 ### TAs and special guests: 
 
