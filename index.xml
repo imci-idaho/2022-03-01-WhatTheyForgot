@@ -30,10 +30,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</guid>
-      <description>(placeholder text below that needs editing)
-Pre-work Please do the requested Git/GitHub prep in advance! Go here for details. If you have questions, please ask on the community.rstudio.com thread.
-We will hold a Session Zero February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can.
-Schedule Monday, February 28 15:00 - 16:00 Session Zero (optional, but recommended)</description>
+      <description>Pre-work You need to have R and RStudio installed on the computer you will use for this workshop. Installing the packages here, renv, reprex, devtools in advance is recommended. If you will be using a Windows machine for the workshop, please install Rtools (note that this is a program not a package).
+A zoom connection is required.
+packages &amp;lt;- c(&amp;quot;here&amp;quot;, &amp;quot;renv&amp;quot;, &amp;quot;reprex&amp;quot;, &amp;quot;devtools&amp;quot;) install.packages(packages) all(lapply(packages, library, character.only = TRUE))  Once you have devtools installed, install the package lookup from GitHub:</description>
     </item>
     
   </channel>
