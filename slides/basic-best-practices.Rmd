@@ -216,29 +216,43 @@ class: inverse, center, middle
 
 # Plays well with default ordering
 
-Files with chronological order? -> *Use the ISO 8601 standard for dates*
+### Chronological order
+
+.pull-left[
+
+*Use the ISO 8601 standard for dates*
+
+
+
+.red[## YYYY-MM-DD]
+]
 
 --
 
-.center[## YYYY-MM-DD]
+.pull-right[
 
---
+![](images/iso_date_psa.png)
+]
 
-![](images/file_names_dates.png)
+
+---
+
+class: center, middle
+
+![](images/file_names_chrono.png)
 
 ---
 
-.center[![](images/iso_date_psa.png)]
-
----
 
 # Plays well with default ordering
 
-Files with logical order? -> Put something numeric first
+### Logical order
+
+Put something numeric first
 
 --
 
-(with leading zeros!)
+with leading zeros!
 
 --
 
