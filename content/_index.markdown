@@ -2,8 +2,9 @@
 title: Home
 ---
 
-# Workshop Information
+[<img src="https://raw.githubusercontent.com/imci-idaho/2022-03-01-WhatTheyForgot/main/static/media/IMCI_logo_horizontal.png" style="max-width:15%;min-width:40px;float:right;" alt="IMCI" />](https://imci.uidaho.edu/)
 
+# Workshop Information
 
 [![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
 

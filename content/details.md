@@ -19,8 +19,8 @@ Once you have **devtools** installed, install the package **lookup** from GitHub
 ```
 devtools::install_github("jimhester/lookup")
 ```
+<b style='color:red;'>Note: please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we will use in this workshop.</b>
 
-*Note: please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we need for this workshop.*  
 
 We will hold a **Session Zero** February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can. 
 

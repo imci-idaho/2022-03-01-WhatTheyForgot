@@ -17,11 +17,11 @@ menu:
     - name: Home
       url: ""
       weight: 1
-    - name: Course Materials
-      url: "course-materials/"
-      weight: 2
     - name: Details
       url: "details/"
+      weight: 2
+    - name: Course Materials
+      url: "course-materials/"
       weight: 3
     - name: Resources
       url: "resources/"
