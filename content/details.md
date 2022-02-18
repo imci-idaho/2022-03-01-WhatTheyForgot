@@ -2,54 +2,40 @@
 title: Workshop Details
 ---
 
+*(placeholder text below that needs editing)* 
+
 ## Pre-work
 
-You need to have [R](https://cloud.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/) installed on the computer you will use for this workshop. Installing the packages **here**, **renv**, **reprex**, **devtools** in advance is recommended. If you will be using a Windows machine for the workshop, please install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) (note that this is a *program* not a package). 
+Please do the requested Git/GitHub prep in advance! Go [here](https://happygitwithr.com/workshops.html#pre-workshop-set-up) for details. If you have questions, please ask on the [community.rstudio.com thread](https://community.rstudio.com/t/what-they-forgot-to-teach-you-about-r-workshop-rstudio-conf-2020/49106).
 
-A zoom connection is required.  
-
-```
-packages <- c("here", "renv", "reprex", "devtools")
-install.packages(packages)
-all(lapply(packages, library, character.only = TRUE))
-```
-
-Once you have **devtools** installed, install the package **lookup** from GitHub:  
-
-```
-devtools::install_github("jimhester/lookup")
-```
-<b style='color:red;'>Note: please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we will use in this workshop.</b>
-
-
-We will hold a **Session Zero** February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can. 
+We will hold a *Session Zero* February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can. 
 
 ## Schedule
 
 ### Monday, February 28
 
-3:00 - 4:00 Session Zero 
+15:00 - 16:00 Session Zero (optional, but recommended)
 
 ### Tuesday, March 1
 
-2:00 - 3:30  Settings & Practices for Reproducible Research
-3:30 - 3:45  Break  
-3:45 - 5:00  Workflow for Reproducible Research  
+14:00 - 15:30  
+15:30 - 15:45 Break  
+15:45 - 17:00     
 
 ### Thursday, March 3
 
-2:00 - 3:30  R set-up & maintenance
-3:30 - 3:45  Break  
-3:45 - 5:00  debugging 
+14:00 - 15:30  
+15:30 - 15:45 Break  
+15:45 - 17:00  
 
 ### Tuesday, March 8
 
-2:00 - 3:30  Building reproducible examples 
-3:30 - 3:45  Break  
-3:45 - 5:00  Finding help in R 
+14:00 - 15:30  
+15:30 - 15:45 Break  
+15:45 - 17:00  
 
 ### Thursday, March 10
 
-2:00 - 3:30  Extra topics
-3:30 - 3:45  Break  
-3:45 - 5:00  Extra topics  
+ 14:00 - 15:30  
+15:30 - 15:45 Break  
+15:45 - 17:00  

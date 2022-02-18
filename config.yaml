@@ -17,11 +17,11 @@ menu:
     - name: Home
       url: ""
       weight: 1
-    - name: Details
-      url: "details/"
-      weight: 2
     - name: Course Materials
       url: "course-materials/"
+      weight: 2
+    - name: Details
+      url: "details/"
       weight: 3
     - name: Resources
       url: "resources/"
@@ -29,7 +29,7 @@ menu:
 
 params:
   description: "A workshop offerred by University of Idaho Carpentries"
-  footer: "&copy; [University of Idaho](https://www.uidaho.edu) {Year} | [Github](https://github.com/imci-idaho/2022-03-01-WhatTheyForgot)"
+  footer: "&copy; [University of Idaho](www.uidaho.edu) 2022 -- {Year} | [Github](https://github.com/imci-idaho/2022-03-01-WhatTheyForgot)"
 
 markup:
   highlight:
