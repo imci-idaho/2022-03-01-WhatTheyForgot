@@ -1,0 +1,30 @@
+---
+title: "Zen And The aRt of Workflow Maintenance"
+author: "Breanna Sipley"
+date: "2/18/2022"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Acknowledgments
+
+Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/zen-art-workflow>
+
+## Break logic & output into pieces
+
+- smell-test.R
+- wrangle.R
+- model.R
+- make-figs.R
+- report.Rmd
+
+## Break logic & output into pieces
+
+- smell-test.R
+- wrangle.R
+- model.R           >>> everything.R
+- make-figs.R
+- report.Rmd
