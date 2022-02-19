@@ -39,7 +39,7 @@ This course is less focused on actual code (but there will be coding), and more 
 ## Instructors
 
 * [Julia Piaskowski](https://jpiaskowski.gitlab.io/) | [GitHub](https://github.com/jpiaskowski) | [Twitter](https://twitter.com/SeedsAndBreeds)
-* [Breanna Sipley](https://sipley.github.io/) | [GitHub](https://github.com/sipley) | [Twitter](https://twitter.com/Breanna_Siple
+* [Breanna Sipley](https://sipley.github.io/) | [GitHub](https://github.com/sipley) | [Twitter](https://twitter.com/Breanna_Siple)
 * Yesol Sapozhnikov
   
 ### TAs and special guests: 
