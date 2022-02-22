@@ -1,8 +1,14 @@
 ---
 title: "Zen And The aRt of Workflow Maintenance"
 author: "Breanna Sipley"
-date: "2/18/2022"
-output: slidy_presentation
+date: "03/01/2022"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    mathjax: null
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
@@ -13,6 +19,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/zen-art-workflow>
 
+---
+
+# Expect to Iterate
+
+---
+
 ## Break logic & output into pieces
 
 - smell-test.R
@@ -21,6 +33,8 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 - make-figs.R
 - report.Rmd
 
+---
+
 ## Break logic & output into pieces
 
 - smell-test.R
@@ -28,3 +42,5 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 - model.R           >>> everything.R
 - make-figs.R
 - report.Rmd
+
+---
