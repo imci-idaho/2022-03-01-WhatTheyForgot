@@ -59,3 +59,13 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 - ests.csv
 
 ---
+
+## Workflow
+
+![workflow](images/workflow2.png)
+
+---
+
+## Workflow
+
+![workflow](images/workflow-summary.png)
