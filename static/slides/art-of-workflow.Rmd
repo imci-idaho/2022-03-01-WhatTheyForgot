@@ -46,3 +46,7 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 - report.Rmd
 
 ---
+
+## Workflow
+
+![workflow](images/workflow.png)
