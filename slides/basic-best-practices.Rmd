@@ -123,6 +123,8 @@ class: inverse, center, middle
 
 ![](images/project-options-renv.png)
 
+--
+
 More info: [vignette](https://rstudio.github.io/renv/articles/renv.html)
 
 ---
@@ -295,7 +297,7 @@ with leading zeros!
 
 class: center
 
-# Take-home message
+# Take-home message:
 
 --
 
