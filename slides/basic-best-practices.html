@@ -22,16 +22,25 @@ class: center, middle, inverse, title-slide
 
 
 
+class: center
 
-# What We Will Cover
+# What We Will Discuss:
 
-- Saving source and blank slates
+--
 
-- Project-oriented workflow
+## Saving source and blank slates
 
-- Safe paths for reproducibility
+--
 
-- Naming files
+## Project-oriented workflow
+
+--
+
+## Safe paths for reproducibility
+
+--
+
+## Naming files
 
 ---
 
@@ -97,7 +106,15 @@ class: inverse, center, middle
 
 # RStudio Projects
 
+--
+
+- Helps with keeping files associated with a project together
+
+--
+
 - Automatically starts at the working directory for the project (eliminate the need for `setwd("path/that/only/works/on/one/particular/machine")`)
+
+--
 
 - Easy to switch from project A to project B
 
@@ -105,7 +122,11 @@ class: inverse, center, middle
 
 # `renv` package
 
-You can turn it on in Project Options:
+- Addresses package-dependency issue
+
+--
+
+- You can turn it on in Project Options:
 
 ![](images/project-options-renv.png)
 
@@ -117,15 +138,15 @@ More info: [vignette](https://rstudio.github.io/renv/articles/renv.html)
 
 --
 
-- File system discipline
+## - File system discipline
 
 --
 
-- Working directory intentionality
+## - Working directory intentionality
 
 --
 
-- File path discipline
+## - File path discipline
 
 ---
 
@@ -135,14 +156,28 @@ class: inverse, center, middle
 
 ---
 
+# Habits conducive to safe paths:
+
+--
+
 1. Organize by projects
+
+--
 
 2. Make top-level project folder clear
 
-  - If you use RStudioo Projects, you'll see `.Rproj` file
+--
+
+  - If you use RStudio Projects, you'll see `.Rproj` file
   
   
 .center[![](images/rproj_top_level.png)]
+
+--
+
+*Extra Credit: *
+
+*This folder was created a few years ago when I was just learning R. What bad habit did I have that shows in this screenshot?*
 
 ---
 
@@ -166,8 +201,6 @@ ggsave(here("figs", "foofy_scatterplot.png"))
 
 More info: [vignette](https://cran.r-project.org/web/packages/here/vignettes/here.html)
 
---
-
 [Using `here` with rmarkdown](https://cran.r-project.org/web/packages/here/vignettes/rmarkdown.html)
 
 ---
@@ -182,15 +215,15 @@ class: inverse, center, middle
 
 --
 
-- Machine readable
+## - Machine readable
 
 --
 
-- Human readable
+## - Human readable
 
 --
 
-- Plays well with default ordering
+## - Plays well with default ordering
 
 ---
 
@@ -266,7 +299,27 @@ with leading zeros!
 
 ![](images/file_names_zeros.png)
 
+---
 
+class: center
+
+# Take-home message
+
+--
+
+### Save the source, not environment
+
+--
+
+### Adopt project-oriented workflow
+
+--
+
+### Practice safe paths
+
+--
+
+### Be deliberate when naming files
 
 
     </textarea>
