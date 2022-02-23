@@ -32,24 +32,24 @@ We will hold a **Session Zero** February 28 at 3-4 pm to help orient everyone to
 
 ### Tuesday, March 1
 
-2:00 - 3:30  Settings & Practices for Reproducible Research
+2:00 - 3:30  Settings & Practices for Reproducible Research  
 3:30 - 3:45  Break  
 3:45 - 5:00  Workflow for Reproducible Research  
 
 ### Thursday, March 3
 
-2:00 - 3:30  R set-up & maintenance
+2:00 - 3:30  R set-up & maintenance  
 3:30 - 3:45  Break  
-3:45 - 5:00  debugging 
+3:45 - 5:00  debugging   
 
 ### Tuesday, March 8
 
-2:00 - 3:30  Building reproducible examples 
+2:00 - 3:30  Building reproducible examples  
 3:30 - 3:45  Break  
-3:45 - 5:00  Finding help in R 
+3:45 - 5:00  Finding help in R   
 
 ### Thursday, March 10
 
-2:00 - 3:30  Extra topics
+2:00 - 3:30  Extra topics   
 3:30 - 3:45  Break  
 3:45 - 5:00  Extra topics  
