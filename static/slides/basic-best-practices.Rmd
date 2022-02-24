@@ -105,11 +105,11 @@ class: inverse, center, middle
 
 --
 
-- Automatically starts at the working directory for the project (eliminate the need for `setwd("path/that/only/works/on/one/particular/machine")`)
+-  Easy to switch from project A to project B
 
 --
 
-- Easy to switch from project A to project B
+- Automatically starts at the working directory for the project (eliminate the need for `setwd("path/that/only/works/on/one/particular/machine")`)
 
 ---
 
