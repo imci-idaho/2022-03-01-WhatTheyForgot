@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Session Zero</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2022-02-28" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Session Zero
+### 
+### 2022-02-28
+
+---
+
+
+
+class: center, middle
+
+![Session Zero Welcome](images/session_zero2.jpg)
+
+---
+class: center, middle
+
+# Introductions
+
+---
+class: middle
+
+### 1. Name   
+### 1. School + Department   
+### 1. The one R package that *saved* you   
+
+---
+# (Target) Course Learning Outcomes
+
+* Understand your R installation and package library
+* Know how to make your R processes more reproducible
+* Know how to implement multiple approaches for troubleshooting errors
+* Know how to use R's debugger
+* Know how to create a reproducible example
+* .....what else do you want to know? 
+
+---
+# This Class: Years Using R
+
+
+
+![](intro_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+# This class: usage frequency
+
+![](intro_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+---
+# This class: attitude towards R
+
+![](intro_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+---
+class: center, middle
+
+# What do you want to learn in this course? 
+
+---
+# R is hard
+
+[&lt;img src="images/mayIhelp.png" alt="drawing" width="550"&gt;](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+  </body>
+</html>
