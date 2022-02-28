@@ -6,7 +6,7 @@ title: Home
 
 # Workshop Information
 
-[![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
+[<img src="https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg" alt="drawing" width="150">](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
 
 by Julia, Breanna and Yesol
 
