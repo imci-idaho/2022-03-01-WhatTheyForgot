@@ -14,7 +14,7 @@ by Julia, Breanna and Yesol
 
 :spiral_calendar: March 1, 3, 8, 10, 2022   
 :alarm_clock: 2:00 - 5:00 pm (Pacific time)  
-:earth_americas: via Zoom (Link will be provided via email)  
+:earth_americas: via Zoom (Link provided via email)  
 
 ## Overview
 
