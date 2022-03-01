@@ -34,15 +34,17 @@
 <main>
 <h2 id="pre-work">Pre-work</h2>
 <p>You need to have <a href="https://cloud.r-project.org/">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> installed on the computer you will use for this workshop. Installing the packages <strong>here</strong>, <strong>renv</strong>, <strong>reprex</strong>, <strong>devtools</strong> in advance is recommended. If you will be using a Windows machine for the workshop, please install <a href="https://cran.r-project.org/bin/windows/Rtools/rtools40.html">Rtools</a> (note that this is a <em>program</em> not a package).</p>
-<p>A zoom connection is required.</p>
 <pre><code>packages &lt;- c(&quot;here&quot;, &quot;renv&quot;, &quot;reprex&quot;, &quot;devtools&quot;)
 install.packages(packages)
-all(lapply(packages, library, character.only = TRUE))
+lapply(packages, library, character.only = TRUE)
 </code></pre>
 <p>Once you have <strong>devtools</strong> installed, install the package <strong>lookup</strong> from GitHub:</p>
 <pre><code>devtools::install_github(&quot;jimhester/lookup&quot;)
 </code></pre>
 <p><b style='color:red;'>Note: please do NOT install the package &lsquo;lookup&rsquo; found on CRAN. This is a different package entirely than what we will use in this workshop.</b></p>
+<p>We will be using <a href="https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#">gitter</a> for the class chat, which requires a account with either GitHub, GitLab or Twitter. If you do not have one of those, please get an account (<a href="https://github.com/signup">GitHub</a>.</p>
+<p>A Zoom connection is also required since this workshop will be held online</p>
+<hr>
 <p>We will hold a <strong>Session Zero</strong> February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can.</p>
 <h2 id="schedule">Schedule</h2>
 <h3 id="monday-february-28">Monday, February 28</h3>
