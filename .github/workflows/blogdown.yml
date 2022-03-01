@@ -30,7 +30,7 @@ jobs:
       # set up Hugo
       - name: Install hugo
         run: |
-          R -e 'blogdown::install_hugo("0.82.0")'
+          R -e 'blogdown::install_hugo("0.86.0")'
       # build site
       - name: Build site
         run: |

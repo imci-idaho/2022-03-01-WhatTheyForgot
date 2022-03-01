@@ -6,7 +6,7 @@ title: Home
 
 # Workshop Information
 
-[![Gitter](https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg)](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
+[<img src="https://badges.gitter.im/what-they-forgot/wtf-2020-rsc.svg" alt="drawing" width="150">](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
 
 by Julia, Breanna and Yesol
 
@@ -14,7 +14,7 @@ by Julia, Breanna and Yesol
 
 :spiral_calendar: March 1, 3, 8, 10, 2022   
 :alarm_clock: 2:00 - 5:00 pm (Pacific time)  
-:earth_americas: via Zoom (Link will be provided via email)  
+:earth_americas: via Zoom (Link provided via email)  
 
 ## Overview
 

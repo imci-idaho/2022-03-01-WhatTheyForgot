@@ -1,8 +1,8 @@
 ---
 title: "Getting to know your R Setup"
-subtitle: "⚔<br/>and your dev environment"
+subtitle: "⚔"
 author: "Julia Piaskowski"
-date: "2022-03-08"
+date: "2022-03-03"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,6 +15,23 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+class: center, middle
+# Where Does Your R Executable & Libraries Live? 
+
+---
+class: center, middle
+
+![Where is Waldo?](images/where_is_waldo.jpeg)
+
+---
+# Where does your R executable live? 
+
+#### Windows
+ 
+#### Mac
+
+#### Linux
+
 
 
 
