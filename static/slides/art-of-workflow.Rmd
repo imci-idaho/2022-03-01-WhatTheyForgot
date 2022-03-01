@@ -30,23 +30,21 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 
 # Break logic & output into pieces
 
----
+--
 
-# Break logic & output into pieces
+## ! everything.R
 
-<br> 
-
-# ! everything.R
-
----
+--
 
 # Instead
 
-> - smell-test.R
-> - wrangle.R
-> - model.R
-> - make-figs.R
-> - report.Rmd
+--
+
+- smell-test.R
+- wrangle.R
+- model.R
+- make-figs.R
+- report.Rmd
 
 ---
 
@@ -58,22 +56,20 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 
 # Break logic & output into pieces
 
----
+--
 
-# Break logic & output into pieces
+## ! .Rdata
 
-<br>
-
-# ! .Rdata
-
----
+--
 
 # Instead
 
-> - raw-data.xlsx
-> - data.csv
-> - fits.rds           
-> - ests.csv
+--
+
+- raw-data.xlsx
+- data.csv
+- fits.rds           
+- ests.csv
 
 ---
 
