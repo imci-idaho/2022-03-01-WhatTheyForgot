@@ -41,10 +41,12 @@ class: middle
 * .....what else do you want to know? 
 
 ---
-# This Class: Years Using R
+# This class: years Using R
 
 ```{r include=FALSE}
 library(ggplot2); library(googlesheets4); library(dplyr); library(RColorBrewer)
+gs4_deauth()
+
 survey_url <- "https://docs.google.com/spreadsheets/d/1vOBNZHZOwdRSu1tYz63zu7Lzv2Ci4DAzD-SnIgVT_wk/edit?usp=sharing"
 survey <- read_sheet(survey_url)
 colnames(survey) = c("timestamp", "yearsR", "freqR", "feelingR", "challenges")
@@ -87,7 +89,7 @@ pie(exp, col = c("#A50F15", "#DE2D26",  "#FB6A4A", "#FCAE91", "#FEE5D9"),
 ---
 # This class: attitude towards R
 
-```{r}
+```{r, out.width=600}
 survey %>% count(feelingR) %>% mutate(N = n/sum(n) * 100) %>% 
   ggplot(aes(x = "", y = N , fill = feelingR)) +
     geom_bar(stat = "identity", width=1, color = "white") +
@@ -103,8 +105,12 @@ class: center, middle
 # What do you want to learn in this course? 
 
 ---
-# R is hard
+# R can be hard
 
-[<img src="images/mayIhelp.png" alt="drawing" width="550">](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#)
+<img src="images/using_R_meme.jpg" alt="R rake meme" width="400">
 
+---
+# We are here to help
+
+<img src="images/mayIhelp.png" alt="R rake meme" width="550">
 
