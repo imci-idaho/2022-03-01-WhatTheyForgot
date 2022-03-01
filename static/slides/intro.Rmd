@@ -12,23 +12,30 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, tidy=TRUE)
 ```
 class: center, middle
 
 ![Session Zero Welcome](images/session_zero2.jpg)
 
 ---
-class: center, middle
+# Can you run this code successfully?
 
-# Introductions
+```
+library(renv); library(reprex); library(lookup);
+
+library(here); library(devtools)
+
+lookup::lookup(body)
+```
 
 ---
 class: middle
 
 ### 1. Name   
-### 1. School + Department   
-### 1. The one R package that *saved* you   
+### 1. ~~School + Department~~ field of work
+### 1. ~~The one R package that *saved* you~~ the time you felt like Neo after troubleshooting an R error
+
 
 ---
 # (Target) Course Learning Outcomes
@@ -38,7 +45,35 @@ class: middle
 * Know how to implement multiple approaches for troubleshooting errors
 * Know how to use R's debugger
 * Know how to create a reproducible example
-* .....what else do you want to know? 
+* ....additional topics? 
+
+---
+class: center, middle
+
+# What do you want to learn in this course? 
+
+---
+# R can be hard
+
+<img src="images/using_R_meme.jpg" alt="R rake meme" width="400">
+
+---
+# We are here to help
+
+<img src="images/mayIhelp.png" alt="R rake meme" width="550">
+
+---
+# Gitter vs Zoom Chat
+
+#### If you an issue that needs immediate attention and will be totally irrelevant later (e.g. can't hear, class is moving too fast), <u>use Zoom chat</u>.
+
+#### Everything else: <u>use Gitter</u>. Gitter is a persistent resource for discussion and troubleshooting. If you had a problem, chances are, someone else also had that problem. 
+
+---
+class: center, middle
+
+# Git Repo for this Workshop <br>
+##  https://github.com/IdahoAgStats/what-they-forgot-202203
 
 ---
 # This class: years Using R
@@ -65,7 +100,7 @@ survey$freqR <- factor(survey$freqR,
 levs <- unique(survey$feelingR)
 survey$feelingR <- factor(survey$feelingR, levels = levs, 
                           labels = c("needlessly challenging", "Love it!", "no opinion",
-                                     "works fine", "works but frutrating"))
+                                     "works fine", "works but frustrating"))
 ```
 
 ```{r}
@@ -98,19 +133,4 @@ survey %>% count(feelingR) %>% mutate(N = n/sum(n) * 100) %>%
     theme_void(base_size = 20) +
     theme(legend.title = element_blank())
 ```
-
----
-class: center, middle
-
-# What do you want to learn in this course? 
-
----
-# R can be hard
-
-<img src="images/using_R_meme.jpg" alt="R rake meme" width="400">
-
----
-# We are here to help
-
-<img src="images/mayIhelp.png" alt="R rake meme" width="550">
 
