@@ -4,6 +4,7 @@ author: "Breanna Sipley"
 date: "03/01/2022"
 output:
   xaringan::moon_reader:
+    incremental: true
     lib_dir: libs
     mathjax: null
     nature:
@@ -27,23 +28,25 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 
 ---
 
-## Break logic & output into pieces
-
-- smell-test.R
-- wrangle.R
-- model.R
-- make-figs.R
-- report.Rmd
+# Break logic & output into pieces
 
 ---
 
-## Break logic & output into pieces
+# Break logic & output into pieces
 
-- smell-test.R
-- wrangle.R
-- model.R           >>> everything.R
-- make-figs.R
-- report.Rmd
+<br> 
+
+# ! everything.R
+
+---
+
+# Instead
+
+> - smell-test.R
+> - wrangle.R
+> - model.R
+> - make-figs.R
+> - report.Rmd
 
 ---
 
@@ -53,10 +56,24 @@ Slides modified from Jenny Bryan talk available at <https://github.com/jennybc/z
 
 ---
 
-- raw-data.xlsx
-- data.csv
-- fits.rds           >>> .Rdata
-- ests.csv
+# Break logic & output into pieces
+
+---
+
+# Break logic & output into pieces
+
+<br>
+
+# ! .Rdata
+
+---
+
+# Instead
+
+> - raw-data.xlsx
+> - data.csv
+> - fits.rds           
+> - ests.csv
 
 ---
 
