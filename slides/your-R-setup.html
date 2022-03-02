@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 # Getting to know your R Setup
-## ⚔
+## ⚔ <br> and other demystifications
 ### Julia Piaskowski
 ### 2022-03-03
 
@@ -22,23 +22,159 @@ class: center, middle, inverse, title-slide
 
 
 
-class: center, middle
-# Where Does Your R Executable &amp; Libraries Live? 
+
+
+# Updating R
+*(please don't do this in the middle of class)* 
+
+**Windows**
+```
+library(installr); updateR() # follow prompts
+```
+
+**Mac**  Visit the [website](https://cran.r-project.org/bin/macosx/), download and install. 
+
+**Linux**   Run in terminal: 
+```
+sudo apt update
+sudo apt upgrade
+```
 
 ---
-class: center, middle
+# Updating packages
+
+1. command line - single package:
+```
+devtools::update.packages("RColorBrewer") # single packges
+```
+2. command line - all packages:
+*(don't run this unless you have the time to wait)*
+```
+devtools::update_packages(TRUE)
+```
+
+3. point-and-click
+
+&lt;RStudio 'Packages' pane&gt; 
+
+---
+# Downgrade a package
+
+Easiest way (if you know the version): 
+```
+devtools::install_version("RColorBrewer", "1.0.5")
+```
+
+Downgrade to a specific point in time: 
+*(note that going this far back in time usually causes problems)*
+```
+groundhog::groundhog.library("RColorBrewer", "2010-01-01")
+```
+How to find the version information? Visit the package site on CRAN. 
+
+---
+# Where Does R Live? 
 
 ![Where is Waldo?](images/where_is_waldo.jpeg)
 
 ---
-# Where does your R executable live? 
+# Where the R Executable Lives
 
-#### Windows
- 
-#### Mac
+This tell us the path to R RStudio is using: 
 
-#### Linux
+```r
+R.home()  
+```
 
+```
+## [1] "/usr/lib/R"
+```
+
+```r
+#file.path(R.home("bin"), "R")
+```
+
+
+---
+# Where Your Package Libraries Live
+
+
+```r
+.libPaths()
+```
+
+```
+## [1] "/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1"
+## [2] "/usr/local/lib/R/site-library"                      
+## [3] "/usr/lib/R/site-library"                            
+## [4] "/usr/lib/R/library"
+```
+1. main library
+1. empty
+1. added via the command line and updates with `sudo apt-get update`
+1. "base R packages" (what is shipped with R)
+
+R is using all of these, in order. 
+
+---
+class: middle
+
+```
+&gt; install.packages("RColorBrewer") &gt;&gt;#
+
+Installing package into ‘/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1’
+(as ‘lib’ is unspecified)
+```
+
+---
+class: middle, center
+
+# terminal fun  
+
+## [exercise]("exercises/Exercise_1.txt")
+
+---
+# What Happens When R is Started?
+![r start-up schematic](images/R-startup.svg)
+(lots of things)
+
+--
+.Renviron &amp; .Rprofile
+
+**.Renviron**
+
+* sets global variables: API and authentication keys
+* there is often only one of these per R system, located in the home directory, but there can one per project
+* do not add this to git repository! 
+
+**.Rprofile** 
+* An R script that runs every time R is opened or restarted
+* there is one created automatically when R is installed at the home directory
+* there may be one in each **.Rproj**, this takes precedence over others
+* this often goes in the git repo
+
+---
+class: center, middle
+
+![let's go crazy](images/prince.jpg)
+
+---
+```
+options(scipen=999) # force R to not use scientific notation
+
+.First &lt;- function() {
+  cat("Welcome, High Priestress of R. You are a true hero and your legend will never die")
+}
+
+library(tidyverse) # probably not a good idea 
+source("scripts/file_import.R")
+
+.Last &lt;- function() {
+  cat('Praised be,  my R programmer.')
+}
+```
+[more](https://sodocumentation.net/r/topic/4166/-rprofile)
+---
 
 
 

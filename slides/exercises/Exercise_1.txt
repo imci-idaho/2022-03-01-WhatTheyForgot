@@ -1,0 +1,6 @@
+
+Determine in your R console where your package libraries are located and the default library where packages are installed when doing a manual installation from R. 
+
+Using the R terminal, determine what packages are in your libraries. 
+
+Using 
