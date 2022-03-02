@@ -11,3 +11,5 @@ title: "Additional Resources"
 * [R Graphics Cookbook](https://r-graphics.org/) (ggplot-focused book)
 * [Advanced R](https://adv-r.hadley.nz/) (book)
 * [R for Data Science](https://r4ds.had.co.nz/) (book)
+* [Happy Git with R](https://happygitwithr.com/)
+
