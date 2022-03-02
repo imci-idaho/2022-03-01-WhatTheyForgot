@@ -13,7 +13,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, tidy=TRUE)
 ```
 
 
@@ -66,9 +66,9 @@ groundhog::groundhog.library("RColorBrewer", "2010-01-01")
 How to find the version information? Visit the package site on CRAN. 
 
 ---
-# Where Does R Live? 
+.pull-left[# Where Does R Live?] 
 
-![Where is Waldo?](images/where_is_waldo.jpeg)
+.pull-right[![Where is Waldo?](images/where_is_waldo.jpeg)]
 
 ---
 # Where the R Executable Lives
@@ -113,7 +113,7 @@ class: middle, center
 ---
 # What Happens When R is Started?
 ![r start-up schematic](images/R-startup.svg)
-(lots of things)
+([lots of things](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html))
 
 --
 .Renviron & .Rprofile
@@ -136,6 +136,8 @@ class: center, middle
 ![let's go crazy](images/prince.jpg)
 
 ---
+## A possible .Rprofile
+
 ```
 options(scipen=999) # force R to not use scientific notation
 
@@ -150,8 +152,41 @@ source("scripts/file_import.R")
   cat('Praised be,  my R programmer.')
 }
 ```
-[more](https://sodocumentation.net/r/topic/4166/-rprofile)
+
+[more details](https://sodocumentation.net/r/topic/4166/-rprofile) and [more options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
+
 ---
+class: center, middle
 
+exercise
 
+---
+# Namespace conflicts
+### What is going on? 
+
+```{r}
+library(dplyr)
+```
+
+Only one function name can be loaded into an R session. Identical function names for packages loaded earlier must be referenced like thus: `base::filter()`. 
+
+---
+# Namesapce solutions
+
+* remove conflicting packages:
+```
+detach(offending_package)
+```
+
+* only require packages you will use (reconsider `library(tidyverse)`)
+* load the packages with whose functions you do not want masked last
+* A solution under development:
+```
+devtools::install_github("r-lib/conflicted")
+```
+```{r}
+library(conflicted); library(dplyr)
+conflict_scout()
+conflict_prefer("filter", "dplyr")
+```
 
