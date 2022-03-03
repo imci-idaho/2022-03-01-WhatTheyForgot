@@ -51,11 +51,11 @@ We will hold a **Session Zero** February 28 at 3-4 pm (Pacific Time) to help ori
 
 2:00 - 3:30  R set-up & maintenance  
 3:30 - 3:45  Break  
-3:45 - 5:00  Finding help, debuggging if there is time   
+3:45 - 5:00  Finding help   
 
 ### Tuesday, March 8
 
-2:00 - 3:30  debugging, building reproducible examples  
+2:00 - 3:30  Debugging, reproducible examples  
 3:30 - 3:45  Break  
 3:45 - 5:00  Control flow   
 
