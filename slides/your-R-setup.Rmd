@@ -144,16 +144,17 @@ class: bottom, left
 ## What Happens When [R is Started?](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)
 
 ---
-## .Renviron & .Rprofile
-
-**.Renviron**
+#  .Renviron 
 
 * sets global variables: API and authentication keys
 * there is often only one of these per R system, located in the home directory, but there can one per project
 * do not add this to git repository or make sure it ends up in *.gitignore*
 
-**.Rprofile** 
-* An R script that runs every time R is opened or restarted
+---
+#  .Rprofile
+
+ 
+* An <u>R script</u> that runs every time R is opened or restarted
 * there is one created automatically when R is installed at the home directory
 * there may be one in each **.Rproj**, this takes precedence over others
 * this often goes in the git repo
@@ -188,9 +189,7 @@ knitr::include_graphics("images/prince.jpg")
 ]
 
 .pull-right[
-**let's go crazy**  
-
-[exercise](exercises/exercise-2.html)
+[let's go crazy exercise](exercises/exercise-2.html)
 ]
 
 ---
