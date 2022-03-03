@@ -1,8 +1,8 @@
 ---
 title: "Finding Help"
-subtitle: "⚔<br/>and finding source code"
+subtitle: "⚔<br/>to solve your R error"
 author: "Julia Piaskowski"
-date: "2022-03-10"
+date: "2022-03-03"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -16,34 +16,124 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-class: center, middle? 
+class: center, middle 
 
-What do you when you need to solve a problem in R? 
+## What do you when you need to solve a problem in R? 
 
----
-# Other help options:
-
-* RStudio Community
-* R4DS slack channel
-* Stack overflow
-
-Where can you find source code?
+![who ya gonna call](images/ghostbusters.jpeg)
 
 ---
-# Read the documentation
+# Check the documentation!
+
+*Remember, you can spend 2 hours searching the web in order to save 15 minutes of reading the documentation.*
+
+How do we do this?
+
+```{r eval=FALSE}
+?par
+??plot
+```
 
 ---
-# Read the error message
+# No really, read the docs
+
+2 main aspects of documentation:   
+
+1. Function reference
+1. Vignettes
+
+CRAN can be a good place to start. 
+
+[tidyr example](https://CRAN.R-project.org/package=tidyr)
 
 ---
-# read the source code
+# Read your error messages
+
+*They are often telling you something important.*
+
+![tweet about informative error message I ignored](images/tweet_ignored_error.png)
+
+---
+# Still, error messages can be confusing
+
+![confused man meme at R error](images/r_function_error.jpg)
+
+---
+## Other help options
+
+[RStudio Community](https://community.rstudio.com/)  
+<br>  
+![rstudio community screenshot](images/rstudio_community.png)
+
+---
+## Other help options
+
+[R4DS community](https://www.rfordatasci.com/)  
+<br>   
+![R for DS community screenshot](images/r4ds_screenshot.png)  
+
+---
+## Other help options
+
+[Stack overflow](https://stackoverflow.com/)  
+<br>  
+![stack overflow screen shot](images/stackoverflow_screenshot.png)
+
+---
+# Read the source code
+
+![read the source, luke](images/luke_source_code.jpeg)
+
+*(this will help improve your coding, too)*
 
 ---
 # How to find source code
 
----
-# Miscellaneous R tip
-### How to find other methods associated with an R object
+* Type the function name in the console without parentheses: 
+```{r eval=FALSE}
+lm
+```
+*[suppressed output because it is long]*
+<br><br>
 
-All R objects have a class assigned to them and there are often a set of functions that can be run on that 
+* Sometimes this is not informative   
+```{r}
+c
+```
+
+* Sometimes you have to use backticks:  
+```{r}
+`[`
+```
+
+---
+# Use 'lookup' to find what you need
+
+It checks CRAN, Bioconductor and GitHub!
+
+```{r eval=FALSE}
+lookup::lookup(`[`)
+```
+
+---
+#  Miscellaneous R tip
+
+#### How to find other methods associated with an R object
+--
+
+All R objects have a class assigned to them: 
+
+```{r}
+y <- rnorm(20); x <- y + rnorm(20)
+m <- lm(y ~ x)
+class(m)
+```
+
+---
+
+Once you know the object class, you can search on methods built for that class. 
+
+```{r}
+methods(class = "lm")
+```
 

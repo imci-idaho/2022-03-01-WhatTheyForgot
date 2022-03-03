@@ -9,25 +9,33 @@ You need to have [R](https://cloud.r-project.org/) and [RStudio](https://www.rst
 ```
 packages <- c("here", "renv", "reprex", "devtools")
 install.packages(packages)
-lapply(packages, library, character.only = TRUE)
 ```
 
-Once you have **devtools** installed, install the package **lookup** from GitHub:  
+Once you have **devtools** installed, install the package **lookup** from GitHub:
 
 ```
 devtools::install_github("jimhester/lookup")
 ```
 <b style='color:red;'>Note: please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we will use in this workshop.</b>
 
+Make sure that everything works properly:
+```
+pkgs <- c("here", "renv", "reprex", "devtools", "lookup")
+lapply(pkgs, require, character.only = TRUE) 
+lookup::lookup(body)
+```
+Check that all packages loaded and that `lookup::lookup(body)` successfully executed without generating an error message. 
+
 We will be using [gitter](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#) for the class chat, which requires a account with either GitHub, GitLab or Twitter. If you do not have one of those, please get an account ([GitHub](https://github.com/signup). 
 
-A Zoom connection is also required since this workshop will be held online
+A Zoom connection is also required since this workshop will be held online. 
 
 ---------------------
 
-We will hold a **Session Zero** February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can. 
+We will hold a **Session Zero** February 28 at 3-4 pm (Pacific Time) to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can. 
 
-## Schedule
+## Schedule   
+*all times in Pacific Time*   
 
 ### Monday, February 28
 
@@ -43,13 +51,13 @@ We will hold a **Session Zero** February 28 at 3-4 pm to help orient everyone to
 
 2:00 - 3:30  R set-up & maintenance  
 3:30 - 3:45  Break  
-3:45 - 5:00  debugging   
+3:45 - 5:00  Finding help, debuggging if there is time   
 
 ### Tuesday, March 8
 
-2:00 - 3:30  Building reproducible examples  
+2:00 - 3:30  debugging, building reproducible examples  
 3:30 - 3:45  Break  
-3:45 - 5:00  Finding help in R   
+3:45 - 5:00  Control flow   
 
 ### Thursday, March 10
 
