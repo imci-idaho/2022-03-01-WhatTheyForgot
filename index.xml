@@ -22,7 +22,7 @@
       
       <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/course-materials/</guid>
       <description>Materials will be added as the workshop progresses.
- Session Zero Optimal set-up for Reproducible Research The aRt of Workflow Getting to Know Your R Setup  </description>
+ Session Zero Optimal set-up for Reproducible Research The aRt of Workflow Getting to Know Your R Setup Finding help  </description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       
       <guid>https://imci-idaho.github.io/2022-03-01-WhatTheyForgot/details/</guid>
       <description>Pre-work You need to have R and RStudio installed on the computer you will use for this workshop. Installing the packages here, renv, reprex, devtools in advance is recommended. If you will be using a Windows machine for the workshop, please install Rtools (note that this is a program not a package).
-packages &amp;lt;- c(&amp;quot;here&amp;quot;, &amp;quot;renv&amp;quot;, &amp;quot;reprex&amp;quot;, &amp;quot;devtools&amp;quot;) install.packages(packages) lapply(packages, library, character.only = TRUE)  Once you have devtools installed, install the package lookup from GitHub:</description>
+packages &amp;lt;- c(&amp;quot;here&amp;quot;, &amp;quot;renv&amp;quot;, &amp;quot;reprex&amp;quot;, &amp;quot;devtools&amp;quot;) install.packages(packages)  Once you have devtools installed, install the package lookup from GitHub:</description>
     </item>
     
   </channel>

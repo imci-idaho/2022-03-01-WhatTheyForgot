@@ -36,17 +36,23 @@
 <p>You need to have <a href="https://cloud.r-project.org/">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> installed on the computer you will use for this workshop. Installing the packages <strong>here</strong>, <strong>renv</strong>, <strong>reprex</strong>, <strong>devtools</strong> in advance is recommended. If you will be using a Windows machine for the workshop, please install <a href="https://cran.r-project.org/bin/windows/Rtools/rtools40.html">Rtools</a> (note that this is a <em>program</em> not a package).</p>
 <pre><code>packages &lt;- c(&quot;here&quot;, &quot;renv&quot;, &quot;reprex&quot;, &quot;devtools&quot;)
 install.packages(packages)
-lapply(packages, library, character.only = TRUE)
 </code></pre>
 <p>Once you have <strong>devtools</strong> installed, install the package <strong>lookup</strong> from GitHub:</p>
 <pre><code>devtools::install_github(&quot;jimhester/lookup&quot;)
 </code></pre>
 <p><b style='color:red;'>Note: please do NOT install the package &lsquo;lookup&rsquo; found on CRAN. This is a different package entirely than what we will use in this workshop.</b></p>
+<p>Make sure that everything works properly:</p>
+<pre><code>pkgs &lt;- c(&quot;here&quot;, &quot;renv&quot;, &quot;reprex&quot;, &quot;devtools&quot;, &quot;lookup&quot;)
+lapply(pkgs, require, character.only = TRUE) 
+lookup::lookup(body)
+</code></pre>
+<p>Check that all packages loaded and that <code>lookup::lookup(body)</code> successfully executed without generating an error message.</p>
 <p>We will be using <a href="https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#">gitter</a> for the class chat, which requires a account with either GitHub, GitLab or Twitter. If you do not have one of those, please get an account (<a href="https://github.com/signup">GitHub</a>.</p>
-<p>A Zoom connection is also required since this workshop will be held online</p>
+<p>A Zoom connection is also required since this workshop will be held online.</p>
 <hr>
-<p>We will hold a <strong>Session Zero</strong> February 28 at 3-4 pm to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can.</p>
+<p>We will hold a <strong>Session Zero</strong> February 28 at 3-4 pm (Pacific Time) to help orient everyone to course expectations, check your set-up, assess needs and vote on some optional topics to address. Please attend if you can.</p>
 <h2 id="schedule">Schedule</h2>
+<p><em>all times in Pacific Time</em></p>
 <h3 id="monday-february-28">Monday, February 28</h3>
 <p>3:00 - 4:00 Session Zero</p>
 <h3 id="tuesday-march-1">Tuesday, March 1</h3>
@@ -56,11 +62,11 @@ lapply(packages, library, character.only = TRUE)
 <h3 id="thursday-march-3">Thursday, March 3</h3>
 <p>2:00 - 3:30  R set-up &amp; maintenance<br>
 3:30 - 3:45  Break<br>
-3:45 - 5:00  debugging</p>
+3:45 - 5:00  Finding help, debuggging if there is time</p>
 <h3 id="tuesday-march-8">Tuesday, March 8</h3>
-<p>2:00 - 3:30  Building reproducible examples<br>
+<p>2:00 - 3:30  debugging, building reproducible examples<br>
 3:30 - 3:45  Break<br>
-3:45 - 5:00  Finding help in R</p>
+3:45 - 5:00  Control flow</p>
 <h3 id="thursday-march-10">Thursday, March 10</h3>
 <p>2:00 - 3:30  Extra topics<br>
 3:30 - 3:45  Break<br>
