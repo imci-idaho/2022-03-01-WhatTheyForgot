@@ -18,7 +18,7 @@ options(htmltools.dir.version = FALSE)
 
 class: center, middle 
 
-## What do you when you need to solve a problem in R? 
+## What do you do when you need to solve a problem in R? 
 
 ![who ya gonna call](images/ghostbusters.jpeg)
 
