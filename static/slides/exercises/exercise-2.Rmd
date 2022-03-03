@@ -1,0 +1,20 @@
+---
+title: "Exercise: .Rprofile"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+1. Create an example *.Rprofile* file and put in the same directory where a *.Rproj* file lives. Give yourself a personalized greeting message. 
+2. Restart R (ctrl + shift + F10 or use Session --> Restart R) and reopen the project. Did your custom message appear? 
+

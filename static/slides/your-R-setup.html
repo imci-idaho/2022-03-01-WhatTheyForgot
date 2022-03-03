@@ -23,9 +23,8 @@ class: center, middle, inverse, title-slide
 
 
 
-
-# Updating R
-*(please don't do this in the middle of class)* 
+## Updating R
+&lt;small&gt;*(please don't do this in the middle of the workshop)*&lt;/small&gt;
 
 **Windows**
 ```
@@ -41,62 +40,82 @@ sudo apt upgrade
 ```
 
 ---
-# Updating packages
+## Updating packages
 
-1. command line - single package:
+* command line - single package:  
+
+```r
+devtools::update.packages("RColorBrewer")
 ```
-devtools::update.packages("RColorBrewer") # single packges
-```
-2. command line - all packages:
-*(don't run this unless you have the time to wait)*
-```
+
+*command line - all packages:   
+&lt;small&gt;*(don't run this unless you have the time to wait)*&lt;/small&gt;
+
+```r
 devtools::update_packages(TRUE)
 ```
 
-3. point-and-click
-
-&lt;RStudio 'Packages' pane&gt; 
+* point-and-click using RStudio's "Packages" Pane   
 
 ---
-# Downgrade a package
+## Downgrade a package
 
 Easiest way (if you know the version): 
-```
+
+```r
 devtools::install_version("RColorBrewer", "1.0.5")
 ```
 
-Downgrade to a specific point in time: 
+Downgrade to a specific point in time:   
 *(note that going this far back in time usually causes problems)*
-```
-groundhog::groundhog.library("RColorBrewer", "2010-01-01")
-```
-How to find the version information? Visit the package site on CRAN. 
-
----
-.pull-left[# Where Does R Live?] 
-
-.pull-right[![Where is Waldo?](images/where_is_waldo.jpeg)]
-
----
-# Where the R Executable Lives
-
-This tell us the path to R RStudio is using: 
 
 ```r
-R.home()  
+groundhog::groundhog.library("RColorBrewer", "2010-01-01")
+```
+How to find the version information? Visit the [package site](http://localhost:4321/2022-03-01-WhatTheyForgot) on [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). 
+---
+## Installing packages when you update R
+
+* if updating a minor update (4.0.1 to 4.0.3), do nothing  
+* if a major update (4.0 to 4.1), reinstall packages  
+&lt;small*&gt;(don't copy over packages directly because things may break)*&lt;/small&gt;
+
+One possible [solution](https://rstats.wtf/maintaining-r.html): 
+
+```r
+# Install new version of R (4.1 in this example) Create a
+# new directory for the version of R
+fs::dir_create("~/Library/R/4.1/library")
+# Re-start R so the .libPaths are updated OR find where
+# your R library exists already with .libPaths() Look up
+# what packages were in your old package library
+pkgs &lt;- fs::path_file(fs::dir_ls("~/Library/R/3.6/library"))
+# Filter these packages as needed Install the packages in
+# the new version
+install.packages(pkgs)
+```
+
+---
+## Where does R live?
+
+&lt;img src="images/where_is_waldo.jpeg" width="60%" /&gt;
+
+---
+## Where the R executable(s) live(s)
+
+This tell us the path to R that RStudio is using: 
+
+```r
+R.home()
 ```
 
 ```
 ## [1] "/usr/lib/R"
 ```
 
-```r
-#file.path(R.home("bin"), "R")
-```
-
 
 ---
-# Where Your Package Libraries Live
+## Where your package libraries live
 
 
 ```r
@@ -117,35 +136,41 @@ R.home()
 R is using all of these, in order. 
 
 ---
-class: middle
+## Check your default library
 
+(by installing a package)
+
+
+```r
+install.packages("RColorBrewer")
 ```
-&gt; install.packages("RColorBrewer") &gt;&gt;#
-
-Installing package into ‘/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1’
+```
+Installing package into 
+‘/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1’
 (as ‘lib’ is unspecified)
 ```
 
 ---
 class: middle, center
-
 # terminal fun  
 
-## [exercise]("exercises/Exercise_1.txt")
+## [exercise](exercises/exercise-1.html)
 
 ---
-# What Happens When R is Started?
-![r start-up schematic](images/R-startup.svg)
-([lots of things](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html))
+background-image: ![R start-up schematic](images/R-startup.svg)
+background-position: center
+background-size: contain
 
---
-.Renviron &amp; .Rprofile
+### What Happens When [R is Started?](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)
+
+---
+## .Renviron &amp; .Rprofile
 
 **.Renviron**
 
 * sets global variables: API and authentication keys
 * there is often only one of these per R system, located in the home directory, but there can one per project
-* do not add this to git repository! 
+* do not add this to git repository or make sure it ends up in *.gitignore*
 
 **.Rprofile** 
 * An R script that runs every time R is opened or restarted
@@ -154,18 +179,14 @@ class: middle, center
 * this often goes in the git repo
 
 ---
-class: center, middle
-
-![let's go crazy](images/prince.jpg)
-
----
 ## A possible .Rprofile
 
 ```
 options(scipen=999) # force R to not use scientific notation
 
 .First &lt;- function() {
-  cat("Welcome, High Priestress of R. You are a true hero and your legend will never die")
+  cat("Welcome, High Priestress of R. 
+  You are a true hero and your legend will never die.")
 }
 
 library(tidyverse) # probably not a good idea 
@@ -176,16 +197,22 @@ source("scripts/file_import.R")
 }
 ```
 
-[more details](https://sodocumentation.net/r/topic/4166/-rprofile) and [more options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
+more [details](https://sodocumentation.net/r/topic/4166/-rprofile) and  [options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
 
 ---
-class: center, middle
 
-exercise
+.pull-left[
+&lt;img src="images/prince.jpg" width="200%" /&gt;
+]
+
+.pull-right[
+**let's go crazy**  
+
+[exercise](exercises/exercise-2.html)
+]
 
 ---
-# Namespace conflicts
-### What is going on? 
+## Namespace conflicts
 
 
 ```r
@@ -212,22 +239,26 @@ library(dplyr)
 Only one function name can be loaded into an R session. Identical function names for packages loaded earlier must be referenced like thus: `base::filter()`. 
 
 ---
-# Namesapce solutions
+## Namespace solutions
 
 * remove conflicting packages:
-```
+
+```r
 detach(offending_package)
 ```
 
 * only require packages you will use (reconsider `library(tidyverse)`)
 * load the packages with whose functions you do not want masked last
-* A solution under development:
-```
-devtools::install_github("r-lib/conflicted")
-```
+* use the package **conflicted**
+
+---
+## A namespace solution under development:
+
 
 ```r
-library(conflicted); library(dplyr)
+# devtools::install_github('r-lib/conflicted')
+library(conflicted)
+library(dplyr)
 conflict_scout()
 ```
 
@@ -249,7 +280,7 @@ conflict_prefer("filter", "dplyr")
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlight": "solarized",
 "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
