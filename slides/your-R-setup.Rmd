@@ -5,20 +5,21 @@ author: "Julia Piaskowski"
 date: "2022-03-03"
 output:
   xaringan::moon_reader:
+    #css: [default, metropolis, metropolis-fonts]
     lib_dir: libs
     mathjax: null
     nature:
-      highlightStyle: github
+      highlight: solarized
       countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, tidy=TRUE)
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 60), tidy = TRUE)
 ```
 
-
-# Updating R
-*(please don't do this in the middle of class)* 
+## Updating R
+<small>*(please don't do this in the middle of the workshop)*</small>
 
 **Windows**
 ```
@@ -34,54 +35,75 @@ sudo apt upgrade
 ```
 
 ---
-# Updating packages
+## Updating packages
 
-1. command line - single package:
+* command line - single package:  
+```{r eval=FALSE}
+devtools::update.packages("RColorBrewer") 
 ```
-devtools::update.packages("RColorBrewer") # single packges
-```
-2. command line - all packages:
-*(don't run this unless you have the time to wait)*
-```
+
+*command line - all packages:   
+<small>*(don't run this unless you have the time to wait)*</small>
+```{r eval=FALSE}
 devtools::update_packages(TRUE)
 ```
 
-3. point-and-click
-
-<RStudio 'Packages' pane> 
+* point-and-click using RStudio's "Packages" Pane   
 
 ---
-# Downgrade a package
+## Downgrade a package
 
 Easiest way (if you know the version): 
-```
+```{r eval=FALSE}
 devtools::install_version("RColorBrewer", "1.0.5")
 ```
 
-Downgrade to a specific point in time: 
+Downgrade to a specific point in time:   
 *(note that going this far back in time usually causes problems)*
+```{r eval=FALSE}
+groundhog::groundhog.library("RColorBrewer", 
+                             "2010-01-01")
 ```
-groundhog::groundhog.library("RColorBrewer", "2010-01-01")
+How to find the version information? Visit the [package site](http://localhost:4321/2022-03-01-WhatTheyForgot) on [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). 
+---
+## Installing packages when you update R
+
+* if updating a minor update (4.0.1 to 4.0.3), do nothing  
+* if a major update (4.0 to 4.1), reinstall packages  
+<small*>(don't copy over packages directly because things may break)*</small>
+
+One possible [solution](https://rstats.wtf/maintaining-r.html): 
+```{r eval=FALSE}
+# Install new version of R (4.1 in this example)
+# Create a new directory for the version of R
+fs::dir_create("~/Library/R/4.1/library")
+# Re-start R so the .libPaths are updated
+# OR find where your R library exists already with .libPaths()
+# Look up what packages were in your old package library
+pkgs <- fs::path_file(fs::dir_ls("~/Library/R/3.6/library"))
+# Filter these packages as needed
+# Install the packages in the new version
+install.packages(pkgs)
 ```
-How to find the version information? Visit the package site on CRAN. 
 
 ---
-.pull-left[# Where Does R Live?] 
+## Where does R live?
 
-.pull-right[![Where is Waldo?](images/where_is_waldo.jpeg)]
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/where_is_waldo.jpeg")
+```
 
 ---
-# Where the R Executable Lives
+## Where the R executable(s) live(s)
 
-This tell us the path to R RStudio is using: 
+This tell us the path to R that RStudio is using: 
 ```{r}
 R.home()  
-#file.path(R.home("bin"), "R")
 ```
 
 
 ---
-# Where Your Package Libraries Live
+## Where your package libraries live
 
 ```{r}
 .libPaths()
@@ -94,35 +116,40 @@ R.home()
 R is using all of these, in order. 
 
 ---
-class: middle
+## Check your default library
 
+(by installing a package)
+
+```{r eval=FALSE}
+install.packages("RColorBrewer") 
 ```
-> install.packages("RColorBrewer") >>#
-
-Installing package into ‘/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1’
+```
+Installing package into 
+‘/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1’
 (as ‘lib’ is unspecified)
 ```
 
 ---
 class: middle, center
-
 # terminal fun  
 
-## [exercise]("exercises/Exercise_1.txt")
+## [exercise](exercises/exercise-1.html)
 
 ---
-# What Happens When R is Started?
-![r start-up schematic](images/R-startup.svg)
-([lots of things](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html))
+background-image: ![R start-up schematic](images/R-startup.svg)
+background-position: center
+background-size: contain
 
---
-.Renviron & .Rprofile
+### What Happens When [R is Started?](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)
+
+---
+## .Renviron & .Rprofile
 
 **.Renviron**
 
 * sets global variables: API and authentication keys
 * there is often only one of these per R system, located in the home directory, but there can one per project
-* do not add this to git repository! 
+* do not add this to git repository or make sure it ends up in *.gitignore*
 
 **.Rprofile** 
 * An R script that runs every time R is opened or restarted
@@ -131,18 +158,14 @@ class: middle, center
 * this often goes in the git repo
 
 ---
-class: center, middle
-
-![let's go crazy](images/prince.jpg)
-
----
 ## A possible .Rprofile
 
 ```
 options(scipen=999) # force R to not use scientific notation
 
 .First <- function() {
-  cat("Welcome, High Priestress of R. You are a true hero and your legend will never die")
+  cat("Welcome, High Priestress of R. 
+  You are a true hero and your legend will never die.")
 }
 
 library(tidyverse) # probably not a good idea 
@@ -153,16 +176,24 @@ source("scripts/file_import.R")
 }
 ```
 
-[more details](https://sodocumentation.net/r/topic/4166/-rprofile) and [more options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
+more [details](https://sodocumentation.net/r/topic/4166/-rprofile) and  [options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
 
 ---
-class: center, middle
 
-exercise
+.pull-left[
+```{r, echo=FALSE, out.width="200%"}
+knitr::include_graphics("images/prince.jpg")
+```
+]
+
+.pull-right[
+**let's go crazy**  
+
+[exercise](exercises/exercise-2.html)
+]
 
 ---
-# Namespace conflicts
-### What is going on? 
+## Namespace conflicts
 
 ```{r}
 library(dplyr)
@@ -171,20 +202,22 @@ library(dplyr)
 Only one function name can be loaded into an R session. Identical function names for packages loaded earlier must be referenced like thus: `base::filter()`. 
 
 ---
-# Namesapce solutions
+## Namespace solutions
 
 * remove conflicting packages:
-```
+```{r eval=FALSE}
 detach(offending_package)
 ```
 
 * only require packages you will use (reconsider `library(tidyverse)`)
 * load the packages with whose functions you do not want masked last
-* A solution under development:
-```
-devtools::install_github("r-lib/conflicted")
-```
+* use the package **conflicted**
+
+---
+## A namespace solution under development:
+
 ```{r}
+# devtools::install_github("r-lib/conflicted")
 library(conflicted); library(dplyr)
 conflict_scout()
 conflict_prefer("filter", "dplyr")

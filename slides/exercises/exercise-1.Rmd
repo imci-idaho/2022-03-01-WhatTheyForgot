@@ -1,0 +1,17 @@
+---
+title: "Exercise: R Installation Exploration"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+1. Determine in your R console where your package libraries are located and the default library where packages are installed when doing a manual installation from R.   
+1. Using the R terminal, determine what packages are in your libraries. 
