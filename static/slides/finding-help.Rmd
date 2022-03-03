@@ -1,6 +1,6 @@
 ---
 title: "Finding Help"
-subtitle: "⚔<br/>to solve your R error"
+subtitle: "⚔<br/>in the R wilderness"
 author: "Julia Piaskowski"
 date: "2022-03-03"
 output:
@@ -42,9 +42,14 @@ How do we do this?
 1. Function reference
 1. Vignettes
 
-CRAN can be a good place to start. 
+[CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html) can be a good place to start. 
 
 [tidyr example](https://CRAN.R-project.org/package=tidyr)
+
+---
+class: center, middle, inverse
+
+## [exercise](exercises/exercise-3.html)
 
 ---
 # Read your error messages
@@ -99,17 +104,16 @@ lm
 * Sometimes this is not informative   
 ```{r}
 c
-```
-
-* Sometimes you have to use backticks:  
-```{r}
+subset
 `[`
 ```
 
 ---
 # Use 'lookup' to find what you need
 
-It checks CRAN, Bioconductor and GitHub!
+*(Prior to 'lookup', finding source code was a real [bugger](https://github.com/jennybc/access-r-source#readme)*
+
+**lookup** checks CRAN, Bioconductor and GitHub!
 
 ```{r eval=FALSE}
 lookup::lookup(`[`)
@@ -131,7 +135,7 @@ class(m)
 
 ---
 
-Once you know the object class, you can search on methods built for that class. 
+Once you know the object class, you can search on methods written for that class. 
 
 ```{r}
 methods(class = "lm")

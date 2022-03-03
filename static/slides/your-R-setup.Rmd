@@ -42,7 +42,8 @@ sudo apt upgrade
 devtools::update.packages("RColorBrewer") 
 ```
 
-*command line - all packages:   
+* command line - all packages:  
+
 <small>*(don't run this unless you have the time to wait)*</small>
 ```{r eval=FALSE}
 devtools::update_packages(TRUE)
@@ -101,6 +102,8 @@ This tell us the path to R that RStudio is using:
 R.home()  
 ```
 
+It can sometimes be more [complicated](https://support.rstudio.com/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE) than that depending on the system.
+
 
 ---
 ## Where your package libraries live
@@ -130,7 +133,7 @@ Installing package into
 ```
 
 ---
-class: middle, center
+class: middle, center, inverse
 # terminal fun  
 
 ## [exercise](exercises/exercise-1.html)
@@ -148,14 +151,33 @@ class: bottom, left
 
 * sets global variables: API and authentication keys
 * there is often only one of these per R system, located in the home directory, but there can one per project
-* do not add this to git repository or make sure it ends up in *.gitignore*
+* do not add this to a git repository or make sure it ends up in *.gitignore*
+
+--
+Example:
+
+```{r eval=FALSE}
+if(!file.exists(".Renviron")) file.create(".Renviron")
+```
+
+Open file and manually add: 
+```{r eval=FALSE}
+NOAA_KEY = 'my-secret-key'
+```
+
+
+Some helper functions from **usethis**: 
+```{r eval=FALSE}
+usethis::edit_r_environ("user") # to set system-wide
+usethis::edit_r_environ("project") # for the current project you are in
+```
 
 ---
 #  .Rprofile
 
  
-* An <u>R script</u> that runs every time R is opened or restarted
-* there is one created automatically when R is installed at the home directory
+* An <mark>R script</mark> that runs every time R is opened or restarted
+* there is (often) one created automatically when R is installed at the home directory
 * there may be one in each **.Rproj**, this takes precedence over others
 * this often goes in the git repo
 
@@ -166,7 +188,7 @@ class: bottom, left
 options(scipen=999) # force R to not use scientific notation
 
 .First <- function() {
-  cat("Welcome, High Priestress of R. 
+  cat("Welcome, High Priestess of R. 
   You are a true hero and your legend will never die.")
 }
 
@@ -181,6 +203,7 @@ source("scripts/file_import.R")
 more [details](https://sodocumentation.net/r/topic/4166/-rprofile) and  [options](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html)
 
 ---
+class: center, middle, inverse
 
 .pull-left[
 ```{r, echo=FALSE, out.width="200%"}
@@ -189,11 +212,11 @@ knitr::include_graphics("images/prince.jpg")
 ]
 
 .pull-right[
-[let's go crazy exercise](exercises/exercise-2.html)
+[exercise](exercises/exercise-2.html)
 ]
 
 ---
-## Namespace conflicts
+# Namespace conflicts
 
 ```{r}
 library(dplyr)
@@ -202,7 +225,20 @@ library(dplyr)
 Only one function name can be loaded into an R session. Identical function names for packages loaded earlier must be referenced like thus: `base::filter()`. 
 
 ---
+# Find conflicts: 
+
+```{r}
+getAnywhere("filter")
+```
+
+
+---
 ## Namespace solutions
+
+* use "::"
+```{r eval=FALSE}
+dplyr::filter(...)
+```
 
 * remove conflicting packages:
 ```{r eval=FALSE}

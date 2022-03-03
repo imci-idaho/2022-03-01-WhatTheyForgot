@@ -61,6 +61,6 @@ We will hold a **Session Zero** February 28 at 3-4 pm (Pacific Time) to help ori
 
 ### Thursday, March 10
 
-2:00 - 3:30  Control flow, Part I 
+2:00 - 3:30  Control flow, Part I   
 3:30 - 3:45  Break  
-3:45 - 5:00  Control flow, Part II 
+3:45 - 5:00  Control flow, Part II   
