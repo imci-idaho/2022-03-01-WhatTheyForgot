@@ -45,7 +45,7 @@ sudo apt upgrade
 * command line - single package:  
 
 ```r
-devtools::update.packages("RColorBrewer") 
+devtools::update.packages("RColorBrewer")
 ```
 
 * command line - all packages:  
@@ -71,8 +71,7 @@ Downgrade to a specific point in time:
 *(note that going this far back in time usually causes problems)*
 
 ```r
-groundhog::groundhog.library("RColorBrewer", 
-                             "2010-01-01")
+groundhog::groundhog.library("RColorBrewer", "2010-01-01")
 ```
 How to find the version information? Visit the [package site](http://localhost:4321/2022-03-01-WhatTheyForgot) on [CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html). 
 ---
@@ -85,15 +84,15 @@ How to find the version information? Visit the [package site](http://localhost:4
 One possible [solution](https://rstats.wtf/maintaining-r.html): 
 
 ```r
-# Install new version of R (4.1 in this example)
-# Create a new directory for the version of R
+# Install new version of R (4.1 in this example) Create a
+# new directory for the version of R
 fs::dir_create("~/Library/R/4.1/library")
-# Re-start R so the .libPaths are updated
-# OR find where your R library exists already with .libPaths()
-# Look up what packages were in your old package library
+# Re-start R so the .libPaths are updated OR find where
+# your R library exists already with .libPaths() Look up
+# what packages were in your old package library
 pkgs &lt;- fs::path_file(fs::dir_ls("~/Library/R/3.6/library"))
-# Filter these packages as needed
-# Install the packages in the new version
+# Filter these packages as needed Install the packages in
+# the new version
 install.packages(pkgs)
 ```
 
@@ -108,11 +107,11 @@ install.packages(pkgs)
 This tell us the path to R that RStudio is using: 
 
 ```r
-R.home()  
+R.home()
 ```
 
 ```
-## [1] "/Library/Frameworks/R.framework/Resources"
+## [1] "/usr/lib/R"
 ```
 
 It can sometimes be more [complicated](https://support.rstudio.com/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE) than that depending on the system.
@@ -127,7 +126,10 @@ It can sometimes be more [complicated](https://support.rstudio.com/hc/en-us/arti
 ```
 
 ```
-## [1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library"
+## [1] "/home/jpiaskowski/R/x86_64-pc-linux-gnu-library/4.1"
+## [2] "/usr/local/lib/R/site-library"                      
+## [3] "/usr/lib/R/site-library"                            
+## [4] "/usr/lib/R/library"
 ```
 1. main library
 1. empty
@@ -143,7 +145,7 @@ R is using all of these, in order.
 
 
 ```r
-install.packages("RColorBrewer") 
+install.packages("RColorBrewer")
 ```
 ```
 Installing package into 
@@ -177,21 +179,21 @@ Example:
 
 
 ```r
-if(!file.exists(".Renviron")) file.create(".Renviron")
+if (!file.exists(".Renviron")) file.create(".Renviron")
 ```
 
 Open file and manually add: 
 
 ```r
-NOAA_KEY = 'my-secret-key'
+NOAA_KEY = "my-secret-key"
 ```
 
 
 Some helper functions from **usethis**: 
 
 ```r
-usethis::edit_r_environ("user") # to set system-wide
-usethis::edit_r_environ("project") # for the current project you are in
+usethis::edit_r_environ("user")  # to set system-wide
+usethis::edit_r_environ("project")  # for the current project you are in
 ```
 
 ---
@@ -293,7 +295,7 @@ dplyr::filter(...)
 * remove conflicting packages:
 
 ```r
-detach(offending_package)
+unloadNamespace("offending_package")
 ```
 
 * only require packages you will use (reconsider `library(tidyverse)`)
@@ -305,8 +307,9 @@ detach(offending_package)
 
 
 ```r
-# devtools::install_github("r-lib/conflicted")
-library(conflicted); library(dplyr)
+# devtools::install_github('r-lib/conflicted')
+library(conflicted)
+library(dplyr)
 conflict_scout()
 ```
 
@@ -322,6 +325,27 @@ conflict_prefer("filter", "dplyr")
 
 ```
 ## [conflicted] Will prefer dplyr::filter over any other package
+```
+
+---
+# Find all the loaded namespaces:
+
+
+```r
+sort(loadedNamespaces())
+```
+
+```
+##  [1] "assertthat" "base"       "bslib"      "cachem"     "cli"       
+##  [6] "compiler"   "conflicted" "crayon"     "datasets"   "DBI"       
+## [11] "digest"     "dplyr"      "ellipsis"   "evaluate"   "fansi"     
+## [16] "fastmap"    "formatR"    "generics"   "glue"       "graphics"  
+## [21] "grDevices"  "highr"      "htmltools"  "jquerylib"  "jsonlite"  
+## [26] "knitr"      "lifecycle"  "magrittr"   "memoise"    "methods"   
+## [31] "pillar"     "pkgconfig"  "purrr"      "R6"         "rlang"     
+## [36] "rmarkdown"  "rstudioapi" "sass"       "stats"      "stringi"   
+## [41] "stringr"    "tibble"     "tidyselect" "tools"      "utf8"      
+## [46] "utils"      "vctrs"      "xaringan"   "xfun"       "yaml"
 ```
 
     </textarea>
