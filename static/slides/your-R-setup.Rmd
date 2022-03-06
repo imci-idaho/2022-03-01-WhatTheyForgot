@@ -242,7 +242,7 @@ dplyr::filter(...)
 
 * remove conflicting packages:
 ```{r eval=FALSE}
-detach(offending_package)
+unloadNamespace("offending_package")
 ```
 
 * only require packages you will use (reconsider `library(tidyverse)`)
@@ -257,5 +257,12 @@ detach(offending_package)
 library(conflicted); library(dplyr)
 conflict_scout()
 conflict_prefer("filter", "dplyr")
+```
+
+---
+# Find all the loaded namespaces:
+
+```{r}
+sort(loadedNamespaces())
 ```
 

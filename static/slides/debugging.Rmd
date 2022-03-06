@@ -16,5 +16,132 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+# When you encounter an R error: 
 
+1. check package documentation
+1. ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
+1. check source code
+
+##### but, eventually, you will probably need to work with debugging functions
+
+---
+class: center, middle, inverse
+
+## debugging = removing code errors  
+<br> 
+# How do you debug?  
+
+---
+# Retrace your steps
+
+1. Go through a process step-by-step and see where things went wrong
+1. Start with the action that occurred that first and proceed to the second action, the third, etc...
+
+---
+# Retrace Example
+
+[Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
+```{r eval=FALSE}
+# install.packages"(tidytuesdayR")
+library(dplyr); library(tidyr); library(purrr)
+agdata <- tidytuesdayR::tt_load('2020-09-01')
+yields <- agdata[[4]]
+colnames(yields) <- gsub("\\(tonnes per hectare\\)", "", names(yields))
+
+wheat <- yields %>% tidyr::pivot_wider(id_cols = Year, 
+                                  names_from = Entity,
+                                  values_from = Wheat) %>% 
+  purrr::discard(~all(is.na(.))) %>% 
+  mutate(ethiopia = case_when(
+    is.na(Ethiopia) ~ `Ethiopia PDR`,
+    TRUE ~ Ethiopia)) %>% select(-Ethiopia, -`Ethiopia PDR`)
+```
+---
+# Another retrace example
+
+#### Hard: 
+```{r eval=FALSE}
+result <- function4(function3(function2(function1(my_object, extra_args = 1), more_args = TRUE), even_more_args = "show_me_the_money"), final_arg = FALSE)
+```
+--
+#### Easier
+```{r eval=FALSE}
+pre_result1 <- function1(my_object, extra_args = 1)
+pre_result2 <- function2(pre_result1, more_args = TRUE)
+pre_result3 <- function3(pre_result2, even_more_args = "show_me_the_money")
+result <- function4(pre_result3, final_arg = FALSE)
+```
+*(avoid writing nested functions)*  
+
+---
+# Consider writing a function if....
+
+* You need to do something repeatedly
+* that thing that needs to be repeated has several steps
+* If you have to cut-paste-replace more than twice, consider a function to automate that process
+
+
+---
+# Why write functions? 
+
+* To save yourself work  
+* to avoid mistakes  
+  
+:thumbs-up: DRY = **D**on't **R**epeat **Y**ourself  
+<br>
+  
+:thumbs-down: WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
+
+---
+# Crash course in functions
+
+R functions follow a general structure:
+
+```{r, eval=FALSE}
+my_function_name <- function(arg1, arg2) {
+  final_output <- action(arg1, arg2)
+  return(final_output)
+}
+```
+
+Their usage:
+```{r, eval = FALSE}
+my_result <- my_function_name(arg1 = ..., arg2 = ...)
+```
+
+---
+# More intro to functions
+
+It helps to describe the arguments (but, first we need an actual function to help us define the argument)
+```{r}
+my_function_name <- function(arg1, arg2) {
+  # arg1 & arg2 = numeric vectors of identical lengths
+  plot(arg1, arg2)
+}
+```
+
+```{r}
+plot(1:10, 1:10 + rnorm(10))
+```
+ *(usually these functions are slightly more complicated)* 
+
+---
+class: middle, center, inverse
+
+# [exercise](exercises/exercise-4.html)
+
+---
+
+
+
+
+
+---
+# Some future example
+```{r, eval=FALSE}
+fertil <- agdata[[2]]
+colnames(fertil) <- c("country", "code", "year", 
+                      "cereal_yield", "N_appl")
+anova
+```
 
