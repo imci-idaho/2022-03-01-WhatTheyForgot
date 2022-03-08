@@ -155,12 +155,34 @@ class: middle, center, inverse
 ---
 # Some future example
 
+
 ```r
 fertil &lt;- agdata[[2]]
 colnames(fertil) &lt;- c("country", "code", "year", 
                       "cereal_yield", "N_appl")
 anova
 ```
+
+---
+class: center, middle, inverse
+
+# Miscellaneous R tip: running R scripts in a terminal
+
+```r
+Rscript path/to/my/script.R 
+```
+
+
+```bash
+Rscript -e "Sys.Date()"
+```
+
+```
+## [1] "2022-03-07"
+```
+
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
