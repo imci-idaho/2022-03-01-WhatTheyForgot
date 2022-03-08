@@ -1,0 +1,19 @@
+---
+title: "Exercise: Package Documentation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+1. With the data set you found in a tidyverse package, create a mini-dataset using a `x_format()` or `x_paste()` command. 
+

@@ -23,6 +23,152 @@ class: center, middle, inverse, title-slide
 
 
 
+class: center, middle
+
+## How to ask for help  
+ 
+&lt;br&gt; &lt;br&gt;  
+*the coding error*  
+*unsolvable mystery*  
+*make it simple, friend*  
+
+---
+# Getting Help (again)
+
+Eventually, you will probably need outside help to solve a programming problem. 
+&lt;br&gt;  
+lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...
+&lt;br&gt;   
+You are asking them to help you, but in order for them to do that, they need to understand your problem.
+
+---
+# Reproducible example
+
+  = minimum version of what you are doing in R that is generating an error
+
+
+![lion and cub](images/lion_and_cub.jpg)
+
+---
+# Good reproducible example
+
+1. use smallest, simplest data set. Preferably a built-in data set (e.g. iris or cars, yawn).  
+1. If you have to create a data set, keep it small, keep it simple. 
+  * minimum size (e.g. number of rows), minimum variables
+  * enough information to replicate your situation - at least, the situation that is creating a problem
+
+&lt;center&gt; Remember, the goal is to recreate your problem! &lt;/center&gt;
+
+---
+# Tools to create a minimal data set
+
+* `data.frame()`, `matrix()`, `list()` and other base R functions
+* if you simulate new data through a random process, use `set.seed()`. 
+
+
+```r
+set.seed(208)
+my_df &lt;- data.frame(x1 = c(1, 2, 3, 4),
+                    x2 = c("a", "a", "b", "b"),
+                    x3 = rnorm(4))
+my_df
+```
+
+```
+##   x1 x2         x3
+## 1  1  a  0.3398108
+## 2  2  a  1.7201904
+## 3  3  b  0.2312531
+## 4  4  b -1.0609545
+```
+--
+
+**mini-exercise:** make a `data.frame` with at least 2 variables and 5 rows. 
+
+---
+# Tools to create a minimal data set
+
+* find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (data sets are listed). 
+
+*(no point in running these in an Rmarkdown document)*
+
+--
+**mini-exercise:** find a data set from a tidyverse package you've never used before and examine is. How big is it? What type of variables are present? 
+
+---
+# Tools to create a minimal data set
+
+* the package **[datapasta](https://milesmcbain.github.io/datapasta/index.html)**
+
+Run in the console: 
+
+```r
+library(datapasta); library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+Format a table to R code and put it on the clipboard
+
+```r
+iris %&gt;% head() %&gt;% df_format() 
+```
+[CTRL + V]
+
+Pull part of table into R-formatted syntax: 
+
+```r
+# first, copy part of a table
+# next type either line in the console and run
+tribble_paste()
+df_paste()
+```
+
+---
+class: center, middle, inverse
+
+## # [exercise](exercises/exercise-8.html)
+
+---
+# Narrow down the problem:
+
+* DON'T provide a long list of commands and say "it didn't work"  
+* DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
+* DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
+* DON'T run load meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
+* DO &lt;mark&gt;ruthlessly&lt;/mark&gt; strip out every bit of unneeded code, any extra lines, extraneous arguments that can be ignored while the error persists
+
+---
+# Be considerate of your anonymous helpers
+
+.pull-left[
+  ![please be kind rewind])(images/kind_rewind.jpg)
+]
+
+.pull-right[
+* no `rm = list(ls())` since it is running on someone else's system
+* no setwd("to/my/computer")
+* if your code changes systems systems (e.g. `par(...)`, make sure you reset it
+* don't mask built-in functions (e.g. `mean()`)  with your own custom functions
+]
+
+---
+# Use good style
 
 
     </textarea>

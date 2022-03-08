@@ -16,9 +16,6 @@ body{ /* Normal  */
 <br><br>
 
 1. Add an argument for coloring the points.   
-1. Alter the plot to produce lines instead. If you don't know how to do this, search `plot.default` in the help menu or run this in the console:  
-```{r,eval=FALSE}
-?plot.default
-```
-1. If you have time, adjust the plot in other way to make it more interesting.  
+1. Alter the plot to produce lines instead. If you don't know how to do this, search `plot.default` in the help menu.  
+1. If you have time, adjust the plot in other ways to make it more interesting.  
 

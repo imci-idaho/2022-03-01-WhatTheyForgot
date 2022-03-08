@@ -138,10 +138,26 @@ class: middle, center, inverse
 
 ---
 # Some future example
+
 ```{r, eval=FALSE}
 fertil <- agdata[[2]]
 colnames(fertil) <- c("country", "code", "year", 
                       "cereal_yield", "N_appl")
 anova
 ```
+
+---
+class: center, middle, inverse
+
+# Miscellaneous R tip: running R scripts in a terminal
+```{r, eval = FALSE}
+Rscript path/to/my/script.R 
+```
+
+```{bash}
+Rscript -e "Sys.Date()"
+```
+
+
+
 

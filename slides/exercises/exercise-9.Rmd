@@ -1,0 +1,37 @@
+---
+title: "Exercise: Package Documentation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+
+1. Create a reproducible example for this person:
+<small>
+Ive got a big dataset im doing my sampling from. For each sample, Im creating a dataframe.
+The dataframe consists of 3 columns. "Species code" "Diameter" "Height". Species code range from 1-4.
+
+Based on what species my sample consists of, I want to make a model.
+This is what I want the code to do:
+
+If (Number of observations/rows of speciescode 1 is equal to 3 or higher AND number of observations/rows of speciescode 2,3 and 4 is equal to 3 or higher)
+Make model for speciescode 1
+Make model for species code 2,3 and 4 together.
+Else (If the above statement is not true)
+Make a universal model
+
+Does anyone know how a code like this would look like? Creating the models is no problem.
+
+Thanks! </small>
+
+
