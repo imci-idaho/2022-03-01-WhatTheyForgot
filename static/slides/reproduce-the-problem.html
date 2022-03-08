@@ -4,7 +4,7 @@
     <title>Reproduce the Problem</title>
     <meta charset="utf-8" />
     <meta name="author" content="Julia Piaskowski" />
-    <meta name="date" content="2022-03-10" />
+    <meta name="date" content="2022-03-08" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # Reproduce the Problem
 ## ⚔<br/>using reprex
 ### Julia Piaskowski
-### 2022-03-10
+### 2022-03-08
 
 ---
 
@@ -42,10 +42,9 @@ lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad s
 You are asking them to help you, but in order for them to do that, they need to understand your problem.
 
 ---
-# Reproducible example
+# reprex = Reproducible example
 
   = minimum version of what you are doing in R that is generating an error
-
 
 ![lion and cub](images/lion_and_cub.jpg)
 
@@ -90,37 +89,19 @@ my_df
 
 * find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (data sets are listed). 
 
-*(no point in running these in an Rmarkdown document)*
+*(no point in running these in an Rmarkdown document)*   
 
---
-**mini-exercise:** find a data set from a tidyverse package you've never used before and examine is. How big is it? What type of variables are present? 
+-- 
+**mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
 
 ---
 # Tools to create a minimal data set
 
 * the package **[datapasta](https://milesmcbain.github.io/datapasta/index.html)**
 
-Run in the console: 
 
 ```r
 library(datapasta); library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
 ```
 
 Format a table to R code and put it on the clipboard
@@ -142,12 +123,14 @@ df_paste()
 ---
 class: center, middle, inverse
 
-## # [exercise](exercises/exercise-8.html)
+# [exercise](exercises/exercise-8.html)
 
 ---
 # Narrow down the problem:
 
-* DON'T provide a long list of commands and say "it didn't work"  
+* DON'T provide a long description of why you want to do something, "We plan to save the world by comparing storm drainage rates..."
+* DON'T dump a long R script with the single descriptor "it didn't work"  
+* Screenshots usually are not helpful
 * DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
 * DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
 * DON'T run load meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
@@ -157,7 +140,7 @@ class: center, middle, inverse
 # Be considerate of your anonymous helpers
 
 .pull-left[
-  ![please be kind rewind])(images/kind_rewind.jpg)
+&lt;img src="images/kind_rewind.jpg" width="840" /&gt;
 ]
 
 .pull-right[
@@ -168,9 +151,67 @@ class: center, middle, inverse
 ]
 
 ---
-# Use good style
+# Last step: using `reprex()`
 
+* **reprex** is a package supporting how to generate reproducible examples. 
+* like **datapasta**, it can make your life easier
 
+Copy: 
+
+```r
+x&lt;- 1:10
+plot(x)
+```
+
+Run:
+
+```r
+reprex::reprex()
+```
+
+Paste your clipboard where you are seeking help (e.g. [GitHub issue](https://github.com/IdahoAgStats/what-they-forgot-202203/issues), Stack Overflow Question)
+
+---
+# Example: Let's Write a Reprex!
+
+![](images/need_reprex.png)
+
+---
+class: middle, center, inverse
+
+# [exercise](exercises/exercise-9.html)
+
+---
+# Use good style  
+
+### (it's easier to read)   
+
+1. There is no cap on white space usage
+
+```r
+myfunc&lt;-onebigfunc(mydf,arg=1,arg2=TRUE,arg4="Go")
+more&lt;-evenmore(myfunc,argA=c("Idaho","Montana","Utah"))
+if(condition){dothis}
+else{dothat}
+```
+1. pay attention to function examples in documentation for code styling 
+1. there's actually a [code guide!](https://style.tidyverse.org/syntax.html) and a package, [styler](https://styler.r-lib.org/) to support this. 
+
+Tip: &lt;mark&gt;CTRL + Shift + a&lt;/mark&gt; will reformat things. 
+
+---
+# The Good, The Bad and the Weird
+
+* Creating a good reprex is **a lot** of work!
+* If you want to elicit feedback to solve your problem, this is how to do that. 
+* Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem! 
+
+---
+# Guides for creating a good reprex
+
+* [Stack Overflow](https://stackoverflow.com/help/minimal-reproducible-example)
+* [Rstudio Community](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061)
+* [Reprex Do's and Don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

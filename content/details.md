@@ -7,7 +7,7 @@ title: Workshop Details
 You need to have [R](https://cloud.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/) installed on the computer you will use for this workshop. Installing the packages **here**, **renv**, **reprex**, **devtools** in advance is recommended. If you will be using a Windows machine for the workshop, please install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) (note that this is a *program* not a package). 
 
 ```
-packages <- c("here", "renv", "reprex", "devtools")
+packages <- c("here", "renv", "reprex", "devtools", "datapasta")
 install.packages(packages)
 ```
 

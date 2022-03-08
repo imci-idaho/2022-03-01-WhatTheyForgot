@@ -15,5 +15,5 @@ body{ /* Normal  */
 
 <br><br>
 
-1. With the data set you found in a tidyverse package, create a mini-dataset using a `x_format()` or `x_paste()` command. 
+1. With the data set you found in a tidyverse package, create a mini-dataset using a `x_format()` or `x_paste()` command. Note that the command is not literally `x_format()`; you will need to replace "x" with the appropriate object type. 
 

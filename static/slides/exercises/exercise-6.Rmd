@@ -1,0 +1,19 @@
+---
+title: "Exercise: Package Documentation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+1.With the last function, add code to plot the residuals versus the fitted values. Use `methods(class = "lm")` to ascertain how to access fitted values and residuals from an **lm** object. 
+

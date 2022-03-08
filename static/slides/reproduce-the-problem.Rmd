@@ -2,7 +2,7 @@
 title: "Reproduce the Problem"
 subtitle: "⚔<br/>using reprex"
 author: "Julia Piaskowski"
-date: "2022-03-10"
+date: "2022-03-08"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -73,18 +73,17 @@ my_df
 
 * find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (data sets are listed). 
 
-*(no point in running these in an Rmarkdown document)*
+*(no point in running these in an Rmarkdown document)*   
 
---
-**mini-exercise:** find a data set from a tidyverse package you've never used before and examine is. How big is it? What type of variables are present? 
+-- 
+**mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
 
 ---
 # Tools to create a minimal data set
 
 * the package **[datapasta](https://milesmcbain.github.io/datapasta/index.html)**
 
-Run in the console: 
-```{r}
+```{r eval=FALSE}
 library(datapasta); library(dplyr)
 ```
 
@@ -95,7 +94,7 @@ iris %>% head() %>% df_format()
 [CTRL + V]
 
 Pull part of table into R-formatted syntax: 
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 # first, copy part of a table
 # next type either line in the console and run
 tribble_paste()
@@ -105,12 +104,14 @@ df_paste()
 ---
 class: center, middle, inverse
 
-## # [exercise](exercises/exercise-8.html)
+# [exercise](exercises/exercise-8.html)
 
 ---
 # Narrow down the problem:
 
-* DON'T provide a long list of commands and say "it didn't work"  
+* DON'T provide a long description of why you want to do something, "We plan to save the world by comparing storm drainage rates..."
+* DON'T dump a long R script with the single descriptor "it didn't work"  
+* Screenshots usually are not helpful
 * DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
 * DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
 * DON'T run load meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
@@ -120,7 +121,9 @@ class: center, middle, inverse
 # Be considerate of your anonymous helpers
 
 .pull-left[
-  ![please be kind rewind])(images/kind_rewind.jpg)
+```{r, echo=FALSE}
+knitr::include_graphics("images/kind_rewind.jpg")
+```
 ]
 
 .pull-right[
@@ -137,20 +140,20 @@ class: center, middle, inverse
 * like **datapasta**, it can make your life easier
 
 Copy: 
-```{r, eval = true}
+```{r, eval=FALSE}
 x<- 1:10
 plot(x)
 ```
 
 Run:
-```{r}
+```{r, eval=FALSE}
 reprex::reprex()
 ```
 
 Paste your clipboard where you are seeking help (e.g. [GitHub issue](https://github.com/IdahoAgStats/what-they-forgot-202203/issues), Stack Overflow Question)
 
 ---
-# Example
+# Example: Let's Write a Reprex!
 
 ![](images/need_reprex.png)
 
@@ -160,10 +163,17 @@ class: middle, center, inverse
 # [exercise](exercises/exercise-9.html)
 
 ---
-# Use good style 
-### (it's easier to read)
+# Use good style  
 
-1. There is no limit on white space 
+### (it's easier to read)   
+
+1. There is no cap on white space usage
+```{r, eval=FALSE}
+myfunc<-onebigfunc(mydf,arg=1,arg2=TRUE,arg4="Go")
+more<-evenmore(myfunc,argA=c("Idaho","Montana","Utah"))
+if(condition){dothis}
+else{dothat}
+```
 1. pay attention to function examples in documentation for code styling 
 1. there's actually a [code guide!](https://style.tidyverse.org/syntax.html) and a package, [styler](https://styler.r-lib.org/) to support this. 
 

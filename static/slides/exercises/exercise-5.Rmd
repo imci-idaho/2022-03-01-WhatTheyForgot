@@ -1,0 +1,19 @@
+---
+title: "Exercise: Package Documentation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+1. Feed a bogus argument to `lm()` and run `traceback()` to see where it all falls apart. If you're not familiar with lm (for least squares linear modelling), check the documentation. 
+
