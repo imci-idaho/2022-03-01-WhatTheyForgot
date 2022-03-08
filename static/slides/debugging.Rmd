@@ -149,6 +149,12 @@ anova
 ---
 class: center, middle, inverse
 
+<iframe src="https://giphy.com/embed/ReImZejkBnqYU" width="530" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/angry-computer-frustrated-ReImZejkBnqYU">image credit: GIPHY</a></p>
+
+
+---
+class: center, middle, inverse
+
 # Miscellaneous R tip: running R scripts in a terminal
 ```{r, eval = FALSE}
 Rscript path/to/my/script.R 
