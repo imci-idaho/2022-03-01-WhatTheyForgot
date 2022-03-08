@@ -17,6 +17,7 @@ body{ /* Normal  */
 
 
 1. Create a reproducible example for this person:
+
 <small>
 Ive got a big dataset im doing my sampling from. For each sample, Im creating a dataframe.
 The dataframe consists of 3 columns. "Species code" "Diameter" "Height". Species code range from 1-4.
@@ -35,3 +36,4 @@ Does anyone know how a code like this would look like? Creating the models is no
 Thanks! </small>
 
 
+* If you have time, post your example as an 'issue' in our [git repo](https://github.com/IdahoAgStats/what-they-forgot-202203/issues) for the course. 

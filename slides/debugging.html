@@ -25,11 +25,11 @@ class: center, middle, inverse, title-slide
 
 # When you encounter an R error: 
 
-1. check package documentation
-1. ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
-1. check source code
+1. Check package documentation
+1. Ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
+1. Check source code (maybe)
 
-##### but, eventually, you will probably need to work with debugging functions
+##### but, you will probably need to work with debugging functions eventually
 
 ---
 class: center, middle, inverse
@@ -47,15 +47,53 @@ class: center, middle, inverse
 ---
 # Retrace Example
 
+
+
+
 [Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
 
 ```r
 # install.packages"(tidytuesdayR")
 library(dplyr); library(tidyr); library(purrr)
 agdata &lt;- tidytuesdayR::tt_load('2020-09-01')
-yields &lt;- agdata[[4]]
-colnames(yields) &lt;- gsub("\\(tonnes per hectare\\)", "", names(yields))
+```
 
+```
+## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
+## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
+## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
+## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
+```
+
+```
+## Error in github_sha("static"): Response Code 403: API rate limit exceeded for 129.101.247.81. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
+```
+
+```r
+yields &lt;- agdata[[4]]
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'agdata' not found
+```
+
+```r
+colnames(yields) &lt;- gsub("\\(tonnes per hectare\\)", "", names(yields))
+```
+
+```
+## Error in is.factor(x): object 'yields' not found
+```
+
+```r
+head(agdata)
+```
+
+```
+## Error in head(agdata): object 'agdata' not found
+```
+
+```r
 wheat &lt;- yields %&gt;% tidyr::pivot_wider(id_cols = Year, 
                                   names_from = Entity,
                                   values_from = Wheat) %&gt;% 
@@ -64,13 +102,19 @@ wheat &lt;- yields %&gt;% tidyr::pivot_wider(id_cols = Year,
     is.na(Ethiopia) ~ `Ethiopia PDR`,
     TRUE ~ Ethiopia)) %&gt;% select(-Ethiopia, -`Ethiopia PDR`)
 ```
+
+```
+## Error in tidyr::pivot_wider(., id_cols = Year, names_from = Entity, values_from = Wheat): object 'yields' not found
+```
 ---
 # Another retrace example
+
+**Working with nested functions makes debugging hard**
 
 #### Hard: 
 
 ```r
-result &lt;- function4(function3(function2(function1(my_object, extra_args = 1), more_args = TRUE), even_more_args = "show_me_the_money"), final_arg = FALSE)
+result &lt;- function4(function3(function2(function1(my_object, extra_args = 1),more_args = TRUE), even_more_args = "show_me_the_money"), final_arg = FALSE)
 ```
 --
 #### Easier
@@ -97,10 +141,12 @@ result &lt;- function4(pre_result3, final_arg = FALSE)
 * To save yourself work  
 * to avoid mistakes  
   
-:thumbs-up: DRY = **D**on't **R**epeat **Y**ourself  
+👍  DRY = **D**on't **R**epeat **Y**ourself  
 &lt;br&gt;
   
-:thumbs-down: WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
+👎  WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
+
+.footnote[[more instructions](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 # Crash course in functions
@@ -138,35 +184,191 @@ my_function_name &lt;- function(arg1, arg2) {
 plot(1:10, 1:10 + rnorm(10))
 ```
 
-![](debugging_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+&lt;img src="debugging_files/figure-html/unnamed-chunk-9-1.png" height="60%" /&gt;
  *(usually these functions are slightly more complicated)* 
 
 ---
-class: middle, center, inverse
+class: center, middle,  inverse
 
 # [exercise](exercises/exercise-4.html)
 
 ---
+## What to do when function errors happen
+
+* `traceback`
 
 
+```r
+f &lt;- function(x) x + 1
+g &lt;- function(x) f(x)^3
+g("a")
+```
 
+```
+## Error in x + 1: non-numeric argument to binary operator
+```
+
+```r
+#traceback()
+```
 
 
 ---
-# Some future example
+class: center, middle, inverse
+
+
+# [mini-exercise](exercises/exercise-5.html)
+
+
+---
+# Trace
+
+For any R function, it will alert you when there is a problem.
+
+This example examines `print()` when it receives output that is numeric and greater than or equal to 3. 
+
+
+```r
+trace(print, quote(if (is.numeric(x) &amp;&amp; x &gt;= 3) 
+  cat("We have a problem: \n")), print = FALSE)
+```
+
+```
+## Tracing function "print" in package "base"
+```
+
+```
+## [1] "print"
+```
+
+
+```r
+print("a")
+```
+
+```
+## [1] "a"
+```
+
+```r
+print(4)
+```
+
+```
+## We have a problem: 
+## [1] 4
+```
+
+Remember to turn `trace` off: 
+
+```r
+untrace(print)
+```
+
+```
+## Untracing function "print" in package "base"
+```
+
+---
+## What to do when function errors happen
+
+* sprinkle `print()` and/or `str()` statements in your function
+(not a formal debug method, just something that works)
+
+
+```r
+log_hist &lt;- function(var, color = "cyan", do_log=TRUE) {
+  if(do_log == TRUE) {
+    logvar = log(var)
+    hist(logvar, col = color)
+  }
+  else hist(var, col = color)
+}
+```
+
+--
+
+
+```r
+log_hist(rnorm(100), do_log=TRUE)
+```
+
+---
+## `browse()`
+
+A more powerful way to examine objects in a function:
 
 
 ```r
 fertil &lt;- agdata[[2]]
 colnames(fertil) &lt;- c("country", "code", "year", 
                       "cereal_yield", "N_appl")
-anova
+```
+
+
+```r
+my_lm_fun &lt;- function(df, country){
+  m1 = lm(country ~ year, data = df)
+  a1 = anova(m1)
+  r2 = summary(m1)$r2
+  return(list(coefficients = coef(m1), anova = a1, rsq = r2))
+}
+```
+
+
+```r
+my_lm_fun(df = fertil, country = "Canada")
 ```
 
 ---
+class: center, middle, inverse
 
-&lt;iframe src="https://giphy.com/embed/ReImZejkBnqYU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/angry-computer-frustrated-ReImZejkBnqYU"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+# [exercise](exercises/exercise-6.html)
 
+---
+## How do you examine an error for a function you didn't write? 
+
+* `debug()` 
+
+
+```r
+debug(stats::lm)
+```
+
+
+```r
+test &lt;- lm(cereal_yield ~ N_appl, data = fertil)
+```
+
+Turn if off: 
+
+```r
+undebug(tidyr::fill)
+```
+
+---
+# You can put this in your .Rprofile!
+
+e.g. 
+
+```r
+options(error = traceback)
+```
+or
+
+```r
+options(error = browser)
+```
+
+....and more
+
+
+---
+class: center, middle, inverse
+
+&lt;iframe src="https://giphy.com/embed/ReImZejkBnqYU" width="530" height="300" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/angry-computer-frustrated-ReImZejkBnqYU"&gt;image credit: GIPHY&lt;/a&gt;&lt;/p&gt;
+
+## Keep Calm and Debug On
 
 ---
 class: center, middle, inverse
@@ -178,16 +380,9 @@ Rscript path/to/my/script.R
 ```
 
 
-```bash
+```r
 Rscript -e "Sys.Date()"
 ```
-
-```
-## [1] "2022-03-08"
-```
-
-
-
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

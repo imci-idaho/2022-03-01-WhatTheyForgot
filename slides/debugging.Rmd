@@ -18,11 +18,11 @@ options(htmltools.dir.version = FALSE)
 
 # When you encounter an R error: 
 
-1. check package documentation
-1. ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
-1. check source code
+1. Check package documentation
+1. Ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
+1. Check source code (maybe)
 
-##### but, eventually, you will probably need to work with debugging functions
+##### but, you will probably need to work with debugging functions eventually
 
 ---
 class: center, middle, inverse
@@ -40,14 +40,21 @@ class: center, middle, inverse
 ---
 # Retrace Example
 
+```{r include=FALSE, echo=FALSE}
+library(dplyr); library(tidyr); library(purrr)
+```
+
+
 [Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
-```{r eval=FALSE}
+```{r, error=TRUE}
 # install.packages"(tidytuesdayR")
 library(dplyr); library(tidyr); library(purrr)
 agdata <- tidytuesdayR::tt_load('2020-09-01')
 yields <- agdata[[4]]
 colnames(yields) <- gsub("\\(tonnes per hectare\\)", "", names(yields))
-
+head(agdata)
+```
+```{r, error=TRUE}
 wheat <- yields %>% tidyr::pivot_wider(id_cols = Year, 
                                   names_from = Entity,
                                   values_from = Wheat) %>% 
@@ -59,9 +66,11 @@ wheat <- yields %>% tidyr::pivot_wider(id_cols = Year,
 ---
 # Another retrace example
 
+**Working with nested functions makes debugging hard**
+
 #### Hard: 
 ```{r eval=FALSE}
-result <- function4(function3(function2(function1(my_object, extra_args = 1), more_args = TRUE), even_more_args = "show_me_the_money"), final_arg = FALSE)
+result <- function4(function3(function2(function1(my_object, extra_args = 1),more_args = TRUE), even_more_args = "show_me_the_money"), final_arg = FALSE)
 ```
 --
 #### Easier
@@ -87,17 +96,19 @@ result <- function4(pre_result3, final_arg = FALSE)
 * To save yourself work  
 * to avoid mistakes  
   
-:thumbs-up: DRY = **D**on't **R**epeat **Y**ourself  
+👍  DRY = **D**on't **R**epeat **Y**ourself  
 <br>
   
-:thumbs-down: WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
+👎  WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
+
+.footnote[[more instructions](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 # Crash course in functions
 
 R functions follow a general structure:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, out.width='75%'}
 my_function_name <- function(arg1, arg2) {
   final_output <- action(arg1, arg2)
   return(final_output)
@@ -120,37 +131,149 @@ my_function_name <- function(arg1, arg2) {
 }
 ```
 
-```{r}
+```{r, out.height="60%"}
 plot(1:10, 1:10 + rnorm(10))
 ```
  *(usually these functions are slightly more complicated)* 
 
 ---
-class: middle, center, inverse
+class: center, middle,  inverse
 
 # [exercise](exercises/exercise-4.html)
 
 ---
+## What to do when function errors happen
 
+* `traceback`
 
+```{r, error=TRUE}
+f <- function(x) x + 1
+g <- function(x) f(x)^3
+g("a")
 
+#traceback()
+```
 
 
 ---
-# Some future example
+class: center, middle, inverse
+
+
+# [mini-exercise](exercises/exercise-5.html)
+
+
+---
+# Trace
+
+For any R function, it will alert you when there is a problem.
+
+This example examines `print()` when it receives output that is numeric and greater than or equal to 3. 
+
+```{r}
+trace(print, quote(if (is.numeric(x) && x >= 3) 
+  cat("We have a problem: \n")), print = FALSE)
+```
+
+```{r}
+print("a")
+print(4)
+```
+
+Remember to turn `trace` off: 
+```{r}
+untrace(print)
+```
+
+---
+## What to do when function errors happen
+
+* sprinkle `print()` and/or `str()` statements in your function
+(not a formal debug method, just something that works)
+
+```{r}
+log_hist <- function(var, color = "cyan", do_log=TRUE) {
+  if(do_log == TRUE) {
+    logvar = log(var)
+    hist(logvar, col = color)
+  }
+  else hist(var, col = color)
+}
+```
+
+--
+
+```{r, eval=FALSE}
+log_hist(rnorm(100), do_log=TRUE)
+```
+
+---
+## `browse()`
+
+A more powerful way to examine objects in a function:
 
 ```{r, eval=FALSE}
 fertil <- agdata[[2]]
 colnames(fertil) <- c("country", "code", "year", 
                       "cereal_yield", "N_appl")
-anova
 ```
+
+```{r, eval=FALSE}
+my_lm_fun <- function(df, country){
+  m1 = lm(country ~ year, data = df)
+  a1 = anova(m1)
+  r2 = summary(m1)$r2
+  return(list(coefficients = coef(m1), anova = a1, rsq = r2))
+}
+```
+
+```{r, eval=FALSE}
+my_lm_fun(df = fertil, country = "Canada")
+```
+
+---
+class: center, middle, inverse
+
+# [exercise](exercises/exercise-6.html)
+
+---
+## How do you examine an error for a function you didn't write? 
+
+* `debug()` 
+
+```{r, eval=FALSE}
+debug(stats::lm)
+```
+
+```{r, eval=FALSE}
+test <- lm(cereal_yield ~ N_appl, data = fertil)
+```
+
+Turn if off: 
+```{r, eval=FALSE}
+undebug(tidyr::fill)
+```
+
+---
+# You can put this in your .Rprofile!
+
+e.g. 
+```{r, eval=FALSE}
+options(error = traceback)
+```
+or
+```{r, eval=FALSE}
+options(error = browser)
+```
+
+....and more
+
 
 ---
 class: center, middle, inverse
 
 <iframe src="https://giphy.com/embed/ReImZejkBnqYU" width="530" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/angry-computer-frustrated-ReImZejkBnqYU">image credit: GIPHY</a></p>
 
+## Keep Calm and Debug On
 
 ---
 class: center, middle, inverse
@@ -160,10 +283,7 @@ class: center, middle, inverse
 Rscript path/to/my/script.R 
 ```
 
-```{bash}
+```{r, eval=FALSE}
 Rscript -e "Sys.Date()"
 ```
-
-
-
 
