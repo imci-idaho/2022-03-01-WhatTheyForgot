@@ -27,11 +27,11 @@ class: center, middle
 ---
 # Getting Help (again)
 
-Eventually, you will probably need outside help to solve a programming problem. 
+##### Eventually, you will probably need outside help to solve a programming problem. 
 <br>  
-lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...
+##### lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...
 <br>   
-You are asking them to help you, but in order for them to do that, they need to understand your problem.
+##### You are asking them to kindly help you, but in order for them to do that, they need to understand your problem.
 
 ---
 # Example 1 
@@ -57,9 +57,9 @@ class: center, middle
 ## Anyone feel ready to troubleshoot those problems in your R session? 
 
 ---
-# reprex = Reproducible example
+# Reprex = reproducible example
 
-  = minimum version of what you are doing in R that is generating an error
+  = minimum version of what you are doing ~~in R~~ that is generating an error
 
 ![lion and cub](images/lion_and_cub.jpg)
 
@@ -73,7 +73,7 @@ class: center, middle
 ---
 # Some good examples of a reprex
 
-* [Example 1](https://stackoverflow.com/questions/71403633/conditional-formatting-of-cells-using-if-else-or-hiding-columns-in-dt-package-i) n 
+* [Example 1](https://stackoverflow.com/questions/71403633/conditional-formatting-of-cells-using-if-else-or-hiding-columns-in-dt-package-i) 
 * [Example 2](https://stackoverflow.com/questions/71402703/how-to-obtain-the-specific-grouping-of-cases-and-controls-in-r)  
 * [Example 3](https://stackoverflow.com/questions/71403688/save-kable-in-r-writes-empty-file)  
 
@@ -86,8 +86,8 @@ class: center, middle
   * minimum size (e.g. number of rows), minimum variables
   * enough information to replicate your situation - at least, the situation that is creating a problem
 
-<center> Remember, the goal is to recreate your problem! \n
-Tailor your minimal data set to meet that goal. </center>
+<center> Remember, the goal is to recreate your problem! </center>
+<center> Tailor your minimal data set to meet that goal. </center>
 
 ---
 # Tools to create a minimal data set
@@ -113,32 +113,46 @@ my_df
 
 *(no point in running these in an Rmarkdown document - do this in your R session)*   
 
--- 
+--   
 **mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
 
 ---
-# Tools to create a minimal data set
+# datapasta, a convenience package
 
-* the package **[datapasta](https://milesmcbain.github.io/datapasta/index.html)**
+[datapasta documentation](https://milesmcbain.github.io/datapasta/index.html)
 
-```{r eval=FALSE}
-library(datapasta); library(dplyr)
-```
+* Format a table so it's represented as R code, and put it on your system clipboard: 
 
-Format a table to R code and put it on the clipboard
 ```{r, eval=FALSE}
+library(datapasta); library(dplyr)
 iris %>% head() %>% df_format() 
 ```
-Then you an paste the data with ([CTRL + V] on many systems). 
 
-Pull part of table into R-formatted syntax: 
+Then you can paste the data with ([CTRL + V] on many systems). 
+
+---
+# datapasta, a convenience package
+
+* Pull part of table into R-formatted syntax: 
+
+First, copy part of a table from a spreadsheet (e.g. Googlesheets, Excel, Numbers, Calc). 
+
+Next, run this line of code to generate r code that will format your copied spreadsheet cells into an R data.frame: 
 ```{r, eval=FALSE}
-# first, copy part of a table from a spreadsheet
-  #e.g. Googlesheets, Excel, Numbers, Calc
-# next type these line in the console and run
-tribble_paste() # to format your copied data as a tibble
-df_paste() # to format your copied data as a data.frame
+df_paste()
 ```
+
+You can also run this line of code to generate r code that will format your copied spreadsheet cells into an R tibble:
+```{r, eval=FALSE}
+tribble_paste() 
+```
+
+---
+class: center, middle, inverse
+
+# Why do something so tedious??
+
+### Because we need this code for a reprex. This is not for us - it's for the anonymous programmers out there we are asking to help us. 
 
 ---
 class: center, middle, inverse
@@ -150,10 +164,10 @@ class: center, middle, inverse
 
 * DON'T provide a long description of why you want to do something, "We plan to save the world by comparing storm drainage rates..."
 * DON'T dump a long R script with the single descriptor "it didn't work"  
-* Don't use screenshots when code will work
+* Be very judicious in your use of screenshots. In most cases, text and code describes the problem. 
 * DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
 * DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
-* DON'T run load meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
+* DON'T load a meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
 * DO <mark>ruthlessly strip out every bit of unneeded code</mark>, any extra lines, extraneous arguments that can be ignored and still the error persists
 
 ---
@@ -188,7 +202,7 @@ Next, run this code in an R session:
 ```{r, eval=FALSE}
 reprex::reprex()
 ```
-*You won't see much, but, valuable information has been put on your system clipboard!* 
+**You won't see much, but, valuable information has been put on your system clipboard!** 
 
 Paste your clipboard contents on the resource  where you are seeking help (e.g. [GitHub issue](https://github.com/IdahoAgStats/what-they-forgot-202203/issues), Stack Overflow)
 
@@ -209,6 +223,8 @@ class: middle, center, inverse
 
 1. There is no cap on white space usage
 ```{r, eval=FALSE}
+# No need to pack in code this tightly! 
+# We aren't trying to send this data stream to the moon
 myfunc<-onebigfunc(mydf,arg=1,arg2=TRUE,arg4="Go")
 more<-evenmore(myfunc,argA=c("Idaho","Montana","Utah"))
 if(condition){dothis}
@@ -226,9 +242,13 @@ Tip: <mark>CTRL + Shift + a</mark> will reformat things in RStudio.
 * If you want to elicit feedback to solve your problem, this is how to do that. 
 * Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem! 
 
+<iframe src="https://giphy.com/embed/fdLR6LGwAiVNhGQNvf" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fdLR6LGwAiVNhGQNvf">via GIPHY</a></p>
+
 ---
 # Guides for creating a good reprex
 
-* [Stack Overflow](https://stackoverflow.com/help/minimal-reproducible-example)
-* [Rstudio Community](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061)
-* [Reprex Do's and Don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)
+### [Stack Overflow](https://stackoverflow.com/help/minimal-reproducible-example)
+
+### [Rstudio Community](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061)  
+
+### [Reprex Do's and Don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)
