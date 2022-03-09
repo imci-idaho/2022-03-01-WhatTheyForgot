@@ -29,7 +29,7 @@ class: center, middle, inverse, title-slide
 1. Ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
 1. Check source code (maybe)
 
-##### but, you will probably need to work with debugging functions eventually
+#### You will probably need to work with debugging functions eventually
 
 ---
 class: center, middle, inverse
@@ -52,48 +52,14 @@ class: center, middle, inverse
 
 [Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
 
+
 ```r
 # install.packages"(tidytuesdayR")
 library(dplyr); library(tidyr); library(purrr)
 agdata &lt;- tidytuesdayR::tt_load('2020-09-01')
-```
-
-```
-## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
-## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
-## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
-## Only -1 Github queries remaining until 2022-03-08 02:31:05 PM PST.
-```
-
-```
-## Error in github_sha("static"): Response Code 403: API rate limit exceeded for 129.101.247.81. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
-```
-
-```r
 yields &lt;- agdata[[4]]
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'agdata' not found
-```
-
-```r
 colnames(yields) &lt;- gsub("\\(tonnes per hectare\\)", "", names(yields))
-```
 
-```
-## Error in is.factor(x): object 'yields' not found
-```
-
-```r
-head(agdata)
-```
-
-```
-## Error in head(agdata): object 'agdata' not found
-```
-
-```r
 wheat &lt;- yields %&gt;% tidyr::pivot_wider(id_cols = Year, 
                                   names_from = Entity,
                                   values_from = Wheat) %&gt;% 
@@ -101,10 +67,6 @@ wheat &lt;- yields %&gt;% tidyr::pivot_wider(id_cols = Year,
   mutate(ethiopia = case_when(
     is.na(Ethiopia) ~ `Ethiopia PDR`,
     TRUE ~ Ethiopia)) %&gt;% select(-Ethiopia, -`Ethiopia PDR`)
-```
-
-```
-## Error in tidyr::pivot_wider(., id_cols = Year, names_from = Entity, values_from = Wheat): object 'yields' not found
 ```
 ---
 # Another retrace example
@@ -132,7 +94,7 @@ result &lt;- function4(pre_result3, final_arg = FALSE)
 
 * You need to do something repeatedly
 * that thing that needs to be repeated has several steps
-* If you have to cut-paste-replace more than twice, consider a function to automate that process
+* If you have to *cut-paste-replace* more than twice, consider a function to automate that process
 
 
 ---
@@ -181,10 +143,10 @@ my_function_name &lt;- function(arg1, arg2) {
 
 
 ```r
-plot(1:10, 1:10 + rnorm(10))
+my_function_name(1:10, 1:10 + rnorm(10))
 ```
 
-&lt;img src="debugging_files/figure-html/unnamed-chunk-9-1.png" height="60%" /&gt;
+&lt;img src="debugging_files/figure-html/unnamed-chunk-8-1.png" height="60%" /&gt;
  *(usually these functions are slightly more complicated)* 
 
 ---
@@ -371,9 +333,8 @@ class: center, middle, inverse
 ## Keep Calm and Debug On
 
 ---
-class: center, middle, inverse
-
 # Miscellaneous R tip: running R scripts in a terminal
+
 
 ```r
 Rscript path/to/my/script.R 
