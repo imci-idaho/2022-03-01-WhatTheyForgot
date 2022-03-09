@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Package Documentation"
+title: "Exercise: Functions II"
 output: html_document
 ---
 

@@ -22,7 +22,7 @@ options(htmltools.dir.version = FALSE)
 1. Ask around: RStudio community, R4DS slack, Stack Overflow, your local oracle
 1. Check source code (maybe)
 
-##### but, you will probably need to work with debugging functions eventually
+#### You will probably need to work with debugging functions eventually
 
 ---
 class: center, middle, inverse
@@ -46,15 +46,14 @@ library(dplyr); library(tidyr); library(purrr)
 
 
 [Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
-```{r, error=TRUE}
+
+```{r, eval=FALSE}
 # install.packages"(tidytuesdayR")
 library(dplyr); library(tidyr); library(purrr)
 agdata <- tidytuesdayR::tt_load('2020-09-01')
 yields <- agdata[[4]]
 colnames(yields) <- gsub("\\(tonnes per hectare\\)", "", names(yields))
-head(agdata)
-```
-```{r, error=TRUE}
+
 wheat <- yields %>% tidyr::pivot_wider(id_cols = Year, 
                                   names_from = Entity,
                                   values_from = Wheat) %>% 
@@ -87,7 +86,7 @@ result <- function4(pre_result3, final_arg = FALSE)
 
 * You need to do something repeatedly
 * that thing that needs to be repeated has several steps
-* If you have to cut-paste-replace more than twice, consider a function to automate that process
+* If you have to *cut-paste-replace* more than twice, consider a function to automate that process
 
 
 ---
@@ -132,7 +131,7 @@ my_function_name <- function(arg1, arg2) {
 ```
 
 ```{r, out.height="60%"}
-plot(1:10, 1:10 + rnorm(10))
+my_function_name(1:10, 1:10 + rnorm(10))
 ```
  *(usually these functions are slightly more complicated)* 
 
@@ -276,9 +275,8 @@ class: center, middle, inverse
 ## Keep Calm and Debug On
 
 ---
-class: center, middle, inverse
-
 # Miscellaneous R tip: running R scripts in a terminal
+
 ```{r, eval = FALSE}
 Rscript path/to/my/script.R 
 ```

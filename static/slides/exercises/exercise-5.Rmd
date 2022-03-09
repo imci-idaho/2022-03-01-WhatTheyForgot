@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Package Documentation"
+title: "Exercise: Traceback"
 output: html_document
 ---
 

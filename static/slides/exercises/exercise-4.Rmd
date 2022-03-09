@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Package Documentation"
+title: "Exercise: Functions I"
 output: html_document
 ---
 
@@ -15,7 +15,7 @@ body{ /* Normal  */
 
 <br><br>
 
-1. Using the function already written in the last slide, add an argument to function for coloring the points.   
+1. Using the function already written in the last slide, add an argument to the function for coloring the points. This should be an argument that allows the user to specify what color they want.   
 1. Alter the plot to produce lines instead. If you don't know how to do this, search `plot.default` in the help menu.  
-1. If you have time, adjust the plot in other ways to make it more interesting.  
+1. If you have time, add other arguments that allow a user to adjust the plot in other ways to make it more interesting.  
 
