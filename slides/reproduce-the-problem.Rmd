@@ -1,6 +1,6 @@
 ---
 title: "Reproduce the Problem"
-subtitle: "⚔<br/>using reprex"
+subtitle: "⚔<br/>in order to solve it"
 author: "Julia Piaskowski"
 date: "2022-03-08"
 output:
