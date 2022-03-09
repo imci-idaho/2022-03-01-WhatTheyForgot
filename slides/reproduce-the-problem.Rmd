@@ -5,7 +5,6 @@ author: "Julia Piaskowski"
 date: "2022-03-08"
 output:
   xaringan::moon_reader:
-    lib_dir: libs
     mathjax: null
     nature:
       highlightStyle: github
@@ -35,6 +34,29 @@ lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad s
 You are asking them to help you, but in order for them to do that, they need to understand your problem.
 
 ---
+# Example 1 
+
+>I want to ask: are there significant differences in the yield responses of corn to 3 different levels of manure application with and without biofertilizer? What R code should I use? Thank you so much! Manure application levels = none, low, normal Biofertilizer = Y or N. 
+
+---
+# Example 2 
+
+>I am new to R so I am struggling to figure out how to do this. I have a data frame with thousands of observations that looks like this
+x    total  subgroup1  subgroup2
+.03  1000     500       500
+.04  1050     550       500
+.07  1100     525       575
+.08  9900     4900      5000
+I am trying to come up with a weighted value for x based on the following equation.
+weighted x for subgroup1 = (Σ x*subgroup1) / (Σ subgroup1)
+The idea is that for each observation we multiply the x value by the subgroup 1 value and add them all together and divide it by the sum of all the subgroup values. I also want to do this for subgroup 2. I imagine I will need some type of loop function. However, I am not sure where to start in R. Any leads would be great.
+
+---
+class: center, middle
+
+## Anyone feel ready to troubleshoot those problems in your R session? 
+
+---
 # reprex = Reproducible example
 
   = minimum version of what you are doing in R that is generating an error
@@ -42,14 +64,30 @@ You are asking them to help you, but in order for them to do that, they need to 
 ![lion and cub](images/lion_and_cub.jpg)
 
 ---
-# Good reproducible example
+# A good reprex includes...
+
+1. A short description of what you are trying to do programatically (e.g. 'filter a data set based on condition')
+1. Code in the language you are using that reproduces the problem for someone trying to solve this *on their system* (people often cannot just look at code and see what is wrong, they need to work with it).
+1. The error message being produced and/or the incorrect or undesirable output produced by your code. 
+
+---
+# Some good examples of a reprex
+
+* [Example 1](https://stackoverflow.com/questions/71403633/conditional-formatting-of-cells-using-if-else-or-hiding-columns-in-dt-package-i) n 
+* [Example 2](https://stackoverflow.com/questions/71402703/how-to-obtain-the-specific-grouping-of-cases-and-controls-in-r)  
+* [Example 3](https://stackoverflow.com/questions/71403688/save-kable-in-r-writes-empty-file)  
+
+
+---
+# A minimal data set for a reprex
 
 1. use smallest, simplest data set. Preferably a built-in data set (e.g. iris or cars, yawn).  
 1. If you have to create a data set, keep it small, keep it simple. 
   * minimum size (e.g. number of rows), minimum variables
   * enough information to replicate your situation - at least, the situation that is creating a problem
 
-<center> Remember, the goal is to recreate your problem! </center>
+<center> Remember, the goal is to recreate your problem! \n
+Tailor your minimal data set to meet that goal. </center>
 
 ---
 # Tools to create a minimal data set
@@ -73,7 +111,7 @@ my_df
 
 * find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (data sets are listed). 
 
-*(no point in running these in an Rmarkdown document)*   
+*(no point in running these in an Rmarkdown document - do this in your R session)*   
 
 -- 
 **mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
@@ -91,14 +129,15 @@ Format a table to R code and put it on the clipboard
 ```{r, eval=FALSE}
 iris %>% head() %>% df_format() 
 ```
-[CTRL + V]
+Then you an paste the data with ([CTRL + V] on many systems). 
 
 Pull part of table into R-formatted syntax: 
 ```{r, eval=FALSE}
-# first, copy part of a table
-# next type either line in the console and run
-tribble_paste()
-df_paste()
+# first, copy part of a table from a spreadsheet
+  #e.g. Googlesheets, Excel, Numbers, Calc
+# next type these line in the console and run
+tribble_paste() # to format your copied data as a tibble
+df_paste() # to format your copied data as a data.frame
 ```
 
 ---
@@ -111,11 +150,11 @@ class: center, middle, inverse
 
 * DON'T provide a long description of why you want to do something, "We plan to save the world by comparing storm drainage rates..."
 * DON'T dump a long R script with the single descriptor "it didn't work"  
-* Screenshots usually are not helpful
+* Don't use screenshots when code will work
 * DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
 * DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
 * DON'T run load meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
-* DO <mark>ruthlessly</mark> strip out every bit of unneeded code, any extra lines, extraneous arguments that can be ignored while the error persists
+* DO <mark>ruthlessly strip out every bit of unneeded code</mark>, any extra lines, extraneous arguments that can be ignored and still the error persists
 
 ---
 # Be considerate of your anonymous helpers
@@ -128,8 +167,8 @@ knitr::include_graphics("images/kind_rewind.jpg")
 
 .pull-right[
 * no `rm = list(ls())` since it is running on someone else's system
-* no setwd("to/my/computer")
-* if your code changes systems systems (e.g. `par(...)`, make sure you reset it
+* no `setwd("path/to/my/computer")`
+* if your code changes systems systems (e.g. `par(...)`, make sure you reset it at the end of the reprex code
 * don't mask built-in functions (e.g. `mean()`)  with your own custom functions
 ]
 
@@ -139,18 +178,19 @@ knitr::include_graphics("images/kind_rewind.jpg")
 * **reprex** is a package supporting how to generate reproducible examples. 
 * like **datapasta**, it can make your life easier
 
-Copy: 
+Let's pretend the code below is generating an error. Copy both lines of code. 
 ```{r, eval=FALSE}
 x<- 1:10
 plot(x)
 ```
 
-Run:
+Next, run this code in an R session: 
 ```{r, eval=FALSE}
 reprex::reprex()
 ```
+*You won't see much, but, valuable information has been put on your system clipboard!* 
 
-Paste your clipboard where you are seeking help (e.g. [GitHub issue](https://github.com/IdahoAgStats/what-they-forgot-202203/issues), Stack Overflow Question)
+Paste your clipboard contents on the resource  where you are seeking help (e.g. [GitHub issue](https://github.com/IdahoAgStats/what-they-forgot-202203/issues), Stack Overflow)
 
 ---
 # Example: Let's Write a Reprex!
@@ -177,7 +217,7 @@ else{dothat}
 1. pay attention to function examples in documentation for code styling 
 1. there's actually a [code guide!](https://style.tidyverse.org/syntax.html) and a package, [styler](https://styler.r-lib.org/) to support this. 
 
-Tip: <mark>CTRL + Shift + a</mark> will reformat things. 
+Tip: <mark>CTRL + Shift + a</mark> will reformat things in RStudio. 
 
 ---
 # The Good, The Bad and the Weird
