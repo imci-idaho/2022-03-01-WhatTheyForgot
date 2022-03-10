@@ -1,0 +1,70 @@
+---
+title: "`lapply()` examples"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+### Example 1
+
+```{r}
+integers <- sample(1:100, 200, replace = TRUE)
+thrice_int <- lapply(integers, function(x) x*(c(1,2,3)))
+```
+
+### Example 2
+
+```{r echo=TRUE, include=FALSE}
+data(storms, package = "dplyr")
+brks <- hist(storms$wind, plot = FALSE)$breaks
+storms$year_categ <- cut(storms$year, 
+                         c(1975, 1980, 1985, 1990, 1995, 2000,
+                           2005, 2010, 2015, 2020), include.lowest = TRUE)
+```
+
+```{r}
+table(storms$year_categ)
+
+winds <- lapply(as.list(unique(storms$year_categ)), function(x){
+  year = filter(storms, year_categ == x)
+  histo <- hist(year$wind, breaks = brks, plot = FALSE)
+  hist_counts <- histo$counts
+  names(hist_counts) <- histo$mids
+  hist_counts$year_categ = x
+  return(hist_counts)
+})
+
+winds_df <- bind_rows(winds)
+```
+
+### Example 3
+
+```{r}
+library(agridat)
+data(nass.barley); data(nass.wheat); data(nass.hay); data(nass.corn)
+
+(nass_ds <- ls(pattern = "^nass.")) # it's a string
+
+crop_acreage <- lapply(nass_ds, function(x) {
+  dat = mget(x, envir = .GlobalEnv)[[1]] %>% 
+    filter(state == "Idaho") %>% 
+    select(year, acres) 
+  colnames(dat)[2] = x
+  return(dat)
+} )
+
+crop_acre_id <- full_join(crop_acreage[[1]], crop_acreage[[2]], by = "year") %>% 
+  full_join(crop_acreage[[3]], by = "year") %>% 
+  full_join(crop_acreage[[4]], by = "year")
+```
+
+
+

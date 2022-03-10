@@ -1,0 +1,28 @@
+---
+title: "Exercise: `lapply`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+
+You have a data set of 500 random numbers between 1 and 100 that are divided into 5 categories. 
+
+```{r, eval=FALSE}
+df <- data.frame(int = sample(1:10, 500, replace = TRUE),
+                 category = sample(letters[1:5], 500, replace = TRUE))
+head(df)
+```
+
+Calculate the mode of each category using `lapply()`. The mode is the most commonly occurring value. If you're unsure how to do this, consider the function `table()` combined with `sort()`. FYI, The R function `mode()` does not compute a mathematical mode (it gives object class information). 
+

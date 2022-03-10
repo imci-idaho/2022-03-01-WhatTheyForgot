@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 # Reproduce the Problem
-## ⚔<br/>using reprex
+## ⚔<br/>in order to solve it
 ### Julia Piaskowski
 ### 2022-03-08
 
@@ -109,34 +109,28 @@ set.seed(208)
 my_df &lt;- data.frame(x1 = c(1, 2, 3, 4),
                     x2 = c("a", "a", "b", "b"),
                     x3 = rnorm(4))
-my_df
 ```
 
-```
-##   x1 x2         x3
-## 1  1  a  0.3398108
-## 2  2  a  1.7201904
-## 3  3  b  0.2312531
-## 4  4  b -1.0609545
-```
---
+------------------
 
 **mini-exercise:** make a `data.frame` with at least 2 variables and 5 rows. 
 
 ---
 # Tools to create a minimal data set
 
-* find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (data sets are listed). 
+* find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (their data sets are listed in the help files). 
 
 *(no point in running these in an Rmarkdown document - do this in your R session)*   
 
---   
+----------------
+
 **mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
 
 ---
 # datapasta, a convenience package
 
-[datapasta documentation](https://milesmcbain.github.io/datapasta/index.html)
+[&lt;img src="images/datapasta_hex.png" style="max-width:22%;min-width:60px;"
+alt="datapasta" /&gt;](https://milesmcbain.github.io/datapasta/index.html)
 
 * Format a table so it's represented as R code, and put it on your system clipboard: 
 
@@ -146,7 +140,7 @@ library(datapasta); library(dplyr)
 iris %&gt;% head() %&gt;% df_format() 
 ```
 
-Then you can paste the data with ([CTRL + V] on many systems). 
+Next, paste the R-formatted data ([CTRL + V] on many systems) into an R source file. 
 
 ---
 # datapasta, a convenience package

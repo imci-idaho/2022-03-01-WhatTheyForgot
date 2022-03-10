@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 
 
 
-# What is Data Workflow? 
+# What is data workflow? 
 
 * Process of of data management and analysis from gathering raw data to eventual storage in a long-term repository
 * Coordinated procedures for
@@ -35,36 +35,37 @@ class: center, middle, inverse, title-slide
   * Data backup and archive 
   
 ---
-# Why Do We Need It?
+# Why do we need it?
 
 * It’s essential to reproducibility
 * It helps us actually get the right answers
 * Reliable workflow results in efficient use of time
 * Errors are inevitable. A good workflow can help you find them and correct them
+* You probably have a workflow, but now, let's explicitly state what it is
 
 ---
-# What is Reproducible Research? 
+# What is reproducible research? 
 
 &gt; ...reproducibility is obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis. This definition is synonymous with “computational reproducibility” 
 
-                    -- Reproducibility and Replicability in Science (2018)
-                    Consensus Study Report of the National Academies of Sciences
+            - Reproducibility and Replicability in Science (2018)
+               Consensus Study Report of the National Academies of Sciences
 
 .right[.ref[*[Reference](https://www.nationalacademies.org/our-work/reproducibility-and-replicability-in-science)*]]
 
 ---
-# Reason for Good Workflow Practices
+# Reason for good wrkflow practices
 
 Avoid things like this: 
 
-&lt;img src="images/email_error.png" width="90%" /&gt;
+&lt;img src="images/email_error.png" width="110%" /&gt;
 
 ---
-# Reason for Good Workflow Practices
+# Reason for good workflow practices
 
 Clarify how data were processed:
 
-&lt;img src="images/colorful_spreadsheet.png" width="90%" /&gt;
+&lt;img src="images/colorful_spreadsheet.png" width="100%" /&gt;
 
 
 ---
@@ -79,13 +80,13 @@ The inability to replicate a study's findings.
 **Causes:** bad statistics, incorrect interpretation, lab assays poorly described, lab assay results can't be replicated, *poor documentation of data processing*
 
 ---
-# A Typical Data Analysis
+# A typical data analysis
 
 &lt;img src="images/horst-eco-r4ds.png" width="6400" /&gt;
 .right[.ref[*(Artwork by Allison Horst)*]]
 
 ---
-# A Typical Data Analysis
+# A typical data analysis
 
 Time allocation: 
 
@@ -93,10 +94,10 @@ Time allocation:
 
 &lt;img src="images/pie_chart.png" width="90%" /&gt;
 
-Data preparation is a *major* part of the analytic process.
+*Data preparation is a &lt;u&gt;major&lt;/u&gt; part of the analytic process.*
 
 ---
-# What Happens During 'Data Preparation'?
+# What happens during 'data preparation'?
 
 * data entry
 * data import
@@ -106,13 +107,14 @@ Data preparation is a *major* part of the analytic process.
 * some data transformations: summary of technical reps, consistency checks, calibration curves
 
 ---
-# Famous Errors in Analysis
+# Famous errors in analysis
 
-* WSU: Analysis of livestock predation by wolves by Robert Weilgus, checked by the Washington Policy Center for Environmental policy and WSU Statistician Marc Evans. The results disagreed, eventually leading to Prof Weilgus' resignation. 
-* In the Fall of 2020, the UK accidentally omitted 16,000 COVID cases from their official "database" (Microsoft Excel), drastically altering their official COVID counts. 
+* Analysis of livestock predation by wolves by Washington State University professor Robert Weilgus, checked by the Washington Policy Center for Environmental policy and WSU Statistician Marc Evans. The results disagreed, eventually leading to [Prof Weilgus' resignation](https://dailyevergreen.com/32158/news/wolf-researcher-resigns-in-settlement-with-wsu/). 
+
+* In the Fall of 2020, the [UK accidentally omitted 16,000 COVID cases](https://www.theguardian.com/politics/2020/oct/05/how-excel-may-have-caused-loss-of-16000-covid-tests-in-england) from their official "database" (Microsoft Excel), drastically altering their official COVID counts. 
 
 ---
-# Famous Errors in Analysis
+# Famous errors in analysis
 
 &gt; We replicate Reinhart and Rogoff and find that coding errors, selective exclusion of available data, and unconventional weighting of summary statistics lead to serious errors that inaccurately represent the relationship between public debt and GDP (gross domestic product) growth among 20 advanced economies in the post-war period,"
 
@@ -123,7 +125,7 @@ Data preparation is a *major* part of the analytic process.
 .right[.ref[*[Reference](http://peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf)*]]
 
 ---
-# Sign of Workflow Issues
+# Sign of workflow issues
 
 * Incorrect results with creative explanations  
 * Delayed publication of papers to determine why results changed  
@@ -147,8 +149,7 @@ class: center, bottom, inverse
 Can a person using README files, a data dictionary, code and/or other descriptors repeat the analytical processes AND obtain the same results for a given study?? 
 
 ---
-
-# The Reproducible Research Plan 
+# The reproducible research plan 
 
 1.  Plan. 
 1.  Archive data and methods.
@@ -157,14 +158,14 @@ Can a person using README files, a data dictionary, code and/or other descriptor
 
 ----------------
 
-#### 3  Document the Process
+#### 3  Document the process
 
 * **The source is real:** Save computing scripts for all processing, analytical and reporting steps. These scripts are ~~as important as the~~ data. 
 * Made a data dictionary for data sets that explains a data set's variables, their data types and expected values. 
 * Prepare a "README' file to accompany a data set 
 
 ---
-# Dealing with Spreadsheets
+# Dealing with spreadsheets
 
 * Spreadsheets are a fact of life
 * Good for data storage, bad for data curation 
@@ -173,12 +174,12 @@ Can a person using README files, a data dictionary, code and/or other descriptor
 &lt;img src="images/spreadsheets.png" width="90%" /&gt;
 
 ---
-##  What a Reproducibility Script Should Capture
+##  What a reproducibility script should capture
 
 * The datafile(s) imported
-  * if your data is downloaded from elsewhere, comprehensive description of how it was accessed
+  * if your data is downloaded from elsewhere, a comprehensive description of how it was accessed
 * Add-on libraries used in data processing and analysis
-* If you use a homespun script form someone else, that is a data file to include
+* If you use a homespun script from someone else for any part of the data processing or analysis, this script should be included
 * Data manipulations used to generate the final data products
   * any variable transformations
   * data aggregation
@@ -187,16 +188,16 @@ Can a person using README files, a data dictionary, code and/or other descriptor
 * anything that contributes to the generation of the final dataset that will be uploaded to a long-term data repository
   
 ---
-##  What a Reproducibility Script Does Not Need to Capture  
+##  What a reproducibility script does not need to capture  
 
 * data explorations that aren't directly used to prepare data
   * histograms, range checks, cross tabulations, etc
-* Package installations (note that this is different from packags loaded and used)
+* Package installations (note that this is different from packages loaded and used )
 * failed code
-* analysis paths that were ultimately abandoned 
+* analytical paths that were ultimately abandoned 
 
 ---
-# Code Itself is Not Always Enough
+# Code itself is not always enough
 
 In a study that attempted to rerun R code from 2,899 studies, only 470 ran as expected *(data from [Chris Chen](https://dash.harvard.edu/bitstream/handle/1/38811561/CHEN-SENIORTHESIS-2018.pdf?sequence=3))*
 
@@ -205,10 +206,10 @@ In a study that attempted to rerun R code from 2,899 studies, only 470 ran as ex
 &lt;img src="images/sankey.png" width="75%" /&gt;
 
 ---
-# Tips for Computational Reproducibility
+# Tips for computational reproducibility
 
 * Restart your programming session often
-* disable automatic saving of `.RData`  
+* disable automatic saving of *.RData*  
 * Use R Projects (or equivalent in other IDE's)
 * Capture R session information with `SessionInfo()` OR consider the **renv** package 
   for capturing the computing environment
@@ -217,7 +218,7 @@ In a study that attempted to rerun R code from 2,899 studies, only 470 ran as ex
 ---
 class: middle, center, inverse
 
-## You will (probably) thank your future self. 
+## Future you will (probably) thank your past self. 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

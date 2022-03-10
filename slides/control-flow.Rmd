@@ -1,0 +1,205 @@
+---
+title: "Control Flow"
+subtitle: "⚔<br/> and task repetition"
+author: "Julia Piaskowski"
+date: "2022-03-10"
+output:
+  xaringan::moon_reader:
+    mathjax: null
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 85), tidy = TRUE)
+library(dplyr)
+```
+
+class: center, middle, inverse
+
+## By popular demand, how to do repeat operations in R
+
+---
+# Repeating operations across a vector
+
+* reminder: a vector is an object with a length attribute composed of items each of the same class. It can have a name attribute (not required)
+
+* `ifelse(test, action-if-yes, action-if-no)`
+
+* the 'test' is a an R function that will return a TRUE or FALSE (`is.na()`, `is.numeric()`)
+
+* a vector example
+```{r}
+x <- 1:10
+y <- ifelse(x < 5, NA, x)
+```
+
+* a vector example inside a data.frame
+```{r}
+data(storms, package = "dplyr")
+storms$category_simple <- ifelse(storms$wind <= 50, "small", "big")
+```
+
+---
+class: center, middle, inverse
+
+# [exercise](exercises/exercise-10.html)
+
+---
+# Repeating operations across a data.frame
+
+* `apply()` a simple handy function to repeat things across a data.frame (or tibble, or matrix)
+* this operation is *vectorised*, meaning all processes proceed simultaneously
+
+* across rows
+```{r, eval=FALSE}
+storm_num <- select_if(storms, is.numeric)
+apply(storm_num, 1, median, na.rm = TRUE)
+```
+
+* across columns
+```{r, eval=FALSE}
+storm_num <- select_if(storms, is.numeric)
+apply(storm_num, 2, median, na.rm = TRUE)
+```
+
+---
+class: center,  middle, inverse
+
+# [exercise](exercises/exercise-11.html)
+
+---
+# Special R functions for rows and columns
+
+* These functions are very, very fast
+* they are not forgiving of non-numeric data
+
+```{r, eval=FALSE}
+rowSums(); colSums()
+rowMeans(); colMeans()
+```
+
+```{r, eval=TRUE}
+library(dplyr); data("storms")
+storms %>% select_if(is.numeric) %>% colMeans(na.rm=TRUE)
+```
+
+---
+# Comments on `NA` values
+
+* I often get the question "how can I replace "NA" across my entire data object?" 
+* `NA` is a reserved word in the R language referring to missing data. Often the best way to handle how missing values from your data are handled is to specify that when the file is read in. Check the documentation for your import function, e.g. `read.csv()`.
+* To make a global replacement of `NA` with another value, use `tidyr::replace_na()`
+* to make a global replacement of another value with `NA`, this can be handled in the import, or use `dplyr::na_if()`
+
+---
+# `lapply()`
+😍😍😍😍😍
+
+* vectorised over *lists*
+* if you can express one aspect of your operation as a list, this can probably work for you!
+* downside: everything comes back as a list
+* very simple notation: 
+
+```{r, eval=FALSE}
+lapply(list, some_function)
+```
+
+* Here are [Some examples](exercises/lapply-examples.html)
+
+---
+class: center, middle, inverse
+
+# [exercise](exercises/exercise-12.html)
+
+---
+# `lapply()` flotsam & jetsam
+
+* dealing with lists can be challenging: they follow different rules; they typically require lots and lots of indexing to extract content. And you usually can't write a list straight to file like a data.frame.  
+* `sapply()` is just like `lapply()`, except it tries to simplify to common R data objects - a matrix or array. This works if the return data is one row. 
+* `dplyr::bind_rows()` can concatenate data.frames better than `rbind()`.
+* getting things out of a list and into the desired format can be one of the most challenging aspects of working with `lapply()` (bonus: it makes you understand R data types really well!).
+* **purrr** to the rescue! 
+
+---
+# purrr
+
+* **purrr** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
+
+```{r}
+library(purrr)
+
+mtcars %>%
+  split(.$cyl) %>%
+  map(~ lm(mpg ~ wt, data = .x)) %>%
+  map_dfr(~ as.data.frame(t(as.matrix(coef(.)))))
+```
+
+---
+# Base/Tidyverse equivalents
+
+|base functions | tidyverse equivalent |
+|--------------|-----------------------|
+| `lapply()` `sapply()` `vapply()`|  **purrr** package   |
+| `mapply()` | `purrr::pmap()` |
+| `tapply()` | `dplyr::group_by() %>%  dplyr::summarise()` |
+| `replicate()` | `purrr:rerun()` |
+| `ifelse()`  | `dplyr::case_when()`  |
+
+---
+# The oft-abused `for`
+
+```{r, eval=FALSE}
+for (i in thingy) {
+  do_something()
+}
+```
+
+* I see things like this frequently: 
+```{r, eval=FALSE}
+x <- LETTERS[1:10]
+for (i in x) print(i)
+# same as sapply(x, print)
+```
+
+* Or worse: 
+```{r, eval=FALSE}
+for (i in item1) {
+  for(j in item2) {
+    here_we_go(...)
+  } }
+```
+
+---
+# Optimal use of `for`
+
+* Better usage of `for` is when you *require* the previous value(s) to proceed through the loop
+* pre-allocation of your vector/data.frame/list/etc will result in faster code
+```{r, eval=FALSE}
+f <- c(0, 1, rep(NA, 98))
+for (i in 3:100){
+  f[i] = f[i-1] + f[i-2]
+}
+
+f[1:20]
+```
+
+---
+# Traditional control flow
+
+* These are standard control variables that exist across many languages
+
+```{r, eval=FALSE}
+if
+else
+for 
+while
+next
+break
+```
+
+* Note that these are reserved words in the R language, you cannot use these words for any other purpose in the R language than what they are designed to do (no function masking is possible). 
+* There's not time to delve into these, but here is a [short introduction](exercises/while-if-break.html). 
