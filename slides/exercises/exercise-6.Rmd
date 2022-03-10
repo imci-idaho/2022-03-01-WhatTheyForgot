@@ -17,3 +17,4 @@ body{ /* Normal  */
 
 1.With the last function, add code to plot the residuals versus the fitted values. Use `methods(class = "lm")` to ascertain how to access fitted values and residuals from an **lm** object. 
 
+
