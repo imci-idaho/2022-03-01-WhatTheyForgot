@@ -190,7 +190,7 @@ class: center, middle, inverse
 ---
 # Trace
 
-* sometimes you only want R to alert you when something specific happens
+* sometimes you only want R to alert you when something specific happens - this is where [trace](https://stat.ethz.ch/R-manual/R-devel/library/base/htmlgi/trace.html) can be helpful
 * this examines `print()` when it receives numeric input that is greater than or equal to 3. 
 
 ```{r}
