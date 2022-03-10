@@ -8,6 +8,7 @@ title: "Additional Resources"
   * [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
   * [plot sizing in base R](https://www.rstudio.com/wp-content/uploads/2016/10/how-big-is-your-graph.pdf)
   * [using Python with R](https://ugoproto.github.io/ugo_r_doc/pdf/reticulate.pdf)
+  * [purrr](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf)
 * [R Graphics Cookbook](https://r-graphics.org/) (ggplot-focused book)
 * [Advanced R](https://adv-r.hadley.nz/) (book)
 * [R for Data Science](https://r4ds.had.co.nz/) (book)

@@ -88,32 +88,21 @@ class: center,  middle, inverse
 
 
 ```r
-rowSums()
-colSums()
-rowMeans()
-colMeans()
+rowSums(); colSums()
+rowMeans(); colMeans()
 ```
 
 
 ```r
-library(dplyr)
-data("storms")
-storms %&gt;%
-    select_if(is.numeric) %&gt;%
-    colMeans(na.rm = TRUE)
+library(dplyr); data("storms")
+storms %&gt;% select_if(is.numeric) %&gt;% colMeans(na.rm=TRUE)
 ```
 
 ```
-##                         year                        month 
-##                  2001.282317                     8.784805 
-##                          day                         hour 
-##                    15.832617                     9.116789 
-##                          lat                         long 
-##                    24.758040                   -64.089316 
-##                         wind                     pressure 
-##                    53.637743                   991.980521 
-## tropicalstorm_force_diameter     hurricane_force_diameter 
-##                   145.253271                    18.147664
+##        year       month         day        hour         lat        long 
+## 1998.107992    8.778521   15.859441    9.114186   24.757892  -64.229301 
+##        wind    pressure ts_diameter hu_diameter 
+##   53.495005  992.138961  166.758994   21.412704
 ```
 
 ---
@@ -157,16 +146,16 @@ class: center, middle, inverse
 ---
 # purrr
 
-* **purrr** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
+* **[purrr](https://purrr.tidyverse.org/)** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
 
 
 ```r
 library(purrr)
 
 mtcars %&gt;%
-    split(.$cyl) %&gt;%
-    map(~lm(mpg ~ wt, data = .x)) %&gt;%
-    map_dfr(~as.data.frame(t(as.matrix(coef(.)))))
+  split(.$cyl) %&gt;%
+  map(~ lm(mpg ~ wt, data = .x)) %&gt;%
+  map_dfr(~ as.data.frame(t(as.matrix(coef(.)))))
 ```
 
 ```
@@ -175,6 +164,8 @@ mtcars %&gt;%
 ## 2    28.40884 -2.780106
 ## 3    23.86803 -2.192438
 ```
+
+.footnote[[purrr cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf)]
 
 ---
 # Base/Tidyverse equivalents
@@ -193,7 +184,7 @@ mtcars %&gt;%
 
 ```r
 for (i in thingy) {
-    do_something()
+  do_something()
 }
 ```
 
@@ -209,10 +200,9 @@ for (i in x) print(i)
 
 ```r
 for (i in item1) {
-    for (j in item2) {
-        here_we_go(...)
-    }
-}
+  for(j in item2) {
+    here_we_go(...)
+  } }
 ```
 
 ---
@@ -223,8 +213,8 @@ for (i in item1) {
 
 ```r
 f &lt;- c(0, 1, rep(NA, 98))
-for (i in 3:100) {
-    f[i] = f[i - 1] + f[i - 2]
+for (i in 3:100){
+  f[i] = f[i-1] + f[i-2]
 }
 
 f[1:20]

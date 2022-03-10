@@ -72,6 +72,11 @@ class: center, bottom, inverse
 # You only live once!
 
 ---
+class: center, middle, inverse
+
+# [longer guide](https://slides.yihui.org/xaringan/#1)
+
+---
 
 class: center, middle
 
