@@ -46,11 +46,16 @@ library(dplyr); library(tidyr); library(purrr)
 
 
 [Agricultural Data from Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-01)
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, include=FALSE, echo=TRUE}
 # install.packages"(tidytuesdayR")
-library(dplyr); library(tidyr); library(purrr)
 agdata <- tidytuesdayR::tt_load('2020-09-01')
+saveRDS(agdata, file = "data/agdata.rds")
+```
+
+
+```{r, error=TRUE}
+library(dplyr); library(tidyr); library(purrr)
+agdata <- readRDS(here::here("static", "slides", "data", "agdata.rds"))
 yields <- agdata[[4]]
 colnames(yields) <- gsub("\\(tonnes per hectare\\)", "", names(yields))
 
@@ -62,6 +67,25 @@ wheat <- yields %>% tidyr::pivot_wider(id_cols = Year,
     is.na(Ethiopia) ~ `Ethiopia PDR`,
     TRUE ~ Ethiopia)) %>% select(-Ethiopia, -`Ethiopia PDR`)
 ```
+
+What went wrong? 
+
+---
+# Fixed:
+
+```{r, error=TRUE}
+yields <- agdata[[4]]
+{{ colnames(yields) <- gsub(" \\(tonnes per hectare\\)", "", names(yields)) }}
+
+wheat <- yields %>% tidyr::pivot_wider(id_cols = Year, 
+                                  names_from = Entity,
+                                  values_from = Wheat) %>% 
+  purrr::discard(~all(is.na(.))) %>% 
+  mutate(ethiopia = case_when(
+    is.na(Ethiopia) ~ `Ethiopia PDR`,
+    TRUE ~ Ethiopia)) %>% select(-Ethiopia, -`Ethiopia PDR`)
+```
+
 ---
 # Another retrace example
 
@@ -130,10 +154,12 @@ my_function_name <- function(arg1, arg2) {
 }
 ```
 
+*(usually these functions are slightly more complicated)* 
+ 
 ```{r, out.height="60%"}
 my_function_name(1:10, 1:10 + rnorm(10))
 ```
- *(usually these functions are slightly more complicated)* 
+
 
 ---
 class: center, middle,  inverse
@@ -164,7 +190,7 @@ class: center, middle, inverse
 ---
 # Trace
 
-For any R function, it will alert you when there is a problem.
+* sometimes you only want R to alert you when something specific happens
 
 This example examines `print()` when it receives output that is numeric and greater than or equal to 3. 
 
@@ -190,18 +216,20 @@ untrace(print)
 (not a formal debug method, just something that works)
 
 ```{r}
-log_hist <- function(var, color = "cyan", do_log=TRUE) {
+log_hist <- function(var, color = "darkcyan", do_log=TRUE) {
   if(do_log == TRUE) {
+    print("doing the log var")
     logvar = log(var)
-    hist(logvar, col = color)
+    str(logvar)
+    hist(logvar, col = color); abline(v = mean(logvar), lwd = 2, col = "red3")
   }
-  else hist(var, col = color)
+  else hist(var, col = color); abline(v = mean(var), lwd = 2, col = "red3")
 }
 ```
 
 --
 
-```{r, eval=FALSE}
+```{r, error=TRUE}
 log_hist(rnorm(100), do_log=TRUE)
 ```
 
@@ -210,13 +238,13 @@ log_hist(rnorm(100), do_log=TRUE)
 
 A more powerful way to examine objects in a function:
 
-```{r, eval=FALSE}
+```{r}
 fertil <- agdata[[2]]
 colnames(fertil) <- c("country", "code", "year", 
                       "cereal_yield", "N_appl")
 ```
 
-```{r, eval=FALSE}
+```{r}
 my_lm_fun <- function(df, country){
   m1 = lm(country ~ year, data = df)
   a1 = anova(m1)
@@ -225,7 +253,7 @@ my_lm_fun <- function(df, country){
 }
 ```
 
-```{r, eval=FALSE}
+```{r, error=TRUE}
 my_lm_fun(df = fertil, country = "Canada")
 ```
 
