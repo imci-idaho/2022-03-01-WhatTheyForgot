@@ -73,9 +73,9 @@ What went wrong?
 ---
 # Fixed:
 
-```{r, error=TRUE}
+```{r, highlight.output=2}
 yields <- agdata[[4]]
-{{ colnames(yields) <- gsub(" \\(tonnes per hectare\\)", "", names(yields)) }}
+colnames(yields) <- gsub(" \\(tonnes per hectare\\)", "", names(yields))
 
 wheat <- yields %>% tidyr::pivot_wider(id_cols = Year, 
                                   names_from = Entity,
@@ -277,7 +277,7 @@ test <- lm(cereal_yield ~ N_appl, data = fertil)
 
 Turn if off: 
 ```{r, eval=FALSE}
-undebug(tidyr::fill)
+undebug(stats::lm)
 ```
 
 ---
@@ -312,4 +312,5 @@ Rscript path/to/my/script.R
 ```{r, eval=FALSE}
 Rscript -e "Sys.Date()"
 ```
+
 
