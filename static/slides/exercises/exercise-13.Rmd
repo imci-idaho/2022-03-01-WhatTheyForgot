@@ -1,0 +1,39 @@
+---
+title: "Exercise: `lapply`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+  }
+</style>
+
+<br><br>
+
+
+Rewrite this using **purrr** functions to loop over all countries for when y = "cereal_yield":
+
+```{r, eval=FALSE}
+my_lm_fun <- function(df, y, cty) {
+  #browser()
+  form <- formula(paste(y, "~ year", sep = ""))
+  m1 = lm(form, data = df,
+          subset = df$country == cty)
+  a1 = anova(m1)
+  r2 = summary(m1)$r.squared
+  return(r2)
+}
+```
+
+It should start: 
+
+```{r, eval=FALSE}
+my_final_estimates <- fertil %>% 
+```
+
+
