@@ -191,8 +191,7 @@ class: center, middle, inverse
 # Trace
 
 * sometimes you only want R to alert you when something specific happens
-
-This example examines `print()` when it receives output that is numeric and greater than or equal to 3. 
+* this examines `print()` when it receives numeric input that is greater than or equal to 3. 
 
 ```{r}
 trace(print, quote(if (is.numeric(x) && x >= 3) 
@@ -200,12 +199,11 @@ trace(print, quote(if (is.numeric(x) && x >= 3)
 ```
 
 ```{r}
-print("a")
 print(4)
 ```
 
 Remember to turn `trace` off: 
-```{r}
+```{r,}
 untrace(print)
 ```
 

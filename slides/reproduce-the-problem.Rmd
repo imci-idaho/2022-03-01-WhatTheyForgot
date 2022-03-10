@@ -27,11 +27,13 @@ class: center, middle
 ---
 # Getting Help (again)
 
-##### Eventually, you will probably need outside help to solve a programming problem. 
-<br>  
-##### lotsa skilled people: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...
-<br>   
-##### You are asking them to kindly help you, but in order for them to do that, they need to understand your problem.
+* Eventually, you will probably need outside help to solve a programming problem.
+* there are many skilled R progammers out there: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...**
+* You are asking them to kindly help you, but in order for them to do that, they need to understand your problem.
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/obi_wan.jpg")
+```
 
 ---
 # Example 1 
@@ -242,9 +244,10 @@ Tip: <mark>CTRL + Shift + a</mark> will reformat things in RStudio.
 
 * Creating a good reprex is **a lot** of work!
 * If you want to elicit feedback to solve your problem, this is how to do that. 
-* Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem! 
+* Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem!
 
 <iframe src="https://giphy.com/embed/fdLR6LGwAiVNhGQNvf" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fdLR6LGwAiVNhGQNvf">via GIPHY</a></p>
+
 
 ---
 # Guides for creating a good reprex

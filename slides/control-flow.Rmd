@@ -127,7 +127,7 @@ class: center, middle, inverse
 ---
 # purrr
 
-* **purrr** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
+* **[purrr](https://purrr.tidyverse.org/)** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
 
 ```{r}
 library(purrr)
@@ -137,6 +137,8 @@ mtcars %>%
   map(~ lm(mpg ~ wt, data = .x)) %>%
   map_dfr(~ as.data.frame(t(as.matrix(coef(.)))))
 ```
+
+.footnote[[purrr cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf)]
 
 ---
 # Base/Tidyverse equivalents
