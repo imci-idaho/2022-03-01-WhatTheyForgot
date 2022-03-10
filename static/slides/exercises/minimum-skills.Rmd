@@ -18,15 +18,16 @@ Can you...
 1. Install and update R with ease?   
 1. Install packages?   
 1. Explain the difference between an R source file (e.g. *.R*, *.Rmd*) and the console?   
-1. Run an R function after reading the documentation and/or an example?   
+1. Run an R function after reading the documentation and/or looking at an example?   
 1. Import data into R?   
 1. Conduct basic mathematical operations in R?   
 1. Can explain the difference between a data.frame, a vector, and a list?  
 
 <br>
-If you do not have these skills, this is not the workshop for you. Perhaps you are new to R \ or perhaps you used to program with R but no longer recall the details. That is totally okay! (we've all been there). But, it's not okay to attend this workshop because the instructors have to adjust the content and pace to accommodate you. The result is that everyone's experience is compromised. 
 
-An alternative is to attend a workshop for beginners or engage in self study. Here are some great resources for beginner R learners:
+If you do not have these skills, this is not the workshop for you (we truly are very sorry!) Perhaps you are new to R or perhaps you used to program with R but no longer recall the details. That is totally okay! (we've all been there). But, it's not in your best interests or ours for you to attend this workshop. The reason is because the instructors have to adjust the content and pace to accommodate you. The result is that everyone's experience is compromised. 
+
+Additionally, you are not likely to get much out of the workshop if you are not already familiar with the basics of R. An alternative is to attend a workshop for beginners or engage in self study. Here are some great resources for beginner R learners:
 
 * [Introduction to R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
 * [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)

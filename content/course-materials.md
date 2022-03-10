@@ -12,4 +12,5 @@ Materials will be added as the workshop progresses.
 * [Finding Help](../slides/finding-help.html)
 * [Debugging](../slides/debugging.html)
 * [Making a Reprex](../slides/reproduce-the-problem.html)
+* [Control Flow and Repetition](../slides/control-flow.html)
 
