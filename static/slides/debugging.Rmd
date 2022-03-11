@@ -243,11 +243,13 @@ colnames(fertil) <- c("country", "code", "year",
 ```
 
 ```{r}
-my_lm_fun <- function(df, country){
-  m1 = lm(country ~ year, data = df)
+my_lm_fun <- function(df, y, cty) {
+  m1 = lm(y ~ year, data = df,
+          subset = df[,df$country == cty])
   a1 = anova(m1)
   r2 = summary(m1)$r2
-  return(list(coefficients = coef(m1), anova = a1, rsq = r2))
+  return(list(coefficients = coef(m1),
+              anova = a1, rsq = r2))
 }
 ```
 
