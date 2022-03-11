@@ -22,9 +22,10 @@ You have a data set of 1000 random numbers between 1 and 100:
 x <- sample(1:100, 1000, replace = TRUE)
 ```
 
-Write `ifelse` statements than converts:
-* numbers less than 50 to zero:
-* numbers greater than or equal to 90 to 100 
-* and keeps the rest of the numbers as is
+Write `ifelse` statements than converts:  
+
+* numbers less than 50 to zero   
+* numbers greater than or equal to 90 to 100   
+* and keeps the rest of the numbers as is   
 
 
