@@ -32,7 +32,9 @@ In terms of your R skills, expect to come away with new knowledge of your R inst
 
 * You've been using R for a while and you feel like writing R code is not what’s holding you back the most.   
 * You’ve realized that you have more pressing "meta" problems that no one seems to talk about.   
-* You want to know how to divide your work into projects and scripts, how to expose your work to others, and how to get more connected to the R development scene.  
+* You want to know how to divide your work into projects and scripts, how to expose your work to others, and how to engage more fully in reproducible research.  
+
+**You should not take this workshop if you are a beginner R user.** We have created a list of [minimal skills](minimum-skills.html) to help you evaluate this. 
 
 This course is less focused on actual code (but there will be coding), and more focused on best practices, your R set-up and other important aspects of R programming that are not often explicitly taught.  
 
