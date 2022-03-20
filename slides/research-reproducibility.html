@@ -28,7 +28,7 @@ class: center, middle, inverse, title-slide
 # What is data workflow? 
 
 * Process of of data management and analysis from gathering raw data to eventual storage in a long-term repository
-* Coordinated procedures for
+* Coordinated procedures for: 
   * Planning, organizing, and documenting research
   * Data preparation
   * Data analysis 
@@ -37,11 +37,11 @@ class: center, middle, inverse, title-slide
 ---
 # Why do we need it?
 
-* It’s essential to reproducibility
-* It helps us actually get the right answers
-* Reliable workflow results in efficient use of time
-* Errors are inevitable. A good workflow can help you find them and correct them
-* You probably have a workflow, but now, let's explicitly state what it is
+* It is essential for reproducibility.
+* It helps us actually get the right answers.
+* Reliable workflow results in efficient use of time.
+* Errors are inevitable. A good workflow can help you find them and correct them.
+* You probably have a workflow, but now, let's explicitly state what it is.
 
 ---
 # What is reproducible research? 
@@ -49,23 +49,28 @@ class: center, middle, inverse, title-slide
 &gt; ...reproducibility is obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis. This definition is synonymous with “computational reproducibility” 
 
             - Reproducibility and Replicability in Science (2018)
-               Consensus Study Report of the National Academies of Sciences
+               National Academies of Sciences
 
 .right[.ref[*[Reference](https://www.nationalacademies.org/our-work/reproducibility-and-replicability-in-science)*]]
 
 ---
-# Reason for good wrkflow practices
+# Reason for good workflow practices
 
 Avoid things like this: 
+*(or at least make it an easy fix)*
+&lt;br&gt;
 
-&lt;img src="images/email_error.png" width="110%" /&gt;
+&lt;img src="images/email_error_format.png" width="110%" /&gt;
+
+
+*(actual email I received)* 
 
 ---
 # Reason for good workflow practices
 
 Clarify how data were processed:
 
-&lt;img src="images/colorful_spreadsheet.png" width="100%" /&gt;
+&lt;img src="images/colorful_spreadsheet_format.png" width="100%" /&gt;
 
 
 ---
@@ -73,7 +78,7 @@ Clarify how data were processed:
 
 The inability to replicate a study's findings. 
 
-&lt;img src="images/Ioannidis2010.png" width="90%" /&gt;
+&lt;img src="images/Ioannidis2010_format.png" width="90%" /&gt;
 
 .right[.ref[(2005, PLOS Medicine)]]
 
@@ -83,7 +88,7 @@ The inability to replicate a study's findings.
 # A typical data analysis
 
 &lt;img src="images/horst-eco-r4ds.png" width="6400" /&gt;
-.right[.ref[*(Artwork by Allison Horst)*]]
+.right[.ref[*Artwork by [Allison Horst](https://www.allisonhorst.com/)*]]
 
 ---
 # A typical data analysis
@@ -99,17 +104,17 @@ Time allocation:
 ---
 # What happens during 'data preparation'?
 
-* data entry
-* data import
-* data calculations using constants (growing degree days, Julian calendar days)
-* data reformatting (e.g., wide to long)
-* merging of data sets
-* some data transformations: summary of technical reps, consistency checks, calibration curves
+* Data entry
+* Data import
+* Calculations (growing degree days, Julian calendar days)
+* Data reformatting (e.g., wide to long)
+* Merging of data sets
+* Data transformations: summary of technical reps, consistency checks, calibration curves
 
 ---
 # Famous errors in analysis
 
-* Analysis of livestock predation by wolves by Washington State University professor Robert Weilgus, checked by the Washington Policy Center for Environmental policy and WSU Statistician Marc Evans. The results disagreed, eventually leading to [Prof Weilgus' resignation](https://dailyevergreen.com/32158/news/wolf-researcher-resigns-in-settlement-with-wsu/). 
+* Analysis of livestock predation by wolves by Washington State University professor Robert Weilgus, checked by the Washington Policy Center for Environmental policy and WSU Statistician Marc Evans. The results disagreed, eventually leading to [Prof Weilgus' resignation.](https://dailyevergreen.com/32158/news/wolf-researcher-resigns-in-settlement-with-wsu/)
 
 * In the Fall of 2020, the [UK accidentally omitted 16,000 COVID cases](https://www.theguardian.com/politics/2020/oct/05/how-excel-may-have-caused-loss-of-16000-covid-tests-in-england) from their official "database" (Microsoft Excel), drastically altering their official COVID counts. 
 
@@ -171,30 +176,30 @@ Can a person using README files, a data dictionary, code and/or other descriptor
 * Good for data storage, bad for data curation 
 * Some [best practices](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989):
 
-&lt;img src="images/spreadsheets.png" width="90%" /&gt;
+&lt;img src="images/spreadsheets_format.png" width="90%" /&gt;
 
 ---
 ##  What a reproducibility script should capture
 
-* The datafile(s) imported
+* The data file(s) imported
   * if your data is downloaded from elsewhere, a comprehensive description of how it was accessed
 * Add-on libraries used in data processing and analysis
 * If you use a homespun script from someone else for any part of the data processing or analysis, this script should be included
-* Data manipulations used to generate the final data products
-  * any variable transformations
+* Data manipulations used to generate the final data products: 
+  * all variable transformations
   * data aggregation
   * filtering steps
   * file merges
-* anything that contributes to the generation of the final dataset that will be uploaded to a long-term data repository
+* Anything that contributes to the generation of the final data set that will be uploaded to a long-term data repository
   
 ---
 ##  What a reproducibility script does not need to capture  
 
-* data explorations that aren't directly used to prepare data
+* Data explorations that aren't directly used to prepare data
   * histograms, range checks, cross tabulations, etc
-* Package installations (note that this is different from packages loaded and used )
-* failed code
-* analytical paths that were ultimately abandoned 
+* Package installations (note that this is different from packages loaded and used)
+* Failed code (although you may want to save this for other reasons)
+* Analytical paths that were ultimately abandoned 
 
 ---
 # Code itself is not always enough
@@ -209,16 +214,16 @@ In a study that attempted to rerun R code from 2,899 studies, only 470 ran as ex
 # Tips for computational reproducibility
 
 * Restart your programming session often
-* disable automatic saving of *.RData*  
+* Disable automatic saving of *.RData*  
 * Use R Projects (or equivalent in other IDE's)
 * Capture R session information with `SessionInfo()` OR consider the **renv** package 
   for capturing the computing environment
-* see the [Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html) CRAN task view for more resources
+* See the [Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html) CRAN task view for more resources
 
 ---
 class: middle, center, inverse
 
-## Future you will (probably) thank your past self. 
+## Future you will (probably) thank your past self
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -68,7 +68,7 @@ wheat <- yields %>% tidyr::pivot_wider(id_cols = Year,
     TRUE ~ Ethiopia)) %>% select(-Ethiopia, -`Ethiopia PDR`)
 ```
 
-What went wrong? 
+<mark>What went wrong? </mark>
 
 ---
 # Fixed:
@@ -103,13 +103,13 @@ pre_result2 <- function2(pre_result1, more_args = TRUE)
 pre_result3 <- function3(pre_result2, even_more_args = "show_me_the_money")
 result <- function4(pre_result3, final_arg = FALSE)
 ```
-*(avoid writing nested functions)*  
+*(Lesson: avoid writing nested functions)*  
 
 ---
 # Consider writing a function if....
 
 * You need to do something repeatedly
-* that thing that needs to be repeated has several steps
+* That thing that needs to be repeated has several steps
 * If you have to *cut-paste-replace* more than twice, consider a function to automate that process
 
 
@@ -117,14 +117,13 @@ result <- function4(pre_result3, final_arg = FALSE)
 # Why write functions? 
 
 * To save yourself work  
-* to avoid mistakes  
+* To avoid mistakes
+<br><br>
   
 👍  DRY = **D**on't **R**epeat **Y**ourself  
 <br>
   
 👎  WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
-
-.footnote[[more instructions](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 # Crash course in functions
@@ -144,9 +143,11 @@ my_result <- my_function_name(arg1 = ..., arg2 = ...)
 ```
 
 ---
-# More intro to functions
+# Crash course in functions
 
-It helps to describe the arguments (but, first we need an actual function to help us define the argument)
+* Let's define a function (plotting)
+* And describe the arguments it takes
+
 ```{r}
 my_function_name <- function(arg1, arg2) {
   # arg1 & arg2 = numeric vectors of identical lengths
@@ -154,12 +155,18 @@ my_function_name <- function(arg1, arg2) {
 }
 ```
 
-*(usually these functions are slightly more complicated)* 
+---
+# Crash course in functions
+
+* Call the function just written: 
  
 ```{r, out.height="60%"}
 my_function_name(1:10, 1:10 + rnorm(10))
 ```
 
+*(functions are usually more complicated than this example)* 
+
+.footnote[[longer function writing tutorial](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 class: center, middle,  inverse
@@ -191,10 +198,10 @@ class: center, middle, inverse
 # Trace
 
 * sometimes you only want R to alert you when something specific happens - this is where [trace](https://stat.ethz.ch/R-manual/R-devel/library/base/htmlgi/trace.html) can be helpful
-* this examines `print()` when it receives numeric input that is greater than or equal to 3. 
+* this examines `print()` when it receives numeric input that is greater than 3. 
 
 ```{r}
-trace(print, quote(if (is.numeric(x) && x >= 3) 
+trace(print, quote(if (is.numeric(x) && x > 3) 
   cat("We have a problem: \n")), print = FALSE)
 ```
 
@@ -305,12 +312,16 @@ class: center, middle, inverse
 ---
 # Miscellaneous R tip: running R scripts in a terminal
 
-```{r, eval = FALSE}
-Rscript path/to/my/script.R 
-```
-
 ```{r, eval=FALSE}
 Rscript -e "Sys.Date()"
 ```
 
+```{r, eval = FALSE}
+Rscript path/to/my/script.R 
+```
+
+
+**Why do this?**
+
+You might be running a long process that does not require your supervision or an interactive RStudio session. R can use *a lot* of memory just running processes, but RStudio, the graphical user interface, is also a memory hog. 
 

@@ -37,12 +37,12 @@ sudo apt upgrade
 ---
 ## Updating packages
 
-* command line - single package:  
+* Command line - single package:  
 ```{r eval=FALSE}
 devtools::update.packages("RColorBrewer") 
 ```
 
-* command line - all packages:  
+* Command line - all packages:  
 
 <small>*(don't run this unless you have the time to wait)*</small>
 ```{r eval=FALSE}
@@ -69,9 +69,8 @@ How to find the version information? Visit the [package site](http://localhost:4
 ---
 ## Installing packages when you update R
 
-* if updating a minor update (4.0.1 to 4.0.3), do nothing  
-* if a major update (4.0 to 4.1), reinstall packages  
-<small*>(don't copy over packages directly because things may break)*</small>
+* If doing a minor update of R (e.g. 4.0.1 to 4.0.3), do nothing (packages will remain compatible)
+* If doing a major R update (4.0 to 4.1), re-install packages. *Don't copy over packages directly because things may break without telling you.*
 
 One possible [solution](https://rstats.wtf/maintaining-r.html): 
 ```{r eval=FALSE}
@@ -149,9 +148,9 @@ class: bottom, left
 ---
 #  .Renviron 
 
-* sets global variables: API and authentication keys
-* there is often only one of these per R system, located in the home directory, but there can one per project
-* do not add this to a git repository or make sure it ends up in *.gitignore*
+* Sets global variables: API and authentication keys
+* There is often only one of these per R system, located in the home directory, but there can one per project
+* DO NOT add this to a git repository or make sure it ends up in  *.gitignore* 
 
 --
 Example:
@@ -168,7 +167,7 @@ NOAA_KEY = 'my-secret-key'
 
 Some helper functions from **usethis**: 
 ```{r eval=FALSE}
-usethis::edit_r_environ("user") # to set system-wide
+usethis::edit_r_environ("user") # system-wide
 usethis::edit_r_environ("project") # for the current project you are in
 ```
 
@@ -178,8 +177,8 @@ usethis::edit_r_environ("project") # for the current project you are in
  
 * An <mark>R script</mark> that runs every time R is opened or restarted
 * there is (often) one created automatically when R is installed at the home directory
-* there may be one in each **.Rproj**, this takes precedence over others
-* this often goes in the git repo
+* There may be one in each **.Rproj**, this takes precedence over others
+* This often goes in the git repo
 
 ---
 ## A possible .Rprofile
@@ -235,19 +234,19 @@ getAnywhere("filter")
 ---
 ## Namespace solutions
 
-* use "::"
+* Use `::`
 ```{r eval=FALSE}
 dplyr::filter(...)
 ```
 
-* remove conflicting packages:
+* Remove conflicting packages:
 ```{r eval=FALSE}
 unloadNamespace("offending_package")
 ```
 
-* only require packages you will use (reconsider `library(tidyverse)`)
-* load the packages with whose functions you do not want masked last
-* use the package **conflicted**
+* Only require packages you will use (reconsider `library(tidyverse)`)
+* Load the packages with whose functions you do not want masked last
+* Use the package **conflicted**
 
 ---
 ## A namespace solution under development:
