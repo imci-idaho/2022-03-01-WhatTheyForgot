@@ -30,20 +30,20 @@ class: center, middle, inverse
 ---
 # Repeating operations across a vector
 
-* reminder: a vector is an object with a length attribute composed of items each of the same class. It can have a name attribute (not required)
+* Reminder: a vector is an object with a length attribute composed of items each of the same class. It can have a name attribute (not required)
 
 * `ifelse(test, action-if-yes, action-if-no)`
 
-* the 'test' is a an R function that will return a TRUE or FALSE (`is.na()`, `is.numeric()`)
+* The 'test' should be an R function that will return a TRUE or FALSE, e.g. `is.na()`, `is.numeric()`
 
-* a vector example
+* Vector example
 
 ```r
 x &lt;- 1:10
 y &lt;- ifelse(x &lt; 5, NA, x)
 ```
 
-* a vector example inside a data.frame
+* Vector example inside a data.frame
 
 ```r
 data(storms, package = "dplyr")
@@ -59,16 +59,16 @@ class: center, middle, inverse
 # Repeating operations across a data.frame
 
 * `apply()` a simple handy function to repeat things across a data.frame (or tibble, or matrix)
-* this operation is *vectorised*, meaning all processes proceed simultaneously
+* This operation is *vectorised*, meaning all processes proceed simultaneously
 
-* across rows
+* Across rows
 
 ```r
 storm_num &lt;- select_if(storms, is.numeric)
 apply(storm_num, 1, median, na.rm = TRUE)
 ```
 
-* across columns
+* Across columns
 
 ```r
 storm_num &lt;- select_if(storms, is.numeric)
@@ -84,50 +84,61 @@ class: center,  middle, inverse
 # Special R functions for rows and columns
 
 * These functions are very, very fast
-* they are not forgiving of non-numeric data
+* They are not forgiving of non-numeric data
 
 
 ```r
-rowSums(); colSums()
-rowMeans(); colMeans()
+rowSums()
+colSums()
+rowMeans()
+colMeans()
 ```
 
 
 ```r
-library(dplyr); data("storms")
-storms %&gt;% select_if(is.numeric) %&gt;% colMeans(na.rm=TRUE)
+library(dplyr)
+data("storms")
+storms %&gt;%
+    select_if(is.numeric) %&gt;%
+    colMeans(na.rm = TRUE)
 ```
 
 ```
-##        year       month         day        hour         lat        long 
-## 1998.107992    8.778521   15.859441    9.114186   24.757892  -64.229301 
-##        wind    pressure ts_diameter hu_diameter 
-##   53.495005  992.138961  166.758994   21.412704
+##                         year                        month 
+##                  2001.282317                     8.784805 
+##                          day                         hour 
+##                    15.832617                     9.116789 
+##                          lat                         long 
+##                    24.758040                   -64.089316 
+##                         wind                     pressure 
+##                    53.637743                   991.980521 
+## tropicalstorm_force_diameter     hurricane_force_diameter 
+##                   145.253271                    18.147664
 ```
 
 ---
 # Comments on `NA` values
 
 * I often get the question "how can I replace "NA" across my entire data object?" 
-* `NA` is a reserved word in the R language referring to missing data. Often the best way to handle how missing values from your data are handled is to specify that when the file is read in. Check the documentation for your import function, e.g. `read.csv()`.
-* To make a global replacement of `NA` with another value, use `tidyr::replace_na()`
-* to make a global replacement of another value with `NA`, this can be handled in the import, or use `dplyr::na_if()`
+* `NA` is a reserved word in the R language referring to missing data. Often the best way to handle how missing values from your data are handled is to specify that when the file is read in. Check the documentation for your import function, e.g. `read.csv(..., na.string = "...")`.
+* To do a global replacement of `NA` with another value, use `tidyr::replace_na()`
+* To do a global replacement of another value with `NA`, this can be handled in the import, or use `dplyr::na_if()`
 
 ---
 # `lapply()`
 😍😍😍😍😍
 
-* vectorised over *lists*
-* if you can express one aspect of your operation as a list, this can probably work for you!
-* downside: everything comes back as a list
-* very simple notation: 
+* Vectorised over *lists*
+* If you can express one aspect of your operation as a list, this can probably work for you!
+* Downside: everything comes back as a list
+* It uses very simple notation: 
 
 
 ```r
 lapply(list, some_function)
 ```
 
-* Here are [Some examples](exercises/lapply-examples.html)
+* Here are [some examples](exercises/lapply-examples.html)
 
 ---
 class: center, middle, inverse
@@ -137,25 +148,25 @@ class: center, middle, inverse
 ---
 # `lapply()` flotsam &amp; jetsam
 
-* dealing with lists can be challenging: they follow different rules; they typically require lots and lots of indexing to extract content. And you usually can't write a list straight to file like a data.frame.  
+* Dealing with lists can be challenging: they follow different rules; they typically require lots and lots of indexing to extract content. And you usually can't write a list straight to file like a data.frame.  
 * `sapply()` is just like `lapply()`, except it tries to simplify to common R data objects - a matrix or array. This works if the return data is one row. 
 * `dplyr::bind_rows()` can concatenate data.frames better than `rbind()`.
-* getting things out of a list and into the desired format can be one of the most challenging aspects of working with `lapply()` (bonus: it makes you understand R data types really well!).
+* Getting things out of a list and into the desired format can be one of the most challenging aspects of working with `lapply()` (bonus: it makes you understand R data types really well!).
 * **purrr** to the rescue! 
 
 ---
 # purrr
 
-* **[purrr](https://purrr.tidyverse.org/)** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
+**[purrr](https://purrr.tidyverse.org/)** does all of the hard work of iteration *plus* conversion of output to the object type you want! 
 
 
 ```r
 library(purrr)
 
 mtcars %&gt;%
-  split(.$cyl) %&gt;%
-  map(~ lm(mpg ~ wt, data = .x)) %&gt;%
-  map_dfr(~ as.data.frame(t(as.matrix(coef(.)))))
+    split(.$cyl) %&gt;%
+    map(~lm(mpg ~ wt, data = .x)) %&gt;%
+    map_dfr(~as.data.frame(t(as.matrix(coef(.)))))
 ```
 
 ```
@@ -187,14 +198,15 @@ class: middle, center, inverse
 ---
 # The oft-abused `for`
 
+A `for` loop: 
 
 ```r
 for (i in thingy) {
-  do_something()
+    do_something()
 }
 ```
 
-* I see things like this frequently: 
+I see things like this frequently: 
 
 ```r
 x &lt;- LETTERS[1:10]
@@ -202,13 +214,14 @@ for (i in x) print(i)
 # same as sapply(x, print)
 ```
 
-* Or worse: 
+Or worse: 
 
 ```r
 for (i in item1) {
-  for(j in item2) {
-    here_we_go(...)
-  } }
+    for (j in item2) {
+        here_we_go(...)
+    }
+}
 ```
 
 ---
@@ -218,12 +231,26 @@ for (i in item1) {
 * pre-allocation of your vector/data.frame/list/etc will result in faster code
 
 ```r
+# vector pre-allocation
 f &lt;- c(0, 1, rep(NA, 98))
-for (i in 3:100){
-  f[i] = f[i-1] + f[i-2]
+f[1:10]
+```
+
+```
+##  [1]  0  1 NA NA NA NA NA NA NA NA
+```
+
+```r
+# Fibonacci sequence
+for (i in 3:100) {
+    f[i] = f[i - 1] + f[i - 2]
 }
 
-f[1:20]
+f[1:10]
+```
+
+```
+##  [1]  0  1  1  2  3  5  8 13 21 34
 ```
 
 ---
@@ -241,8 +268,8 @@ next
 break
 ```
 
-* Note that these are reserved words in the R language, you cannot use these words for any other purpose in the R language than what they are designed to do (no function masking is possible). 
-* There's not time to delve into these, but here is a [short introduction](exercises/while-if-break.html). 
+* Note that these are reserved words in the R language; you cannot use these words for any other purpose in the R language than what they are designed to do (no function masking is possible). 
+* There ua not time to delve into these, but here is a [short introduction](exercises/while-if-break.html). 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -71,11 +71,12 @@ wheat &lt;- yields %&gt;% tidyr::pivot_wider(id_cols = Year,
 ```
 
 ```
-## Error: Can't subset columns that don't exist.
+## Error in `stop_subscript()`:
+## ! Can't subset columns that don't exist.
 ## x Column `Wheat` doesn't exist.
 ```
 
-What went wrong? 
+&lt;mark&gt;What went wrong? &lt;/mark&gt;
 
 ---
 # Fixed:
@@ -113,13 +114,13 @@ pre_result2 &lt;- function2(pre_result1, more_args = TRUE)
 pre_result3 &lt;- function3(pre_result2, even_more_args = "show_me_the_money")
 result &lt;- function4(pre_result3, final_arg = FALSE)
 ```
-*(avoid writing nested functions)*  
+*(Lesson: avoid writing nested functions)*  
 
 ---
 # Consider writing a function if....
 
 * You need to do something repeatedly
-* that thing that needs to be repeated has several steps
+* That thing that needs to be repeated has several steps
 * If you have to *cut-paste-replace* more than twice, consider a function to automate that process
 
 
@@ -127,14 +128,13 @@ result &lt;- function4(pre_result3, final_arg = FALSE)
 # Why write functions? 
 
 * To save yourself work  
-* to avoid mistakes  
+* To avoid mistakes
+&lt;br&gt;&lt;br&gt;
   
 👍  DRY = **D**on't **R**epeat **Y**ourself  
 &lt;br&gt;
   
 👎  WET = **W**rite **E**verything **T**wice / **We** **E**njoy **T**yping  
-
-.footnote[[more instructions](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 # Crash course in functions
@@ -156,9 +156,11 @@ my_result &lt;- my_function_name(arg1 = ..., arg2 = ...)
 ```
 
 ---
-# More intro to functions
+# Crash course in functions
 
-It helps to describe the arguments (but, first we need an actual function to help us define the argument)
+* Let's define a function (plotting)
+* And describe the arguments it takes
+
 
 ```r
 my_function_name &lt;- function(arg1, arg2) {
@@ -167,7 +169,10 @@ my_function_name &lt;- function(arg1, arg2) {
 }
 ```
 
-*(usually these functions are slightly more complicated)* 
+---
+# Crash course in functions
+
+* Call the function just written: 
  
 
 ```r
@@ -176,6 +181,9 @@ my_function_name(1:10, 1:10 + rnorm(10))
 
 &lt;img src="debugging_files/figure-html/unnamed-chunk-10-1.png" height="60%" /&gt;
 
+*(functions are usually more complicated than this example)* 
+
+.footnote[[longer function writing tutorial](https://agstats.io/post/writing-r-functions/) on writing functions]
 
 ---
 class: center, middle,  inverse
@@ -214,11 +222,11 @@ class: center, middle, inverse
 # Trace
 
 * sometimes you only want R to alert you when something specific happens - this is where [trace](https://stat.ethz.ch/R-manual/R-devel/library/base/htmlgi/trace.html) can be helpful
-* this examines `print()` when it receives numeric input that is greater than or equal to 3. 
+* this examines `print()` when it receives numeric input that is greater than 3. 
 
 
 ```r
-trace(print, quote(if (is.numeric(x) &amp;&amp; x &gt;= 3) 
+trace(print, quote(if (is.numeric(x) &amp;&amp; x &gt; 3) 
   cat("We have a problem: \n")), print = FALSE)
 ```
 
@@ -285,7 +293,7 @@ log_hist(rnorm(100), do_log=TRUE)
 ```
 
 ```
-##  num [1:100] 0.423 NaN NaN NaN 0.381 ...
+##  num [1:100] NaN -2.206 NaN -2.823 -0.953 ...
 ```
 
 ![](debugging_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
@@ -378,14 +386,18 @@ class: center, middle, inverse
 
 
 ```r
-Rscript path/to/my/script.R 
+Rscript -e "Sys.Date()"
 ```
 
 
 ```r
-Rscript -e "Sys.Date()"
+Rscript path/to/my/script.R 
 ```
 
+
+**Why do this?**
+
+You might be running a long process that does not require your supervision or an interactive RStudio session. R can use *a lot* of memory just running processes, but RStudio, the graphical user interface, is also a memory hog. 
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

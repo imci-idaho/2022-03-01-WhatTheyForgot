@@ -6,19 +6,21 @@ title: Workshop Details
 
 You need to have [R](https://cloud.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/) installed on the computer you will use for this workshop. Installing the packages **here**, **renv**, **reprex**, **devtools** in advance is recommended. If you will be using a Windows machine for the workshop, please install [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) (note that this is a *program* not a package). 
 
+Please install these packages: 
+
 ```
 packages <- c("here", "renv", "reprex", "devtools", "datapasta")
 install.packages(packages)
 ```
 
-Once you have **devtools** installed, install the package **lookup** from GitHub:
+Once you have **devtools** installed, install the package **[lookup](https://github.com/jimhester/lookup)** from GitHub:
 
 ```
 devtools::install_github("jimhester/lookup")
 ```
-<b style='color:red;'>Note: please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we will use in this workshop.</b>
+<b style='color:red;'>Note!!!! please do NOT install the package 'lookup' found on CRAN. This is a different package entirely than what we will use in this workshop.</b>
 
-Make sure that everything works properly:
+Run this code to make sure that everything works properly:
 ```
 pkgs <- c("here", "renv", "reprex", "devtools", "lookup")
 lapply(pkgs, require, character.only = TRUE) 
@@ -26,7 +28,7 @@ lookup::lookup(body)
 ```
 Check that all packages loaded and that `lookup::lookup(body)` successfully executed without generating an error message. 
 
-We will be using [gitter](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#) for the class chat, which requires a account with either GitHub, GitLab or Twitter. If you do not have one of those, please get an account ([GitHub](https://github.com/signup). 
+We will be using [gitter](https://gitter.im/Idaho-ag-stats/2022-what-they-forgot-workshop#) for the class chat, which requires a account with GitHub, GitLab, or email-based account. If you do not have one of those, please get an account and make sure you can log into Gitter. 
 
 A Zoom connection is also required since this workshop will be held online. 
 

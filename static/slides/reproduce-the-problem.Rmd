@@ -28,7 +28,7 @@ class: center, middle
 # Getting Help (again)
 
 * Eventually, you will probably need outside help to solve a programming problem.
-* there are many skilled R progammers out there: Stack Overflow, R4DS, RStudio Community, that other grad student who knows everything,...**
+* there are many skilled R programmers out there: Stack Overflow, R4DS, RStudio Community, that one grad student who knows everything, ...
 * You are asking them to kindly help you, but in order for them to do that, they need to understand your problem.
 
 ```{r, echo=FALSE, out.width="60%"}
@@ -43,14 +43,14 @@ knitr::include_graphics("images/obi_wan.jpg")
 ---
 # Example 2 
 
->I am new to R so I am struggling to figure out how to do this. I have a data frame with thousands of observations that looks like this
-x    total  subgroup1  subgroup2
-.03  1000     500       500
-.04  1050     550       500
-.07  1100     525       575
-.08  9900     4900      5000
-I am trying to come up with a weighted value for x based on the following equation.
-weighted x for subgroup1 = (Σ x*subgroup1) / (Σ subgroup1)
+>I am new to R so I am struggling to figure out how to do this. I have a data frame with thousands of observations that looks like this  
+x    total  subgroup1  subgroup2   
+.03  1000     500       500   
+.04  1050     550       500   
+.07  1100     525       575   
+.08  9900     4900      5000   
+I am trying to come up with a weighted value for x based on the following equation.   
+weighted x for subgroup1 = (Σ x*subgroup1) / (Σ subgroup1)   
 The idea is that for each observation we multiply the x value by the subgroup 1 value and add them all together and divide it by the sum of all the subgroup values. I also want to do this for subgroup 2. I imagine I will need some type of loop function. However, I am not sure where to start in R. Any leads would be great.
 
 ---
@@ -83,13 +83,15 @@ class: center, middle
 ---
 # A minimal data set for a reprex
 
-1. use smallest, simplest data set. Preferably a built-in data set (e.g. iris or cars, yawn).  
+1. Use smallest, simplest data set. Preferably a built-in data set (e.g. iris or cars, yawn).  
 1. If you have to create a data set, keep it small, keep it simple. 
   * minimum size (e.g. number of rows), minimum variables
   * enough information to replicate your situation - at least, the situation that is creating a problem
 
-<center> Remember, the goal is to recreate your problem! </center>
-<center> Tailor your minimal data set to meet that goal. </center>
+<br><br><br>
+
+<center> **Remember, the goal is to recreate your problem!** </center>
+<center> **Tailor your (minimal) data set to meet that goal.** </center>
 
 ---
 # Tools to create a minimal data set
@@ -111,11 +113,11 @@ my_df <- data.frame(x1 = c(1, 2, 3, 4),
 ---
 # Tools to create a minimal data set
 
-* find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (their data sets are listed in the help files). 
+* Find those data sets! Use `data()`, `data(package = "dplyr")` or search the documentation (their data sets are listed in the help files). 
 
 *(no point in running these in an Rmarkdown document - do this in your R session)*   
 
-----------------
+------------------
 
 **mini-exercise:** find a data set from a tidyverse package you've never used before and examine it. How big is it? What type of variables are present? 
 
@@ -125,14 +127,14 @@ my_df <- data.frame(x1 = c(1, 2, 3, 4),
 [<img src="images/datapasta_hex.png" style="max-width:22%;min-width:60px;"
 alt="datapasta" />](https://milesmcbain.github.io/datapasta/index.html)
 
-* Format a table so it's represented as R code, and put it on your system clipboard: 
+* Format a table so it is represented as R code, and put it on your system clipboard: 
 
 ```{r, eval=FALSE}
 library(datapasta); library(dplyr)
 iris %>% head() %>% df_format() 
 ```
 
-Next, paste the R-formatted data ([CTRL + V] on many systems) into an R source file. 
+* Next, paste the R-formatted data ([CTRL + V] or [CMD + V] on many systems) into an R source file. 
 
 ---
 # datapasta, a convenience package
@@ -141,12 +143,12 @@ Next, paste the R-formatted data ([CTRL + V] on many systems) into an R source f
 
 First, copy part of a table from a spreadsheet (e.g. Googlesheets, Excel, Numbers, Calc). 
 
-Next, run this line of code to generate r code that will format your copied spreadsheet cells into an R data.frame: 
+Next, run this line of code to generate R code that will format your copied spreadsheet cells into an R data.frame: 
 ```{r, eval=FALSE}
 df_paste()
 ```
 
-You can also run this line of code to generate r code that will format your copied spreadsheet cells into an R tibble:
+You can also run this line of code to generate R code that will format your copied spreadsheet cells into an R tibble:
 ```{r, eval=FALSE}
 tribble_paste() 
 ```
@@ -168,7 +170,7 @@ class: center, middle, inverse
 
 * DON'T provide a long description of why you want to do something, "We plan to save the world by comparing storm drainage rates..."
 * DON'T dump a long R script with the single descriptor "it didn't work"  
-* Be very judicious in your use of screenshots. In most cases, text and code describes the problem. 
+* DO Be very judicious in your use of screenshots. In most cases, text and code describes the problem. 
 * DO find the line of code where it all breaks down (this does not mean digging into the source code - find the error in *your* code)  
 * DO include all lines of code needed to recreate the problem - including libraries that must be loaded 
 * DON'T load a meta-library like `library(tidyverse)` - only load the packages needed to recreate the problem
@@ -225,35 +227,37 @@ class: middle, center, inverse
 
 ### (it's easier to read)   
 
-1. There is no cap on white space usage
+* There is no cap on white space usage: 
+
 ```{r, eval=FALSE}
 # No need to pack in code this tightly! 
-# We aren't trying to send this data stream to the moon
+# (We aren't trying to send this data stream to the moon)
 myfunc<-onebigfunc(mydf,arg=1,arg2=TRUE,arg4="Go")
 more<-evenmore(myfunc,argA=c("Idaho","Montana","Utah"))
 if(condition){dothis}
 else{dothat}
 ```
-1. pay attention to function examples in documentation for code styling 
-1. there's actually a [code guide!](https://style.tidyverse.org/syntax.html) and a package, [styler](https://styler.r-lib.org/) to support this. 
+
+* Pay attention to function examples in documentation for code styling 
+* There is actually a [code guide!](https://style.tidyverse.org/syntax.html) and a package, [styler](https://styler.r-lib.org/) to support this. 
 
 Tip: <mark>CTRL + Shift + a</mark> will reformat things in RStudio. 
 
 ---
-# The Good, The Bad and the Weird
+# Show me the money!
 
-* Creating a good reprex is **a lot** of work!
+* Creating a good reprex is **a lot** of work.
 * If you want to elicit feedback to solve your problem, this is how to do that. 
-* Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem!
+* Very frequently, the process of creating a reprex will reveal an error, a mistaken assumption, or something that will help you resolve the problem. 
 
 <iframe src="https://giphy.com/embed/fdLR6LGwAiVNhGQNvf" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fdLR6LGwAiVNhGQNvf">via GIPHY</a></p>
 
 
 ---
-# Guides for creating a good reprex
+# Other guides for creating a good reprex
 
 ### [Stack Overflow](https://stackoverflow.com/help/minimal-reproducible-example)
 
 ### [Rstudio Community](https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061)  
 
-### [Reprex Do's and Don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)
+### [Tidyverse Reprex Do's and Don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)

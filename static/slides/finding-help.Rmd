@@ -25,14 +25,15 @@ class: center, middle
 ---
 # Check the documentation!
 
-*Remember, you can spend 2 hours searching the web in order to save 15 minutes of reading the documentation.*
-
 How do we do this?
 
 ```{r eval=FALSE}
 ?par
 ??plot
 ```
+
+
+(*Remember, you can spend 2 hours searching the web in order to save 15 minutes of reading the documentation).*
 
 ---
 # No really, read the docs
@@ -56,7 +57,10 @@ class: center, middle, inverse
 
 *They are often telling you something important.*
 
-![tweet about informative error message I ignored](images/tweet_ignored_error.png)
+```{r, echo=FALSE, out.width="80%", fig.cap="Informative error message I ignored"}
+knitr::include_graphics('images/tweet_ignored_error.png')
+```
+
 
 ---
 # Still, error messages can be confusing
