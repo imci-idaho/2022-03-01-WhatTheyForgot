@@ -31,4 +31,5 @@ Additionally, you are not likely to get much out of the workshop if you are not 
 
 * [Introduction to R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
 * [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
+* [EdX courses](https://www.edx.org/learn/r-programming)
 
