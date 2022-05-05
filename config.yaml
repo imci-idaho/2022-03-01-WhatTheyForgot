@@ -29,7 +29,7 @@ menu:
 
 params:
   description: "A workshop offerred by University of Idaho Carpentries"
-  footer: "&copy; [University of Idaho](https://www.uidaho.edu) {Year} | [Github](https://github.com/imci-idaho/2022-03-01-WhatTheyForgot)"
+  footer: "CC-BY [University of Idaho](https://www.uidaho.edu) {Year} | [Github](https://github.com/imci-idaho/2022-03-01-WhatTheyForgot)"
 
 markup:
   highlight:
